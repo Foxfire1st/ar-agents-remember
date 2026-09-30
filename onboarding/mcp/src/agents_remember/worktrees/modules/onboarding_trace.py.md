@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/onboarding_trace.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T20:47:37+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2`|
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,10 @@ report-only findings and the closeout refusal. It reads no Git; the application 
 - **Output.** `OnboardingTraceResult` carries the items, the unnecessary rows (a row whose subject raised no
   item), the problems and the pairing. `ok` is no open item and no problem. `repair_findings` is one finding
   per problem plus one `onboarding-trace-missing` finding per open item naming the card or route, its sources
-  and `required_action`; `report_only_findings` lists each unnecessary row as `onboarding-trace-unnecessary`;
+  and `required_action`; `report_only_findings` lists each unnecessary row as `onboarding-trace-unnecessary`,
+  and since MIK-R10 each finding also carries the row's `subject` (additive), so the memory-quality controller
+  can keep an `onboarding:<path>` row that answers an uncovered unexplained change out of that report
+  (`_needed_rows_dropped`, ruling 2026-09-30T01:56:39 Q3);
   `refusal` is the closeout text naming every problem and open item; `brief` and `summary` are the tool and
   worklist views.
 - **The stored-item predicate.** `onboarding_item_open(item, rows_by_subject)` applies both halves of the
@@ -96,6 +99,8 @@ report-only findings and the closeout refusal. It reads no Git; the application 
 
 ### Todos
 
+- MIK-R10 binds each uncovered `unexplained_*` item to this gate's item for its file
+  (`knowledge_worklist/unexplained.settle_uncovered`); this module's items are read, never changed.
 - MIK-R09 (L09) must enforce stored `onboarding_trace` items through `onboarding_item_open`, not through the
   registry's generic row lookup alone, which covers only the row half.
 
@@ -123,12 +128,13 @@ code and memory repositories, so they are named here and not cited as rows.
 | An unparseable sidecar is never a counted change; a readable repair of one is. | `counted_sidecar_change` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:138-148 |
 | Sides that could not be established carry a named reason. | `OnboardingTraceSides` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:166-178 |
 | One item, its open state and its stored document. | `TraceItem`; `to_document` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:181-232 |
-| The result, its repair and report-only findings, and the refusal. | `OnboardingTraceResult`; `refusal` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:235-335 |
-| The leaf's `no_impact` rows, or the unreadable-history problem. | `_history_rows` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:338-360 |
-| The nearest governing route of a changed path. | `nearest_governing_route` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:376-387 |
-| The gate: card and route items, the incomplete side and the unreadable base sidecar. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481 |
-| The stored-item predicate L09 uses. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:484-491 |
-| The row model a `no_impact` row validates against. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:250-272 |
+| The result, its repair and report-only findings, and the refusal. | `OnboardingTraceResult`; `refusal` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:235-336 |
+| Each unnecessary-row finding names its subject (MIK-R10). | `report_only_findings`; "\"subject\": subject," | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:282-295 |
+| The leaf's `no_impact` rows, or the unreadable-history problem. | `_history_rows` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:339-361 |
+| The nearest governing route of a changed path. | `nearest_governing_route` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:377-388 |
+| The gate: card and route items, the incomplete side and the unreadable base sidecar. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:402-482 |
+| The stored-item predicate L09 uses. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:485-492 |
+| The row model a `no_impact` row validates against. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:258-280 |
 | The memory-quality and closeout entry points that call the gate. | `onboarding_trace_gate_for_context`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:970-996; mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
 | Only mechanical fields changed: the item stays open. | `test_only_an_anchors_blob_line_numbers_and_content_do_not_count` | mcp/tests/test_onboarding_trace_gate.py:242-290 |
 | The stored predicate and the live gate agree on an unreadable K_C sidecar. | `test_an_unreadable_sidecar_never_satisfies_a_trace` | mcp/tests/test_onboarding_trace_gate.py:464-488 |
@@ -145,4 +151,5 @@ repository.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The Output bullet records the additive `subject` on each report-only finding and why (ruling 01:56:39 Q3); a Todo records MIK-R10's binding of uncovered items to this gate's items; one row added. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): created this card for the new file MIK-R30 adds, recording the architect rulings of 18:49:50 (1, 3), 19:23:45 (N1, N5) and 19:53:54 (R2-1, R2-2). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

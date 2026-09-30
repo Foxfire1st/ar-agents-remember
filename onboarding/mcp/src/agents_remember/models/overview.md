@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -252,7 +252,7 @@ illustrative. It is not re-exported from `knowledge_files/__init__.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The onboarding-trace row and its `markers` list. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:256-278 |
+| The onboarding-trace row and its `markers` list. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:258-280 |
 | The file result's format fields. | `FileRead` | mcp/src/agents_remember/models/read_files.py:35-53 |
 
 ## 260928-MIK-L28 The Read Response Carries Optional Proofs
@@ -334,7 +334,7 @@ sync also writes it when it moves an open leaf's markers. The root route's subje
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The row kind's docstring with MIK-R30's meaning. | `OnboardingTraceRow`; "for the root route). MIK-R30 owns the kind" | mcp/src/agents_remember/models/knowledge_files/history.py:256-278 |
+| The row kind's docstring with MIK-R30's meaning. | `OnboardingTraceRow`; "for the root route). MIK-R30 owns the kind" | mcp/src/agents_remember/models/knowledge_files/history.py:258-280 |
 
 ## 260928-MIK-L11 The Planned-Effect Forms And The Planned Row
 
@@ -358,8 +358,8 @@ MIK-R11 adds one pure module and one row kind to `knowledge_files/`:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The planned forms, the key and the gate predicate. | `PLANNED_SUBJECT_PATTERN`; `planned_subject`; `planned_item_open` | mcp/src/agents_remember/models/knowledge_files/planned.py:68-68; mcp/src/agents_remember/models/knowledge_files/planned.py:73-76; mcp/src/agents_remember/models/knowledge_files/planned.py:86-97 |
-| The planned row and its disposition-bound ref. | `PlannedRef`; `PlannedEffectRow` | mcp/src/agents_remember/models/knowledge_files/history.py:281-307; mcp/src/agents_remember/models/knowledge_files/history.py:310-333 |
-| The registry with the fourth kind. | `HISTORY_ROW_KINDS`; "HistoryRowKind(\"planned\", PlannedEffectRow, \"MIK-R11\")" | mcp/src/agents_remember/models/knowledge_files/history.py:347-352 |
+| The planned row and its disposition-bound ref. | `PlannedRef`; `PlannedEffectRow` | mcp/src/agents_remember/models/knowledge_files/history.py:283-309; mcp/src/agents_remember/models/knowledge_files/history.py:312-335 |
+| The registry with the fourth kind (MIK-R10 later adds a fifth). | "HistoryRowKind(\"planned\", PlannedEffectRow, \"MIK-R11\")" | mcp/src/agents_remember/models/knowledge_files/history.py:368-368 |
 
 ## 260928-MIK-L27 The Admission Criteria's Meanings
 
@@ -439,7 +439,33 @@ No database path is part of either shape.
 | The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:59-59; mcp/src/agents_remember/models/knowledge/review_trees.py:98-138 |
 | The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:237-254 |
 
+## 260928-MIK-L10 The Unexplained-Change Subjects And The No-Invariant Row
+
+MIK-R10 adds one pure module and one row kind to `knowledge_files/`:
+
+- [`unexplained.py`](knowledge_files/unexplained.py.md) is the one spelling of the unexplained-change subjects:
+  `hunk:<path>@<base lines>..<candidate lines>` (each side the `sha256` of the hunk's changed lines, or `absent`),
+  `file:<path>@<C-side object>`, the item ID of a hunk subject (a function of the subject alone, so an edit
+  elsewhere never reopens an answered item), the `no_invariant` row subjects (`hunk:<item id>` or the file
+  subject), and the predicate `unexplained_satisfied_by` / `unexplained_item_open`. A **covered** item is
+  answered only by its `no_invariant` row; an **uncovered** item only by the file's onboarding trace (a counted
+  card change or the `onboarding:<path>` row), never by a `no_invariant` row (ruling 2026-09-30T03:24:28 N2). The
+  worklist computes `satisfiedBy` with the same function the closeout gate (MIK-R09, L09) applies, so they agree.
+- [`history.py`](knowledge_files/history.py.md) gains `UnexplainedChangeRow`, the fifth registered row kind
+  (`unexplained`, owned by MIK-R10): `no_invariant` is its only disposition, with a non-blank `reason`, and it
+  adds nothing to the common row fields. Attach and author are not rows: an entry over the change links it
+  (ruling 01:56:39 Q1), and a delete-only hunk, which no new entry can link, admits only this row.
+- Nothing in the installed runtime reads history files before MIK-R37, so unconverted memory is unchanged.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The subjects, the row subject and the gate predicate. | `hunk_subject`; `hunk_item_id`; `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:77-80; mcp/src/agents_remember/models/knowledge_files/unexplained.py:90-100; mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
+| The no_invariant row. | `UnexplainedChangeRow` | mcp/src/agents_remember/models/knowledge_files/history.py:338-350 |
+| The registry with the fifth kind. | "HistoryRowKind(\"unexplained\", UnexplainedChangeRow, \"MIK-R10\")" | mcp/src/agents_remember/models/knowledge_files/history.py:369-369 |
+
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Unexplained-Change Subjects And The No-Invariant Row" after L25's (the new, carded `unexplained.py`, governed here; `UnexplainedChangeRow`; rulings 01:56:39 Q1 and 03:24:28 N2), three rows. **Two reopened claims reworded and re-anchored:** L11's "registry with the fourth kind" row now cites only its own `planned` registration line (`:368`), and L07's registry row names the fifth kind and is re-anchored on the line-exact quote "HISTORY_ROW_KINDS: Final["; this pass's two fixer bullets for them were removed. No verification stamp was advanced.
+- 2026-09-30T02:31:47+00:00: Generated citation repair: `frozen_history_violation` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:479-487. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Review Comparison As Four Git Trees, And The Tree View's Answer" after L13's (the new `knowledge/review_trees.py`, carded and governed here; review F4 and F9; ruling 02:32:42 (a) on `same_trees`), with two rows. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules And Their Derived Reads" after L01's: the new `knowledge_files/decisions.py`, the derived `superseded`, and rulings Q4 and Q6. Three rows. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The `leaf` Response Kind, The Public Queue Cap, And The Optional `families`" after L27's, with two rows (the `leaf` kind and `MAX_QUEUED_SEEDS`, ruling 23:21:57; the `families` field, rule 7), and noted in L02's section that the 64-seed edge is resolved as `seed_queue_exceeded`. The other rows were projected by the installed fixer.
@@ -3368,9 +3394,9 @@ installed runtime imports the package yet, so production behavior is unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The history file: one owner, one row per subject, a strict `closed` flag. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:381-425 |
-| The row-kind registry: `invariant`, `family`, since MIK-R24 MIK-R30's `onboarding_trace`, and since MIK-R11 `planned`. | `HISTORY_ROW_KINDS` | mcp/src/agents_remember/models/knowledge_files/history.py:347-352 |
-| The freeze predicate. | `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:461-469 |
+| The history file: one owner, one row per subject, a strict `closed` flag. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:399-443 |
+| The row-kind registry: `invariant`, `family`, since MIK-R24 MIK-R30's `onboarding_trace`, since MIK-R11 `planned`, and since MIK-R10 `unexplained`. | "HISTORY_ROW_KINDS: Final[" | mcp/src/agents_remember/models/knowledge_files/history.py:364-370 |
+| The freeze predicate. | `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:479-487 |
 | The history schema in the dispatch table. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
 | The history row ID kind. | `ROW_PREFIXES` | mcp/src/agents_remember/models/knowledge_files/ids.py:65-65 |
 

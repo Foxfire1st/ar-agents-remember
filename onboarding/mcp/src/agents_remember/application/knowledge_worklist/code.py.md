@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/code.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -98,9 +98,9 @@ code and memory repositories, so they are named here and not cited as rows.
 | The hunks of a blob pair, cached, with a named failure. | `hunks` | mcp/src/agents_remember/application/knowledge_worklist/code.py:224-242 |
 | Resolution by locator kind. | `resolve`; `symbol_span` | mcp/src/agents_remember/application/knowledge_worklist/code.py:247-268 |
 | A line range mapped from its recorded blob; an unknown blob has no mapping. | `_mapped_lines` | mcp/src/agents_remember/application/knowledge_worklist/code.py:270-279 |
-| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:290-332 |
-| Hunk parsing and line-range mapping cases. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:300-319 |
-| Line ranges map, carry and touch. | `test_line_ranges_map_carry_and_touch` | mcp/tests/test_knowledge_worklist.py:411-420 |
+| The mechanical unique match of definition 6. | `unique_binder`; `qualified_spans` | mcp/src/agents_remember/application/knowledge_worklist/code.py:290-322; mcp/src/agents_remember/application/knowledge_worklist/code.py:330-330 |
+| Hunk parsing and line-range mapping cases. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:309-328 |
+| Line ranges map, carry and touch. | "def test_line_ranges_map_carry_and_touch(" | mcp/tests/test_knowledge_worklist.py:422-431 |
 
 ## Cross-Repo References
 
@@ -112,6 +112,7 @@ through Git.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_line_ranges_map_carry_and_touch` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_line_ranges_map_carry_and_touch(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

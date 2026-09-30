@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | governingOverview      | `../../../overview.md`                     |
@@ -230,7 +230,7 @@ exercise the pair, and prefer a single shared eligibility evaluation over two ag
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:258-264; mcp/src/agents_remember/application/memory_quality/controller.py:392-466 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:259-265; mcp/src/agents_remember/application/memory_quality/controller.py:393-467 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:67-98 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
@@ -481,7 +481,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:596-596; mcp/src/agents_remember/application/memory_quality/controller.py:760-796 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:597-597; mcp/src/agents_remember/application/memory_quality/controller.py:786-822 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
 ## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
@@ -870,7 +870,7 @@ section.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
+| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-242 |
 | The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:69-70 |
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
@@ -912,8 +912,8 @@ no worklist.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-110 |
-| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:161-209 |
+| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:115-141 |
+| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-242 |
 
 ## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
 
@@ -974,8 +974,8 @@ checklist bytes are unchanged; this curation's own `memory_quality_check` runs p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:113-129; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:132-137; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:140-143 |
-| The kind-to-renderer table. | `_FACT_RENDERERS` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:146-154 |
+| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174 |
+| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-187 |
 
 ## 260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator
 
@@ -1006,11 +1006,36 @@ runs produced no worklist.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The five rules, four refusing and one report-only. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-147 |
+| The five rules, four refusing and one report-only. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-144 |
 | A stored superseded is named from the raw document. | `check_superseded_not_stored` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:80-97 |
 | A decision is never an export for admission. | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
 
+## 260928-MIK-L10 The Worklist Section Renders The Unexplained Changes
+
+**Route meaning extended (MIK-R10@v2, visibility).** The worklist section rendered by
+[`knowledge_worklist_section.py`](knowledge_worklist_section.py.md) now describes MIK-R10's `unexplained_hunk` and
+`unexplained_file` items (computed on the application route by `application/knowledge_worklist/unexplained.py`):
+the path and each hunk as `-<start>,<count> +<start>,<count>` (or a file change's content and status), the
+coverage (covered or uncovered, the realization-entry count, the governing route and its migration status),
+"delete-only: only no_invariant" for a delete-only hunk, and "answered by <row or counted-change>", or for an open
+item "needs attach/author or a no_invariant row `hunk:…`" (covered) or "needs the onboarding trace
+`onboarding:<path>`" (uncovered). `_unexplained_facts` is two entries of the `_FACT_RENDERERS` table; no branch was
+added (the L06 sync).
+
+The section stays information, never a count: an open unexplained item is enforced by MIK-R09's gate (L09) through
+`models/knowledge_files/unexplained.unexplained_item_open`. On the application route the memory-quality controller
+also keeps an `onboarding:<path>` row that answers an uncovered item out of MIK-R30's unnecessary-row report
+(ruling 2026-09-30T01:56:39 Q3). Unconverted leaves render no section, so today's checklist bytes are unchanged;
+this curation's own `memory_quality_check` runs produced no worklist. Grouping the (by design numerous) unexplained
+items for the curator is carried to L31/L32.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:84-112 |
+| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:185-186 |
+
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Worklist Section Renders The Unexplained Changes" after L13's (`_unexplained_facts` as two `_FACT_RENDERERS` entries; the Q3 onboarding-row rule; the L31/L32 carry), two rows. **Reopened claim reworded:** L06's `_FACT_RENDERERS` row (the table gained two entries) is re-anchored on the line-exact quote "_FACT_RENDERERS: Final["; this pass's fixer bullet for it was removed. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator" after L06's: the five `rules_decisions.py` rules, rulings 01:45:56 Q1–Q3 and Q5/Q6, and the review F6 admission guard in `rules_admission.py`. Three rows. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 The Worklist Section Renders The Family Route Conditions" (`_route_facts` and its helpers, the `_FACT_RENDERERS` dispatch table from review R3-N1), with two rows; L11's two rows into `knowledge_worklist_section.py` were re-measured by hand (`72-82`/`85-111` → `71-81`/`84-110`, `118-166` → `161-209`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule Joins The Knowledge Validator" (the new, carded `rules_admission.py`, governed by this overview), recording architect rulings 2026-09-29T22:11:24 (Q1, Q2, Q5, Q6) and 23:04:57 (F1, F2), with three rows; the Route Model bullet names the module. The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.

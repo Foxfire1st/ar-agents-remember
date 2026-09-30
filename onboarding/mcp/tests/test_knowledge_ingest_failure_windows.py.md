@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_ingest_failure_windows.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -156,7 +156,7 @@ Ranges are the exact construct extents in this candidate.
 | The note left where the moved write-site case stood, and the case's own statement of the precondition it measures. The note's own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "The write site's own precondition"; "the write site's own precondition" | mcp/tests/test_knowledge_curator_ingest_list.py:2404-2412; mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The note left where the moved write-site case stood. Its own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled. | "the write site's own precondition" | mcp/tests/test_knowledge_ingest_failure_windows.py:263-318 |
 | The dataset name the write-site case asserts against. | `CANDIDATE_DATABASE_NAME` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-52 |
-| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:127-127 |
+| The lane row that makes these cases ordinary unit-regression evidence. | "unit-regression"; "mcp/tests/test_knowledge_ingest_failure_windows.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:128-128 |
 
 ## Cross-Repo References
 
@@ -168,6 +168,7 @@ local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; rows citing lane rows after the one `unit-regression` row MIK-R10 inserted at `test-evidence-lanes.toml:124` (or catalog lines after `evidence-lifecycle.toml:836`) were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `test-evidence-lanes.toml` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R13 inserted one `unit-regression` row at `test-evidence-lanes.toml:121`, so citation ranges into later lane rows were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (+1 at or after `:121`; each such row was byte-identical to memory HEAD).
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `test-evidence-lanes.toml`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).

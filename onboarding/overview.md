@@ -5,11 +5,26 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash |  `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate |  2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash |  `31d761a241055d67b85ef3908033856b78a86a57`|
+| lastVerifiedCommitDate |  2026-09-30T05:10:40+02:00|
 
 > **Status:** active baseline
+
+## 260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L10` (MIK-R10@v2): once a memory tree is converted, every change a
+leaf makes that no recorded entry covers becomes a worklist item the closeout gate will require an answer for. In a
+covered file the curator attaches the change to an existing invariant, authors a new one, or records a
+`no_invariant` history row with a reason; a delete-only change admits only the row. In a file the knowledge graph
+does not cover yet, the file's onboarding trace answers it. The curator's hand-off template says how to write the
+row: the authored `skills/` copy, synchronized by `scripts/sync-skills.py` into the package copy and the eight
+harness starter copies this route governs. **Nothing the installed runtime does changes before MIK-R37**:
+unconverted memory gets no worklist.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The template's no_invariant-row bullet, mirrored into the package and starter copies. | "A no_invariant row (MIK-R10, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:575-582 |
 
 ## 260928-MIK-L13 Decisions Are Recorded With The Alternatives They Rejected, Not Yet Used
 
@@ -27,7 +42,7 @@ memory is unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's decision-record section, mirrored into the package and starter copies. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:658-717 |
+| The template's decision-record section, mirrored into the package and starter copies. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:666-726 |
 | The curator role's step-3 pointer to lifting decisions. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## 260928-MIK-L01 A Path Is Read With Its Whole Family, Not Yet Used
@@ -79,7 +94,7 @@ refused until records are authored on a converted line.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's admission section, mirrored into the package and starter copies. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
+| The template's admission section, mirrored into the package and starter copies. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:613-665 |
 | OM-4, mirrored likewise. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
 | c-14 step 3's admission paragraph, mirrored likewise. | "A foundation is a small set of meaningful records" | skills/c-14-knowledge-bootstrap/SKILL.md:161-186 |
 
@@ -141,7 +156,7 @@ unconverted tree keeps today's gate, byte-identical, including this master's own
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The hand-off template's onboarding-row bullet, mirrored into the starter copies. | "An onboarding row (MIK-R30, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
-| The history-file gate's rule. | `onboarding_trace_result`; `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481; mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:484-491 |
+| The history-file gate's rule. | `onboarding_trace_result`; `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:402-482; mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:485-492 |
 
 ## 260928-MIK-L28 Test Proofs Are Read Back And Listed, Not Yet Used
 
@@ -198,7 +213,7 @@ runtime does changes before MIK-R37**: no production memory tree is converted.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
+| The template's file-writer section and its converted-memory condition. | `## The file writer's sections (MIK-R12)`; "On a **converted** memory tree" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-612; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:487-487 |
 | The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:56-60 |
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
@@ -305,6 +320,7 @@ where they named one, and **the first ordinary `--contract` run of a baseline-fo
 where it used to refuse a family revision its own baseline stores.
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used" at the top: the repository-level consequence, with the template bullet reaching the package and eight starter copies; one row. L13's template row was re-pointed by the +8 shift of the inserted bullet. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 Decisions Are Recorded With The Alternatives They Rejected, Not Yet Used" at the top: the repository-level consequence of MIK-R13 (decision content rules, requirement endpoints reported never refused, a decision never an export) and the two skill files reaching the package and the eight starter copies. Two rows. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 A Path Is Read With Its Whole Family, Not Yet Used" at the top: the repository-level consequence, the no-commit root refused by name, and the c-04 change reaching the package copy and the eight starter copies, with one row. The other rows were projected by the installed fixer.
 - 2026-09-30T00:01:42+00:00: Generated citation repair: "Follow a bounded page through"; "The threshold bounds the whole block, not each path." repointed to skills/c-04-retrieval-strategy-router/SKILL.md:240-240; skills/c-04-retrieval-strategy-router/SKILL.md:252-252. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
@@ -6396,8 +6412,8 @@ These current source and policy ranges establish the development/certification d
 | --- | --- | --- |
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:369-389; mcp/src/agents_remember/application/memory_quality/controller.py:392-466; mcp/src/agents_remember/application/memory_quality/controller.py:516-680 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:581-621; mcp/src/agents_remember/application/memory_quality/controller.py:780-816 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:370-390; mcp/src/agents_remember/application/memory_quality/controller.py:393-467; mcp/src/agents_remember/application/memory_quality/controller.py:517-681 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:581-621; mcp/src/agents_remember/application/memory_quality/controller.py:806-842 |
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:763-827 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
 

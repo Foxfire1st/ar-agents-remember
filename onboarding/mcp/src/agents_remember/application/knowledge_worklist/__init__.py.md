@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,9 @@ public names of its submodules; it contains no logic of its own.
   `planned_effects` (the `planned_untouched` item kind, the `planned`/`unplanned` marks and the
   reconciliation of declared effects against rows) and, since MIK-R06, `route_conditions` (the
   `family_route_condition` item kind, the four family route conditions and their satisfying rule; its
-  kind is registered by `compute`'s import, before this module imports it). `base_cache` (the
+  kind is registered by `compute`'s import, before this module imports it) and, since MIK-R10, `unexplained`
+  (the `unexplained_hunk` and `unexplained_file` kinds, the coverage lookup and the items for every unlinked
+  change). `base_cache` (the
   converted-base cache, review R1 F6) is imported by `leaf` and `onboarding_trace` and is not re-exported.
 - `__all__` re-exports the run (`compute_worklist`, `incomplete_worklist`, `WorklistInputs`, `Item`,
   `Incomplete`, `WORKLIST_SCHEMA`), the leaf surface (`leaf_worklist`, `recompute_leaf_worklist`,
@@ -42,7 +44,8 @@ public names of its submodules; it contains no logic of its own.
   `worklist_path`, `WORKLIST_FILE_NAME`) and the registry (`ITEM_KINDS`, `ItemKind`, `item_id`,
   `register_item_kind`, `satisfying_row`), and the registered kinds' names and predicates
   (`ONBOARDING_TRACE_KIND`, `PLANNED_UNTOUCHED_KIND`, `FAMILY_ROUTE_CONDITION_KIND`,
-  `family_route_item_open`).
+  `family_route_item_open`, and MIK-R10's `UNEXPLAINED_HUNK_KIND`, `UNEXPLAINED_FILE_KIND` and
+  `answering_trace_subjects`).
 
 ### Conventions
 
@@ -75,7 +78,7 @@ import cycle.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package map's MIK-R30 entry. | "kind (registered on import), the" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:16-17 |
-| The registering import and the two new public names. | `ONBOARDING_TRACE_KIND`; `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:48-50; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:83-83 |
+| The registering import and the two new public names. | `ONBOARDING_TRACE_KIND`; `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:50-52; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:93-93 |
 
 ## 260928-MIK-L11 The Planned-Effects Kind Is Registered With The Package (MIK-R11)
 
@@ -86,7 +89,7 @@ is. `__all__` gains `PLANNED_UNTOUCHED_KIND`. The package map names the module b
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package map's MIK-R11 entry. | "-- MIK-R11's" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:14-15 |
-| The registering import and the new public name. | `PLANNED_UNTOUCHED_KIND` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:51-53; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:70-70 |
+| The registering import and the new public name. | `PLANNED_UNTOUCHED_KIND` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:53-55; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:77-77 |
 
 ## 260928-MIK-L06 The Family Route Kind And Its Predicate Are Public (MIK-R06)
 
@@ -100,7 +103,22 @@ the family row's disposition (the worker's note 8).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package map's MIK-R06 entry. | "MIK-R06's" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:18-19 |
-| The import and the two new public names. | `FAMILY_ROUTE_CONDITION_KIND`; `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:61-64; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:67-67; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:80-80 |
+| The import and the two new public names. | `FAMILY_ROUTE_CONDITION_KIND`; `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:63-66; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:74-74; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:90-90 |
+
+## 260928-MIK-L10 The Unexplained-Change Kinds Are Registered With The Package (MIK-R10)
+
+The package map names `unexplained` last. The package imports it, and its import registers the
+`unexplained_hunk` and `unexplained_file` kinds, so they are registered whenever the worklist is, like the
+other registrants' kinds. `__all__` gains `UNEXPLAINED_HUNK_KIND`, `UNEXPLAINED_FILE_KIND` and
+`answering_trace_subjects`: the memory-quality controller uses the last to keep an `onboarding:<path>` row
+that answers an uncovered item out of MIK-R30's unnecessary-row report (ruling 2026-09-30T01:56:39 Q3). The
+stored-item predicate for the gate, `unexplained_item_open`, lives in `models/knowledge_files/unexplained.py`,
+not here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The package map's MIK-R10 entry. | "MIK-R10's" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:20-21 |
+| The registering import and the three new public names. | `UNEXPLAINED_HUNK_KIND`; `answering_trace_subjects` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:67-71; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:78-79; mcp/src/agents_remember/application/knowledge_worklist/__init__.py:88-88 |
 
 ## Docs References
 
@@ -119,10 +137,10 @@ code and memory repositories, so they are named here and not cited as rows.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package map and the three raising cases. | "a change elsewhere in the same file raises nothing" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:22-22 |
-| The re-exported public names. | `__all__` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:66-92 |
-| The run entry point it re-exports. | `compute_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:164-174 |
-| The one recompute entry point it re-exports. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:477-508 |
+| The package map and the three raising cases. | "a change elsewhere in the same file raises nothing" | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:24-24 |
+| The re-exported public names. | `__all__` | mcp/src/agents_remember/application/knowledge_worklist/__init__.py:73-102 |
+| The run entry point it re-exports. | `compute_worklist` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:175-185 |
+| The one recompute entry point it re-exports. | `recompute_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:544-575 |
 
 ## Cross-Repo References
 
@@ -133,6 +151,10 @@ No meaningful cross-repo references found: the module only re-exports its own pa
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The Logic bullets name the `unexplained` module and the three new public names; added the section "260928-MIK-L10 The Unexplained-Change Kinds Are Registered With The Package (MIK-R10)" with two rows (ruling 01:56:39 Q3). The earlier sections' rows were re-pointed by exact line shift or by the installed fixer. No verification stamp was advanced.
+- 2026-09-30T02:32:22+00:00: Generated citation repair: "a change elsewhere in the same file raises nothing" repointed to mcp/src/agents_remember/application/knowledge_worklist/__init__.py:24-24. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T02:32:22+00:00: Generated citation repair: `compute_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:175-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T02:32:22+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:544-575. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Added the section "260928-MIK-L06 The Family Route Kind And Its Predicate Are Public" and named `route_conditions` and the kind names and predicates in the Logic bullets. The L30 and L11 import and `__all__` rows were re-pointed by the exact shifts (+2 for the import ranges, +7 and +8 for the `__all__` lines); the fixer had declined them as multi-anchor rows. No verification stamp was advanced.
 - 2026-09-29T23:15:22+00:00: Generated citation repair: "a change elsewhere in the same file raises nothing" repointed to mcp/src/agents_remember/application/knowledge_worklist/__init__.py:22-22. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:15:22+00:00: Generated citation repair: `compute_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:164-174. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/knowledge_worklist/classify.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -99,11 +99,11 @@ code and memory repositories, so they are named here and not cited as rows.
 | The writer's carry-forward is not a re-anchor. | `_only_mechanical` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:239-250 |
 | Added, retired and changed-record invariants; changed families. | `knowledge_changes` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:253-287 |
 | A re-anchor is a change unless a covering class or the carry explains it. | `_reanchor` | mcp/src/agents_remember/application/knowledge_worklist/classify.py:290-304 |
-| Stale takes precedence. | `test_stale_at_base_takes_precedence_and_reaches_its_families_without_widening` | mcp/tests/test_knowledge_worklist.py:371-387 |
-| Deletion, rename, ambiguity and a deleted range are `moved_or_absent`, with a mechanical match. | `test_moved_or_absent_covers_deletion_rename_ambiguity_and_a_deleted_range` | mcp/tests/test_knowledge_worklist.py:390-408 |
-| Added, retired and re-anchored entries raise; new records do not. | `test_added_retired_and_reanchored_entries_raise_and_new_records_do_not` | mcp/tests/test_knowledge_worklist.py:477-509 |
-| The writer's carry in K_C is not a change. | `test_a_mechanical_carry_forward_in_k_c_is_not_a_change` | mcp/tests/test_knowledge_worklist.py:512-518 |
-| An unchanged blob is `untouched`; an edit elsewhere with changed range bytes is `touched`. | `test_an_unchanged_blob_is_untouched_whatever_its_recorded_content_says` | mcp/tests/test_knowledge_worklist.py:640-659 |
+| Stale takes precedence. | `test_stale_at_base_takes_precedence_and_reaches_its_families_without_widening` | mcp/tests/test_knowledge_worklist.py:382-398 |
+| Deletion, rename, ambiguity and a deleted range are `moved_or_absent`, with a mechanical match. | `test_moved_or_absent_covers_deletion_rename_ambiguity_and_a_deleted_range` | mcp/tests/test_knowledge_worklist.py:401-419 |
+| Added, retired and re-anchored entries raise; new records do not. | `test_added_retired_and_reanchored_entries_raise_and_new_records_do_not` | mcp/tests/test_knowledge_worklist.py:488-520 |
+| The writer's carry in K_C is not a change. | "def test_a_mechanical_carry_forward_in_k_c_is_not_a_change(" | mcp/tests/test_knowledge_worklist.py:523-529 |
+| An unchanged blob is `untouched`; an edit elsewhere with changed range bytes is `touched`. | `test_an_unchanged_blob_is_untouched_whatever_its_recorded_content_says` | mcp/tests/test_knowledge_worklist.py:651-670 |
 
 ## Cross-Repo References
 
@@ -115,6 +115,7 @@ of one run.
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: this card's source is unchanged. **Reopened claim re-read and retained:** `test_a_mechanical_carry_forward_in_k_c_is_not_a_change` changed because MIK-R10 narrowed its "raises nothing" assertion to the knowledge items (`knowledge_items`); the claim still holds. The row is re-anchored on the line-exact quote "def test_a_mechanical_carry_forward_in_k_c_is_not_a_change(", and this pass's fixer bullet for it (the only generated bullet naming it) was removed. No verification stamp was advanced.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

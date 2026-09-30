@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -113,6 +113,16 @@ about the declared invariant does not answer the item, while a `changed` row wit
 for `retire`, a retiring `deleted` row) delivers it and raises no item. It reaches the package copy and the
 eight harness starter copies through `sync-skills.py`.
 
+Since leaf `260928-MIK-L10` (MIK-R10) the same list gains a bullet for the **no_invariant row**, on converted
+memory only. It answers an `unexplained_hunk` or `unexplained_file` worklist item in a **covered** file: a
+change no entry covers that carries no invariant. Its subject is the item's `facts.row` (`hunk:<item id>`, or the
+item's own `file:<path>@<blob>`); its disposition is `no_invariant`; its `reason` says why, and it adds nothing
+else. The bullet also names the other answers, which need no such row: attach a `target` to a stored,
+non-retired invariant (`invariant_id`) or author a new invariant over the change. A delete-only hunk admits
+only `no_invariant` (ruling 2026-09-30T01:56:39 Q1: an attach or author cannot answer it, so the item stays
+open), and an item in an **uncovered** file is answered by the file's onboarding trace, not by this row (ruling
+03:24:28 N2). It reaches the package copy and the eight harness starter copies through `sync-skills.py`.
+
 Since leaf `260928-MIK-L27` (MIK-R27) the template has a section, **"The admission rule (MIK-R27)"**,
 after the file writer's sections. Every **new** invariant, family and decision record states the
 admission criterion it meets with a one-sentence justification, `"admission": {"criteria": [...],
@@ -176,7 +186,7 @@ These references name the current owners and the behavior they establish.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** | `### Family routes (MIK-R04)`; "never writes a route." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:482-482 |
-| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:601-601; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** | `## The file writer's sections (MIK-R12)`; "every other commit route still refuse them."; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-612; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:609-609; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 | **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
 | Curator-owned semantic scope remains required. | `### Curator-authored semantic scope` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:144-194 |
 | The public retention input and exact readback requirements. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
@@ -184,8 +194,9 @@ These references name the current owners and the behavior they establish.
 | **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** | "as a path plus symbol"; "Proofs are shown and counted (MIK-R28)." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
 | The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. | "An onboarding row (MIK-R30, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
 | The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. | "A planned row (MIK-R11, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
-| The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. | `## The admission rule (MIK-R27)`; "most knowledge is local and stays prose" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
-| The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example. | `## Decision records (MIK-R13)`; "keeps governing code" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:658-717 |
+| The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files. | "A no_invariant row (MIK-R10, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:575-582 |
+| The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. | `## The admission rule (MIK-R27)`; "most knowledge is local and stays prose" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:613-665 |
+| The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example. | `## Decision records (MIK-R13)`; "keeps governing code" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:666-726 |
 
 ## Cross-Repo References
 
@@ -196,6 +207,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** A Logic paragraph for the new no_invariant-row bullet (after the planned-row bullet; rulings 01:56:39 Q1 and 03:24:28 N2) and one row. The bullet was inserted at `:575-582`, so rows citing later template lines were re-pointed by the installed fixer or by the exact +8 shift. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** A Logic paragraph records the new section "Decision records (MIK-R13)" (fields, links, requirement endpoints, refusals, lifting at closeout, the D18 example; ruling 01:45:56 Q1 on where the ruling travels), and one row cites it. The section was appended after line 657, so no existing row moved. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the template gains the section "The admission rule (MIK-R27)".** A Logic paragraph states it with rulings Q2, F1, F2 and F5, and one row cites it (`:605-656`). The section is appended after line 604, so no existing row moved. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body update — the MIK-R11 planned-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject `planned:<declared subject>#<effect>`, the three dispositions and their refs, the task owner resolving a `dropped` decision), and one row citing it. The eleven inserted lines moved the MIK-R12 row's section extent and its `every other commit route` anchor; that row was re-pointed by the exact +11 line shift. No verification stamp was advanced.

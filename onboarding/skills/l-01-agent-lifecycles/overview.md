@@ -5,9 +5,28 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
+
+## The no_invariant row in the curator hand-off template (260928-MIK-L10)
+
+One file of this skill now serves MIK-R10 (unexplained change disposition):
+
+- `templates/curator-handoff-list.md`'s writer section gains a bullet after the planned row, for converted memory
+  only: a **no_invariant row** answers an `unexplained_hunk` or `unexplained_file` worklist item in a covered file,
+  a change no entry covers that carries no invariant. Its subject is the item's `facts.row` (`hunk:<item id>`, or
+  the item's own `file:<path>@<blob>`), its disposition `no_invariant`, and its `reason` says why; it adds nothing
+  else. The other answers need no row: attach a `target` to a stored, non-retired invariant, or author a new
+  invariant over the change. A delete-only hunk admits only `no_invariant` (ruling 2026-09-30T01:56:39 Q1), and an
+  item in an uncovered file is answered by the file's onboarding trace, not by this row (ruling 03:24:28 N2).
+
+It reaches the package copy and the eight harness starter copies through `sync-skills.py`. It binds converted
+memory only, so no hand-off list of today's memory changes; no role, operation or other template changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The no_invariant-row bullet in the writer section. | "A no_invariant row (MIK-R10, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:575-582 |
 
 ## Decision records in the curator hand-off template and the curator role (260928-MIK-L13)
 
@@ -30,7 +49,7 @@ memory only, so no hand-off list of today's memory changes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The decision-record section of the hand-off template. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:658-717 |
+| The decision-record section of the hand-off template. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:666-726 |
 | The curator role's pointer in step 3. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)
@@ -58,7 +77,7 @@ review or foundation run of today's memory changes.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
+| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:613-665 |
 | OM-4, the requirement-bound reviewer criterion. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
 
 ## The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)
@@ -132,7 +151,7 @@ operation or other template in this route changed.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-604; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-612; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -637,6 +656,7 @@ should be refreshed or deleted, so resolving it now by hand would prejudge it. N
 verification stamp was advanced.
 
 ## Update History
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "The no_invariant row in the curator hand-off template (260928-MIK-L10)" at the top (rulings 01:56:39 Q1 and 03:24:28 N2), one row. The bullet was inserted at `:575-582`, so rows citing later template lines were re-pointed by the installed fixer or by the exact +8 shift. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "Decision records in the curator hand-off template and the curator role (260928-MIK-L13)" at the top: the template's new section and the role's step-3 pointer, synced to every copy. Two rows. The rows the installed fixer declined for the role file were re-pointed by the exact +4 shift below the insertion. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)" at the top (the template section, OM-4 by requirement, and c-14 step 3; rulings Q2, Q3, F1, F2 and F5), with two rows. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)" at the top, recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). Rows citing the template below the inserted bullet were re-pointed by the installed fixer or the exact line shift. No verification stamp was advanced.

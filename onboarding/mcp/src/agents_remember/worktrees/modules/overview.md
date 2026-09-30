@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T04:44:12+02:00 |
+| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57` |
+| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,21 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject
+
+`modules/onboarding_trace.py`'s `OnboardingTraceResult.report_only_findings` now carries each unnecessary row's
+`subject` (one additive field; the message is unchanged). MIK-R10 needs it: an uncovered file's unexplained change is
+answered by the file's onboarding trace, which for a card-less path is the leaf's `onboarding:<path>` row, and this
+gate raises no card item there, so it would report that row as unnecessary. The memory-quality controller
+(`application/memory_quality/controller._needed_rows_dropped`) drops exactly those findings by subject and sets the
+response's `unnecessaryRowCount` to what it keeps (ruling 2026-09-30T01:56:39 Q3). The gate's items, repair findings
+and decision are unchanged, and MIK-R10 reads its items without changing them. Unconverted leaves still run today's
+gate (`onboarding.py`).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Each unnecessary-row finding names its subject. | `report_only_findings`; "\"subject\": subject," | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:282-295 |
 
 ## 260928-MIK-L25 Finalization Carries The Review-Artifact Archive Hook
 
@@ -59,8 +74,8 @@ its entry points. Together they are MIK-R30@v1's gate for converted memory trees
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route's new gate over two memory sides. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:401-481 |
-| The stored item's open state, as the live gate decides it. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:484-491 |
+| The route's new gate over two memory sides. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:402-482 |
+| The stored item's open state, as the live gate decides it. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:485-492 |
 | The two entry points and the shared missing-onboarding refusal. | `_require_onboarded_sources`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:951-967; mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
 
 ## 260921-ICR-L32 The Path-Enumeration Family Reads NUL-Delimited Git Output
@@ -1415,6 +1430,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 
 ## Update History
 
+- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject" at the top (the additive `subject` and why, ruling 01:56:39 Q3), one row. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 Finalization Carries The Review-Artifact Archive Hook" at the top (`finalize._with_review_artifact_cleanup`, review F2, ruling 02:32:42 (a)), with one row. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route": the new `modules/onboarding_trace.py` (carded, governed by this overview), `onboarding.py`'s entry points and converted-tree guards, and the architect rulings of 18:49:50, 19:23:45 and 19:53:54. Three rows. The route-index row's `onboarding.py` range (`513-521`) was moved by the insertions and re-pointed to `532-540`. No verification stamp was advanced.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
