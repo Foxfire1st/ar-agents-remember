@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,33 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L29 Five Index Lookups For The Knowledge Reader
+
+**Route meaning extended (MIK-R29).** The path-based knowledge reader (`application/knowledge_reader/`) is served
+from the derived index of the selected tree, and [`knowledge_index/query.py`](knowledge_index/query.py.md) gains five
+additive lookups for it. Each is an ordinary `Answer[T]` carrying the index state, so a partial index is never read as
+a complete answer:
+
+- `entries_under(directory)`: every entry at or below a directory (the root route `.` holds all). A path prefix never
+  matches a sibling that merely shares its spelling (`dash` holds `dash/x`, not `dashboard/x`).
+- `entries_in_directory(directory)`: the entries of the files directly in a directory, for the reader's bounded
+  directory view (review F2).
+- `live_entry_paths_under(directory)`: the source path of each entry whose invariant is a live record, for the
+  counts the explorer, the directory summary and the subtree agree on.
+- `links_to_path(path)`: every relationship whose target is the anchor or route at the path.
+- `records_of_kind(kind)`: every record of one kind, built on `record_ids`.
+
+`_incoming` now delegates to a shared `_links` with the same SQL and order, so earlier callers are unaffected. The
+index schema, `INDEX_FORMAT`, the key and the cache are unchanged; building a commit's index writes only the
+coordination runtime's cache, which the architect confirmed is L23's design and not a repository write (ruling
+2026-09-30T09:42:58 Q2).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Entries at or under a directory, and of the files directly in it. | `entries_under`; `entries_in_directory` | mcp/src/agents_remember/memory/knowledge_index/query.py:289-297; mcp/src/agents_remember/memory/knowledge_index/query.py:299-307 |
+| Live entry paths, links to a path, and every record of a kind. | `live_entry_paths_under`; `links_to_path`; `records_of_kind` | mcp/src/agents_remember/memory/knowledge_index/query.py:309-320; mcp/src/agents_remember/memory/knowledge_index/query.py:322-327; mcp/src/agents_remember/memory/knowledge_index/query.py:329-333 |
+| The shared link query `_incoming` delegates to. | `_links` | mcp/src/agents_remember/memory/knowledge_index/query.py:381-399 |
 
 ## 260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup
 
@@ -38,8 +65,8 @@ the permitted read path (Q1).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The store's own seal on each projected revision row. | `revision_payload_digest`; `family_revision_payload_digest` | mcp/src/agents_remember/memory/knowledge_index/projection.py:157-202; mcp/src/agents_remember/memory/knowledge_index/projection.py:205-263 |
-| The format bump that rebuilds v1 caches. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:21-23 |
-| Every record ID of one kind. | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:288-292 |
+| The format bump that rebuilds v1 caches. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
+| Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:338-342 |
 
 ## 260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported
 
@@ -1345,7 +1372,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:278-278 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:281-281 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1614,7 +1641,7 @@ index schema, the key and the cache are unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The candidate list is the path and every ancestor, nearest first, and ends with the root route `.`. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:390-399 |
+| The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:443-452 |
 | A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
 
 ## 260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`
@@ -1645,6 +1672,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 Five Index Lookups For The Knowledge Reader" at the top (`entries_under`, `entries_in_directory`, `live_entry_paths_under`, `links_to_path`, `records_of_kind`, and `_incoming` over the shared `_links`; ruling Q2 recorded), with three rows. **Two reopened claims were re-read and reworded:** the `record_ids` row (it now names its new caller) and the `_self_and_ancestors` row (the list `families_governing` matches against); both constructs are unchanged in substance and only moved down the file. This pass's two generated bullets for them were removed because the claims were reworded; no committed history line was touched. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T09:56:53+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup" at the top (the shared seal fix in `projection.py`, `INDEX_FORMAT` v2, `record_ids`; ruling 22:22:37 Q6), with three rows. **Reopened claim re-read:** the retired-records row (`RETIRED_STATUS`, `project`) still holds and its wording was retained. No verification stamp was advanced.
 - 2026-09-30T01:47:43+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:278-278. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported" at the top: the new `knowledge/requirement_endpoint.py`, the owner as resolver, its two root answers, and rulings Q5 and Q8. Two rows. No verification stamp was advanced.
@@ -2078,7 +2107,7 @@ never written by a knowledge writer, and unreached by the installed runtime befo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:261-269; mcp/src/agents_remember/memory/knowledge_index/query.py:271-283 |
+| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:265-273; mcp/src/agents_remember/memory/knowledge_index/query.py:275-287 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

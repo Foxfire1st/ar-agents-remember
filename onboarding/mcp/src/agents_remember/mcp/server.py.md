@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -83,8 +83,8 @@ factory would stamp `"mcp"` onto the interpreter and every later test in it — 
 exercise the dashboard's own write paths. `main` runs once, in a process that exists only to be the
 MCP server, so the wrapper declares a fact about the process rather than about whoever last built a
 server object. The dashboard declares its role on both real entry paths: `_dev_app` for the reload
-worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:240-275).
-worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:148-178; mcp/src/agents_remember/cli/dashboard.py:258-293).
+worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:133-169; mcp/src/agents_remember/cli/dashboard.py:249-284).
+worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:166-196; mcp/src/agents_remember/cli/dashboard.py:276-311).
 
 What the declaration does **not** buy is durability. Every append and every rewrite of all six logs
 takes that log's `flock` unconditionally, in every process, declared or not; the role only decides
@@ -116,7 +116,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51; mcp/src/agents_remember/mcp/registration/__init__.py:53-53; mcp/src/agents_remember/mcp/registration/__init__.py:25-25; mcp/src/agents_remember/mcp/registration/__init__.py:55-55 |
+| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:38-53; mcp/src/agents_remember/mcp/registration/__init__.py:51-51; mcp/src/agents_remember/mcp/registration/__init__.py:53-53; mcp/src/agents_remember/mcp/registration/__init__.py:25-25; mcp/src/agents_remember/mcp/registration/__init__.py:55-55 |
 | The stable tools package declares the public import surface for payload builders. | "Pure payload builders for Agents Remember MCP tools." | mcp/src/agents_remember/mcp/tools/__init__.py:1-6 |
 | The package imports worktree payload builders from the owning module. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:96-96 |
 | The package explicitly exports its builder vocabulary. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-116 |
@@ -136,6 +136,7 @@ The transport server now imports its composition boundary as
 durable-store ownership remain application concerns; only their package location changed.
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-28T17:29:54+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citations into `mcp/src/agents_remember/cli/dashboard.py` (and `serving/_app_common.py`) displaced by L47's fourth-port wiring were re-cited to the declarations that hold their anchors now (whole-identifier match); claim wording unchanged. No stamp advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the two enforced citation spans were re-read and re-derived because this leaf's line shifts moved the constructs they name.** Both anchors live in `cli/dashboard.py`, which this leaf's +16-line insertion pushed down: `_dev_app` is now declared at 130 (extent 130-160, was 114-144) and `run` at 240 (extent 240-275, was 224-259). The body citation now reads `cli/dashboard.py:130-160; cli/dashboard.py:240-275` instead of `:86-116; :196-231`, and both anchors were verified to occur literally inside those ranges — `_dev_app` at 130 and `run` at 240. The claim wording ("The dashboard declares its role on both real entry paths") is unchanged and remains true of the constructs the new ranges hold. Nothing else in this card was touched: it is a citation-only repair, no verification stamp was advanced, and the governed closeout owns the real stamp.

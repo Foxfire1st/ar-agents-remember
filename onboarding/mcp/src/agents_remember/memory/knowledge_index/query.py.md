@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory/knowledge_index/query.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563`|
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,7 @@
 - The lookups: `entries_at_path` (path → realizations and proofs), `invariant` (the record, its realizations with paths, proofs, families, the links pointing at it other than family membership, and the history rows about it), `family` (members and routes), `families_governing` (every `(family, route)` whose route is the path or one of its ancestors — exact matches from `_self_and_ancestors`, never a name prefix; since MIK-R04, leaf 260928-MIK-L04, the candidate list ends with the root route `.`, so a family routed at `.` governs every path, as the validator's `route_covers` does), `incoming_links` (any record → links pointing at it), `history_rows_of` (a leaf, wave or crossing owner → its rows), `history_rows_about` (a subject → rows across all owners) and `record`.
 - Since MIK-R28 two more lookups: `proofs_of(invariant_ids)` (the `proof` entries of those invariants) and `invariants_without_proof()` (the live invariants no proof entry names). See the section below.
 - Since MIK-R25, `record_ids(kind)` answers every record ID of one kind in the tree, sorted: the reviewer's per-side currentness (`application/review_tree_knowledge.side_currentness`) asks it for every `invariant` and `family`.
+- Since MIK-R29, five lookups serve the path-based knowledge reader: `entries_under(directory)`, `entries_in_directory(directory)`, `live_entry_paths_under(directory)`, `links_to_path(path)` and `records_of_kind(kind)`. See the section below. `_incoming` now delegates to a shared `_links(where, parameters)` with the same SQL and the same `ORDER BY`, so the MIK-R05 and MIK-R25 callers are unaffected.
 - `text_id(projected_uuid)` reads `ix_uuid`, the reverse of the projection's identity map.
 - `database_path` is the file itself — the dataset the reused read code opens — and `repository_id` is the index's constant namespace.
 
@@ -59,9 +60,41 @@ None recorded.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The proofs of a set of invariants. | `proofs_of` | mcp/src/agents_remember/memory/knowledge_index/query.py:261-269 |
-| The live invariants no proof names; information, not a gate. | `invariants_without_proof`; "status != 'retired'" | mcp/src/agents_remember/memory/knowledge_index/query.py:271-283 |
+| The proofs of a set of invariants. | `proofs_of` | mcp/src/agents_remember/memory/knowledge_index/query.py:265-273 |
+| The live invariants no proof names; information, not a gate. | `invariants_without_proof`; "status != 'retired'" | mcp/src/agents_remember/memory/knowledge_index/query.py:275-287 |
 | A retired invariant is excluded from the list. | `test_the_index_lists_live_invariants_without_proof` | mcp/tests/test_knowledge_proofs.py:343-356 |
+
+## 260928-MIK-L29 The Reader's Directory, Path And Record Lookups
+
+Five additive lookups, each an ordinary `Answer[T]` carrying the index state, serve the path-based knowledge reader
+(`application/knowledge_reader`, MIK-R29):
+
+- `entries_under(directory)`: the realization and proof entries at the directory or any path below it; the root
+  route `.` (or an empty directory) holds every entry. **A path prefix never matches a sibling that merely shares
+  its spelling:** `dash` holds `dash/x`, not `dashboard/x` (`_under` matches the path itself or `substr` against
+  `<directory>/`). The reader's `subtree` view pages these.
+- `entries_in_directory(directory)`: the entries of the files **directly** in the directory, not in its
+  subdirectories (no further `/` after the prefix): the bounded directory view's own-level entries (review F2).
+- `live_entry_paths_under(directory)`: the source path of every entry at or under the directory whose invariant is a
+  live record (joined with `ix_record`, not retired, not missing), one per entry: the counts the explorer, the
+  directory summary and the subtree agree on.
+- `links_to_path(path)`: every relationship whose target is the code anchor or route at the path, through the
+  shared `_links`.
+- `records_of_kind(kind)`: every record of one kind by ID, built on `record_ids`: the reader's record list and the
+  decisions its derived superseded status is computed from.
+
+The unused `outgoing_links` the first version added was removed (review F12). The helpers `_prefix`, `_under` and
+`_split` are module-level and private.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Entries at or under a directory; a sibling sharing the prefix is never matched. | `entries_under` | mcp/src/agents_remember/memory/knowledge_index/query.py:289-297 |
+| Entries of the files directly in a directory (F2). | `entries_in_directory` | mcp/src/agents_remember/memory/knowledge_index/query.py:299-307 |
+| Live entry paths under a directory, for the reader's counts. | `live_entry_paths_under` | mcp/src/agents_remember/memory/knowledge_index/query.py:309-320 |
+| Links to a path's anchors or route; every record of one kind. | `links_to_path`; `records_of_kind` | mcp/src/agents_remember/memory/knowledge_index/query.py:322-327; mcp/src/agents_remember/memory/knowledge_index/query.py:329-333 |
+| `_incoming` delegating to the shared link query, same SQL and order. | `_incoming`; `_links` | mcp/src/agents_remember/memory/knowledge_index/query.py:378-379; mcp/src/agents_remember/memory/knowledge_index/query.py:381-399 |
+| The directory condition and the prefix it is built from. | `_prefix`; `_under`; `_split` | mcp/src/agents_remember/memory/knowledge_index/query.py:455-459; mcp/src/agents_remember/memory/knowledge_index/query.py:462-468; mcp/src/agents_remember/memory/knowledge_index/query.py:471-475 |
+| The sibling-prefix, own-level, retired-count and route-link cases. | `test_a_directorys_subtree_pages_through_the_shared_continuation`; `test_a_directory_view_is_bounded_to_its_own_level_children_and_route`; `test_the_explorer_lists_code_and_onboarding_children_with_entry_counts` | mcp/tests/test_knowledge_reader.py:653-665; mcp/tests/test_knowledge_reader.py:600-614; mcp/tests/test_knowledge_reader.py:726-749 |
 
 ## Docs References
 
@@ -81,13 +114,13 @@ The index handle, the answer types and the lookups.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lookup list and the rule that every answer carries the index state. | "every answer carries the index's" | mcp/src/agents_remember/memory/knowledge_index/query.py:1-23 |
-| Every record ID of one kind, for the reviewer's per-side currentness (MIK-R25). | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:288-292 |
-| The state every answer carries, and the answer wrapper. | `IndexState`; `Answer` | mcp/src/agents_remember/memory/knowledge_index/query.py:47-58; mcp/src/agents_remember/memory/knowledge_index/query.py:61-66 |
-| Opening refuses another format or another tree's key. | `KnowledgeIndex`; `IndexMismatchError`; `expected_key` | mcp/src/agents_remember/memory/knowledge_index/query.py:140-168; mcp/src/agents_remember/memory/knowledge_index/query.py:42-43 |
-| The reused read code opens the index file under the index namespace. | `database_path`; `repository_id` | mcp/src/agents_remember/memory/knowledge_index/query.py:182-186; mcp/src/agents_remember/memory/knowledge_index/query.py:188-190 |
-| The rule-3 lookups. | `entries_at_path`; `families_governing`; `incoming_links`; `history_rows_of`; `history_rows_about` | mcp/src/agents_remember/memory/knowledge_index/query.py:194-201; mcp/src/agents_remember/memory/knowledge_index/query.py:240-250; mcp/src/agents_remember/memory/knowledge_index/query.py:252-253; mcp/src/agents_remember/memory/knowledge_index/query.py:255-256; mcp/src/agents_remember/memory/knowledge_index/query.py:258-259 |
-| The reverse identity lookup and the ancestor match that never matches on a name prefix and ends with the root route. | `text_id`; `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:294-300; mcp/src/agents_remember/memory/knowledge_index/query.py:390-399 |
+| The lookup list and the rule that every answer carries the index state. | "every answer carries the index's" | mcp/src/agents_remember/memory/knowledge_index/query.py:1-27 |
+| Every record ID of one kind, sorted: the reviewer's per-side currentness (MIK-R25) and, since MIK-R29, the reader's `records_of_kind`. | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:338-342 |
+| The state every answer carries, and the answer wrapper. | `IndexState`; `Answer` | mcp/src/agents_remember/memory/knowledge_index/query.py:51-62; mcp/src/agents_remember/memory/knowledge_index/query.py:65-70 |
+| Opening refuses another format or another tree's key. | `KnowledgeIndex`; `IndexMismatchError`; `expected_key` | mcp/src/agents_remember/memory/knowledge_index/query.py:144-172; mcp/src/agents_remember/memory/knowledge_index/query.py:46-47 |
+| The reused read code opens the index file under the index namespace. | `database_path`; `repository_id` | mcp/src/agents_remember/memory/knowledge_index/query.py:186-190; mcp/src/agents_remember/memory/knowledge_index/query.py:192-194 |
+| The rule-3 lookups. | `entries_at_path`; `families_governing`; `incoming_links`; `history_rows_of`; `history_rows_about` | mcp/src/agents_remember/memory/knowledge_index/query.py:198-205; mcp/src/agents_remember/memory/knowledge_index/query.py:244-254; mcp/src/agents_remember/memory/knowledge_index/query.py:256-257; mcp/src/agents_remember/memory/knowledge_index/query.py:259-260; mcp/src/agents_remember/memory/knowledge_index/query.py:262-263 |
+| The reverse identity lookup and the ancestor match that never matches on a name prefix and ends with the root route. | `text_id`; `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:344-350; mcp/src/agents_remember/memory/knowledge_index/query.py:443-452 |
 | A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
 | The answer cases: path lookups, invariant, family and route, incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07). | `test_path_lookups_return_realizations_and_proofs`; `test_an_invariant_answers_its_code_tests_families_links_and_history`; `test_a_family_answers_members_and_routes_and_routes_answer_their_families`; `test_incoming_links_reach_any_record`; `test_history_rows_are_found_by_subject_and_by_leaf` | mcp/tests/test_knowledge_index.py:157-168; mcp/tests/test_knowledge_index.py:171-195; mcp/tests/test_knowledge_index.py:198-214; mcp/tests/test_knowledge_index.py:235-240; mcp/tests/test_knowledge_index.py:243-259 |
 
@@ -100,6 +133,7 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **body update — five reader lookups (MIK-R29).** Added a Logic bullet and the section "260928-MIK-L29 The Reader's Directory, Path And Record Lookups": `entries_under` (the sibling-prefix guard), `entries_in_directory` (the bounded directory, review F2), `live_entry_paths_under`, `links_to_path`, `records_of_kind`, and `_incoming` delegating to the shared `_links`; the removed `outgoing_links` (F12) is recorded. The module-statement row now spans the grown docstring (`1-27`), and the `record_ids` row was reworded to name its new caller; this pass's generated bullet for that row was removed because the claim was reworded. Other displaced rows were re-pointed by the installed fixer or by the exact base-to-staged line shift. No verification stamp was advanced: the source is staged and uncommitted, and closeout owns the stamp.
 
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Logic gains `record_ids(kind)` (the reviewer's per-side currentness), with one row. Rows citing moved lines were projected by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->

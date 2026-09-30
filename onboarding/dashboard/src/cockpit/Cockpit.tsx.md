@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-28T17:11:24+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -35,6 +35,21 @@ Within the full-page cockpit, `ChatContextBar` owns launch and attach/move contr
 RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
 the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
 outside production navigation.
+
+## 260928-MIK-L29 The Knowledge View
+
+The shell gained one destination: `knowledge`, labelled "Knowledge" in the mode bar, which renders the
+path-based knowledge reader (`panels/knowledge-reader/KnowledgeReader`, MIK-R29). Like Memory, Topology and
+Hangar it is a **transient** view: `ViewBody` mounts it while it is selected and unmounts it on a switch, and
+it is not full-bleed, so the rails stay. The reader keeps its own address in the URL hash, so nothing of its
+state lives in the shell.
+
+**A shared reader URL opens on the Knowledge view.** `Cockpit` passes `initialView="knowledge"` to
+`CockpitShell` when `parseReaderHash(window.location.hash)` names a reader address (`#knowledge?…`), and
+leaves the shell's own default (`operations`) otherwise. The hash persists after the user switches to another
+tab, so a reload then returns to Knowledge (review R1 note N4, harmless). Nothing else in the shell changed:
+the takeovers, rails, polls and streams are as before, and the existing panels are unchanged (the packet's
+preservation boundary).
 
 
 ## 260921-ICR-L33 The Change-Set Takeover Re-Targets Itself
@@ -210,7 +225,7 @@ re-indentation); review R2 judged it wiring, not feature logic (O-R2-2).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The provider around the shell, shown only for Operations with no takeover. | `IntentEntryRevalidation`; "state.view === \"operations\" && !state.takeover" | dashboard/src/cockpit/Cockpit.tsx:887-943 |
+| The provider around the shell, shown only for Operations with no takeover. | `IntentEntryRevalidation`; "state.view === \"operations\" && !state.takeover" | dashboard/src/cockpit/Cockpit.tsx:892-948 |
 
 ### Conventions
 
@@ -268,32 +283,35 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:207-223 |
-| Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-451 |
-| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:455-455 |
-| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:66-73; dashboard/src/cockpit/Cockpit.tsx:75-83 |
-| The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:328-334 |
+| The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:211-227 |
+| Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:454-454 |
+| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:460-460 |
+| The visible registry has exactly one Chats destination, no Sessions route and, since 260928-MIK-L29, a Knowledge destination; Engine Room, Topology, and Chats are full-bleed, and Knowledge is not. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:70-78; dashboard/src/cockpit/Cockpit.tsx:80-89 |
+| The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:334-340 |
 | The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
-| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1129-1156 |
+| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1139-1166 |
 | The boot-time effects flag it persists to. | "calm-cockpit" | dashboard/src/main.tsx:15-15 |
 | The honest-motion gate the rail transition + the toggle drive. | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
-| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:365-389 |
+| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`; the shell opens on the Knowledge view when the URL is a reader address (260928-MIK-L29). | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:371-396 |
+| A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view (MIK-R29 rule 5). | "parseReaderHash(window.location.hash) ? \"knowledge\" : undefined" | dashboard/src/cockpit/Cockpit.tsx:394-395 |
+| The transient Knowledge view renders the reader. | "return <KnowledgeReader />;" | dashboard/src/cockpit/Cockpit.tsx:958-959 |
+| The reader's hash parser. | `parseReaderHash` | dashboard/src/data/knowledgeReader.ts:384-397 |
 | The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). | `applySeatEventLine`, `createGatedSeatEventApplier` | dashboard/src/data/seatEvents.ts:95-104; dashboard/src/data/seatEvents.ts:107-116; dashboard/src/data/seatEvents.ts:125-142 |
 | The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | `startCatalogPollDriver` | dashboard/src/data/catalogPoll.ts:179-192 |
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:48-59; dashboard/src/data/taskIdentity.ts:65-71 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:160-160 |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:813-813 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:818-818 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:79-122; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:173-245 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:715-787 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:720-720 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:725-725 |
 | Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:460-460 |
 | Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:441-441 |
 | The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:439-439 |
 | metricsFor builds the client rollup from lifecycles and spreads the derived state counts. | "export function metricsFor(" | dashboard/src/types/projection.ts:466-466 |
 | The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
-| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:999-1026 |
+| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:1009-1036 |
 | The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-62 |
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
@@ -313,6 +331,11 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **body update — the Knowledge view (MIK-R29).** New section "260928-MIK-L29 The Knowledge View": the transient `knowledge` destination, and a `#knowledge?…` URL opening the shell on it (review note N4 recorded). The registry and `Cockpit` rows were reworded for the new destination, and three rows were added (the initial-view hash check, the `ViewBody` case, the hash parser). The installed fixer re-pointed four displaced rows in this pass (the bullets below) and normalised five more; the provider and body-grid rows were re-pointed by the exact base-to-staged line shift. No verification stamp was advanced: the source is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T09:55:23+00:00: Generated citation repair: "const fullBleed =" repointed to dashboard/src/cockpit/Cockpit.tsx:454-454. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:55:23+00:00: Generated citation repair: "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" repointed to dashboard/src/cockpit/Cockpit.tsx:460-460. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:55:23+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:818-818. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:55:23+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:725-725. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the shell provides the Intent review re-validation context (`ICR-R24@v3`; L47-R1-F2 ruling).** New Logic paragraph and row. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: `EffectsToggle` repointed to dashboard/src/cockpit/Cockpit.tsx:1129-1156. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-25T22:19:46+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:812-812. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.

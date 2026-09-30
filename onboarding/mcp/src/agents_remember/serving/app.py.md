@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,6 +33,19 @@ cached process identity projected by MCP `server_info`.
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
 
 
+## 260928-MIK-L29 The Knowledge Reader Route Is Registered After The Tree View Route
+
+Right after the tree view route, `create_app` calls `register_knowledge_reader_route(app,
+collaborators.knowledge_reader)` (`serving/knowledge_reader.py`, MIK-R29), still before `mount_static(app)`, so the
+greedy static mount never shadows it. A process composed without the port answers `GET /api/knowledge/reader/{view}`
+with a named 503; with it, every typed answer is a 200 and `invalid-request` a 400. The route is GET-only and the
+existing routes are unchanged (the unconverted comparison served them byte-identically, base against worktree).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The import and the registration after the tree view route, before the static mount. | "from agents_remember.serving.knowledge_reader import register_knowledge_reader_route"; "register_knowledge_reader_route(app, collaborators.knowledge_reader)" | mcp/src/agents_remember/serving/app.py:127-127; mcp/src/agents_remember/serving/app.py:307-307 |
+| The route it registers. | `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
+
 ## 260928-MIK-L25 The Tree View Route Is Registered After The Summary Route
 
 Right after the summary route, `create_app` calls `register_review_trees_route(app, collaborators.review_trees)`
@@ -41,7 +54,7 @@ Right after the summary route, `create_app` calls `register_review_trees_route(a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The import and the registration after the summary route. | `register_review_trees_route`; `collaborators.review_trees` | mcp/src/agents_remember/serving/app.py:141-141; mcp/src/agents_remember/serving/app.py:305-305 |
+| The import and the registration after the summary route. | `register_review_trees_route`; `collaborators.review_trees` | mcp/src/agents_remember/serving/app.py:142-142; mcp/src/agents_remember/serving/app.py:306-306 |
 
 ## 260921-ICR-L47 The Changed-Intent Summary Route Is Registered Beside The Reviewer Family
 
@@ -53,7 +66,7 @@ a named 503; with it, every typed summary state is a 200 (`ICR-R24@v3`).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The import and the registration after the reviewer family. | `register_review_summary_route`; `collaborators.review_intent_summary` | mcp/src/agents_remember/serving/app.py:140-140; mcp/src/agents_remember/serving/app.py:304-304 |
+| The import and the registration after the reviewer family. | `register_review_summary_route`; `collaborators.review_intent_summary` | mcp/src/agents_remember/serving/app.py:141-141; mcp/src/agents_remember/serving/app.py:305-305 |
 
 ## 260921-ICR-L3 Reviewer Route Registration Carries All Three Ports
 
@@ -139,9 +152,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:257-327 |
-| One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:168-254; mcp/src/agents_remember/serving/app.py:199-199; mcp/src/agents_remember/serving/app.py:243-243 |
-| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:345-345 |
+| App creation composes the serving route and lifespan families. | `create_app` | mcp/src/agents_remember/serving/app.py:258-329 |
+| One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source. | `_build_serving_runtime`; `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/app.py:169-255; mcp/src/agents_remember/serving/app.py:199-199; mcp/src/agents_remember/serving/app.py:243-243 |
+| The facade exports structural task-assignment names. | "\"TerminalAttachTaskRequest\"," | mcp/src/agents_remember/serving/app.py:347-347 |
 
 ## Cross-Repo References
 
@@ -180,12 +193,14 @@ then **refuses** a role-configured launch by name rather than opening a seat wit
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/app.py:168-254; mcp/src/agents_remember/serving/app.py:248-248; mcp/src/agents_remember/serving/_app_common.py:509-517 |
-| **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.** | `register_review_routes`; `review_source_content` | mcp/src/agents_remember/serving/app.py:295-301; mcp/src/agents_remember/serving/_app_common.py:483-483 |
-| The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-154 |
+| The one line that places the capsule-compiler port on the serving runtime. | `_build_serving_runtime`; `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/app.py:169-255; mcp/src/agents_remember/serving/app.py:249-249; mcp/src/agents_remember/serving/_app_common.py:517-525 |
+| **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.** | `register_review_routes`; `review_source_content` | mcp/src/agents_remember/serving/app.py:296-302; mcp/src/agents_remember/serving/_app_common.py:484-484 |
+| The composition root that binds the real compiler into the collaborator record every `create_app` call uses. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-163 |
 | The gate whose behaviour the port's presence decides. | `resolve_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Route Is Registered After The Tree View Route" with two rows. The installed fixer re-pointed one displaced row (the bullet below) and normalised three; four displaced rows were re-pointed by the exact base-to-staged line shift (one import line and one registration line were added). No verification stamp was advanced: the source is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T09:57:05+00:00: Generated citation repair: "\"TerminalAttachTaskRequest\"," repointed to mcp/src/agents_remember/serving/app.py:347-347. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route Is Registered After The Summary Route", with one row. The L47 row and the others were projected by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-30T01:48:04+00:00: Generated citation repair: "\"TerminalAttachTaskRequest\"," repointed to mcp/src/agents_remember/serving/app.py:345-345. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the summary route is registered beside the reviewer family (`ICR-R24@v3`).** New section and row. Displaced rows were re-pointed. No stamp advanced.

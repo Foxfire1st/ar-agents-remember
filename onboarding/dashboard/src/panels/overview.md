@@ -5,10 +5,51 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T10:52:00+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T12:41:49+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../overview.md`                                 |
+
+## 260928-MIK-L29 The Knowledge Reader Panel
+
+**New panel folder (MIK-R29): `knowledge-reader/`,** governed by this overview. Following the `review/` precedent it
+has no route overview of its own. It is the dashboard's **Knowledge** area: a read-only reader of one repository's
+knowledge at any memory tree, browsed like a file explorer, needing no task, and opened by the Cockpit as a transient
+mode (not full-bleed; a `#knowledge?…` URL opens the Cockpit on it).
+
+- [`knowledge-reader/KnowledgeReader.tsx`](knowledge-reader/KnowledgeReader.tsx.md): the panel. The address is the URL
+  hash (`useReaderAddress`), so reload and back keep the view; the toolbar (repository, the memory-tree selector with
+  unconverted commits disabled, a record lookup, "without proof [under path]", "census"); the selection banner naming
+  the tree, memory revision, code tree and its note, a partial index's problems, and "pin this view to memory …" for a
+  clean `published` or leaf tree (ruling N2); refusals named (`not-converted` and the rest); failed side reads named
+  beside the toolbar (F11). With no address it lands on the first repository's root summary (F2).
+- [`knowledge-reader/KnowledgeTree.tsx`](knowledge-reader/KnowledgeTree.tsx.md): the lazy explorer, one read per opened
+  level, entry counts, "(onboarding only)" paths, an unlisted code tree named; an answer after a tree switch is
+  dropped (F13).
+- [`knowledge-reader/PathViews.tsx`](knowledge-reader/PathViews.tsx.md): the path view (prose, invariants with states,
+  families here or routed, linked records with a decision in full), a directory's bounded summary with "list all N
+  entries" (F2), the paged subtree with one "more" in flight at a time (the R2 note), the without-proof list, the
+  census view and the code view with the resolved lines marked.
+- [`knowledge-reader/TruthView.tsx`](knowledge-reader/TruthView.tsx.md): every field, the invariant and family parts,
+  a decision in full with the **derived** status in the header (F9), links both ways (unreadable links named, F11/F17),
+  and the timeline with each source's state (a source that could not be read named, never "no history").
+- [`knowledge-reader/readerParts.tsx`](knowledge-reader/readerParts.tsx.md): every link a navigation (rule 5), state
+  badges, `DecisionCard` (the rule carried from L13), and the prose whose `[n]` markers are linked in text nodes only,
+  never inside code spans or fences (F4).
+- [`knowledge-reader/KnowledgeReader.test.tsx`](knowledge-reader/KnowledgeReader.test.tsx.md) (14 cases) over
+  [`knowledge-reader/knowledgeReader.captured.json`](knowledge-reader/knowledgeReader.captured.json.md), 17 real served
+  bodies from a converted scratch copy with SCRATCH-AUTHORED routes, decisions, incident, proof, history rows and census.
+  A debugging `console.log` that curation found left in one case was removed by a staged, test-only follow-up.
+
+The existing panels are unchanged (the packet's preservation boundary); the Cockpit gained one mode and one hash check.
+The data adapter is `data/knowledgeReader.ts`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The panel. | `KnowledgeReader` | dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx:448-483 |
+| The bounded directory summary and the paged subtree. | `DirectorySummary`; `SubtreeView` | dashboard/src/panels/knowledge-reader/PathViews.tsx:143-177; dashboard/src/panels/knowledge-reader/PathViews.tsx:451-480 |
+| The truth view. | `TruthView` | dashboard/src/panels/knowledge-reader/TruthView.tsx:157-181 |
+| A decision in full; markers linked in text nodes only. | `DecisionCard`; `remarkReferenceMarkers` | dashboard/src/panels/knowledge-reader/readerParts.tsx:361-389; dashboard/src/panels/knowledge-reader/readerParts.tsx:438-440 |
 
 ## 260928-MIK-L31 Focused Expression Cards In The Central Reading Path
 
@@ -47,9 +88,9 @@ from a leaf-wide read of the same comparison; dataset reviews make no tree read.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-230 |
+| The card component. | `ExpressionCards`; `ReadyCards` | dashboard/src/panels/review/ExpressionCards.tsx:136-176; dashboard/src/panels/review/ExpressionCards.tsx:180-230 |
 | Grouping by (path, range) and the bounded-roster scope. | `cardKey`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:50-55; dashboard/src/panels/review/focusedCards.ts:195-210 |
-| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-1029 |
+| Cards for a tree comparison, marks only from the same comparison. | `pinnedWorklist`; `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:950-954; dashboard/src/panels/review/FamilyReviewCenter.tsx:973-1029 |
 | The conforming example on real data. | "shows the family around _not_listed as focused cards: one changed range, the rest unchanged" | dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:118-195 |
 
 ## 260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees
@@ -245,6 +286,8 @@ routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate 
 every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Update History
+- 2026-09-30T12:41:49+02:00 — 260928-MIK-L29 curator (follow-up after the coordinator's test-only edit, staged; the change set is still 24 files over `b54d1b0331f67454bcf245a7a338b04900181c3c`): **route body updated.** The L29 section now records that the debugging `console.log` in `knowledge-reader/KnowledgeReader.test.tsx` was removed, instead of pointing at a Todo; the test card's Todo is resolved and its rows re-measured. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Panel" at the top: the new `knowledge-reader/` folder and its seven cards (no sub-route overview, following `review/`), with rulings N2, F2, F4, F9, F11, F13, F17 and the R2 in-flight note, and four rows. **One reopened claim was re-read, reworded and re-anchored:** the "production route returns `Cockpit`" row, bound by a committed 2026-09-25 generated-repair bullet, now names the Knowledge initial view and is anchored on the line-exact quotes `"export function Cockpit() {"` and the reader-hash check; the committed bullet is left intact. The installed fixer normalised four rows and the `CockpitShell` row was re-pointed by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the stale test-header and comment notes of the 10:05:09 entry. The L31 section and ICR-L44's section now say the headers were refreshed; ICR-L44's case-header row is reworded and re-measured (`8-19` → `9-21`); the rows into `ReviewWorkspace.family.test.tsx` below the header and into `familyExpressions.test.ts` below its edited comment were re-pointed by the exact −1 and +1 shifts.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 Focused Expression Cards In The Central Reading Path" at the top: the cards and their owners (nine new cards: `ExpressionCards`, `focusedCards`, `statementWording`, `worklistGroups`, `LeafKnowledgeChanges`, the three new test modules' and the cards fixture's), the dataset path unchanged, the fixtures re-captured under rule 6 (with ruling Q3's synthetic body), and four candidate invariants. L25's section and ICR-L44's section now say what L31 superseded; the walkFinal divergent-revision example names the re-captured revision. **Reopened claims reworded:** the `SelectedStatement` row (this pass's generated bullet removed) and the `FamilyReviewCenter` row (bound by a committed 2026-09-26 bullet, so re-anchored on a line-exact quote); the `not_recaptured` row is re-anchored on `mik_l31_recapture`; the gitTrees receipt row re-measured (`9-81`). Four rows added.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Landed Review Workspace Over A Converted Leaf's Git Trees" at the top: the new UI case, its three captured bodies and their receipt (five new cards governed here), rulings 22:22:37 Q2 and 02:32:42 (a), with two rows. Passing rows were normalised by the installed fixer. No verification stamp was advanced.
@@ -470,13 +513,13 @@ inside agents-remember.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:77-85 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:803-807; dashboard/src/cockpit/Cockpit.tsx:809-810 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:810-811; dashboard/src/cockpit/Cockpit.tsx:811-811; dashboard/src/cockpit/Cockpit.tsx:813-813 |
+| The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:80-89 |
+| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:808-812; dashboard/src/cockpit/Cockpit.tsx:814-815 |
+| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:815-816; dashboard/src/cockpit/Cockpit.tsx:816-816; dashboard/src/cockpit/Cockpit.tsx:818-818 |
 | Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:24-56; dashboard/src/data/store.ts:329-401; dashboard/src/data/store.ts:18-19 |
 | The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
-| The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:367-391 |
-| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:886-940 |
+| The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). | "export function Cockpit() {"; "parseReaderHash(window.location.hash) ? \"knowledge\" : undefined" | dashboard/src/cockpit/Cockpit.tsx:371-396 |
+| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:891-945 |
 | The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
 | The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
 | Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:715-787; dashboard/src/panels/HighlightComposer.tsx:602-603; dashboard/src/panels/HighlightComposer.tsx:254-256 |

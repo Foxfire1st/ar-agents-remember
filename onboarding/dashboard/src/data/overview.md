@@ -5,14 +5,34 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
+
+## 260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address
+
+One new adapter, [`knowledgeReader.ts`](knowledgeReader.ts.md) (carded, governed here), serves the dashboard's
+Knowledge area (MIK-R29, `panels/knowledge-reader/`): the answer types of every reader view (the selection block with
+`codeTree`, `codeSource`, `codeNote` and `pinnedCommit`; the bounded directory's `children` and `subtree`; subtree pages
+with their continuation; truth views with `outgoingState` and a timeline whose sources carry their own states; the
+selector's `commitsState`), the reads of `/api/knowledge/reader/<view>`, and the reader's address. **The address is
+the URL hash** (`#knowledge?repo&commit&path|id|census|view…`), because production serves only `/`: `parseReaderHash`
+reads it (any other hash is `null`) and `readerHash` writes it with commit and path or ID always spelled out, so every
+link is a navigation and a view can be shared (rule 5). `readerGet` returns every typed answer whatever its HTTP
+status, including a 400 `invalid-request`, and throws only on a transport failure or a body with no state (a 503
+from a process without the reader), so a refusal is shown as what it is and never as an empty view. The keys are the
+backend's camelCase document keys; the adapter issues GETs only.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shareable hash, read and written. | `parseReaderHash`; `readerHash` | dashboard/src/data/knowledgeReader.ts:384-397; dashboard/src/data/knowledgeReader.ts:400-409 |
+| A typed answer returned whatever its status; only transport failures throw. | `readerGet` | dashboard/src/data/knowledgeReader.ts:424-441 |
+| The selection block every answer carries. | `ReaderSelection` | dashboard/src/data/knowledgeReader.ts:36-52 |
 
 ## 260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing
 
@@ -35,8 +55,8 @@ expansion refusal ([`reviewTransport.test.ts`](reviewTransport.test.ts.md)) was 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The entry types. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-222 |
-| The comparison a payload names, and one selection's entries. | `treeComparisonNumber`; `useReviewTreeEntries` | dashboard/src/data/reviewTrees.ts:316-352 |
+| The entry types. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-211; dashboard/src/data/reviewTrees.ts:213-222 |
+| The comparison a payload names, and one selection's entries. | `treeComparisonNumber`; `useReviewTreeEntries` | dashboard/src/data/reviewTrees.ts:316-322; dashboard/src/data/reviewTrees.ts:326-352 |
 | No camelCase key in the real body. | "one wire convention (MIK-L25 review F9)" | dashboard/src/data/reviewTrees.test.ts:120-145 |
 
 ## 260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees
@@ -112,6 +132,7 @@ consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` 
 measurement.
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address" at the top (the new `knowledgeReader.ts`, the hash address of rule 5, typed answers returned whatever their status), with three rows. The installed fixer normalised two rows in this pass. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing" at the top: the entry types, `invariants=` (ruling 05:36:19 Q2), `treeComparisonNumber`, `useReviewTreeEntries`, the `enabled` flag and payload pinning (review F11), snake_case (MIK-L25 review F9), the re-captured body and the re-measured transport refusal (rule 6 O2), and one candidate invariant. L25's section now says its carried items are settled. **Reopened claim reworded and re-anchored:** L25's answer-and-request row, on line-exact quotes; this pass's generated bullet for it was removed. Three rows added.
 - 2026-09-30T07:49:51+00:00: Generated citation repair: `reviewTreesRead` repointed to dashboard/src/data/reviewTrees.ts:273-279. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees" at the top: the new `reviewTrees.ts`, its test and captured body (three new cards governed here), rulings 22:22:37 Q2 and 02:32:42 (a) and review F4 and F9, with two rows. Passing rows were normalised by the installed fixer. No verification stamp was advanced.

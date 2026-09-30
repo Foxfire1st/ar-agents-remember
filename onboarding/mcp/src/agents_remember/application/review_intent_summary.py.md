@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_intent_summary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ head rule; the fixture tests pin every count class.
 | A revised member shared by two families counts once on each side. | `test_a_revised_statement_two_families_share_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:319-338 |
 | A status-only or version-only successor counts once on each side (L47-R1-F3). | `test_a_record_only_successor_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:341-380 |
 | Divergent heads make the answer `partial`; absent knowledge is `unavailable` with no counts. | `test_an_identity_without_one_head_makes_the_summary_partial`; `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` | mcp/tests/test_review_intent_summary.py:383-403; mcp/tests/test_review_intent_summary.py:406-418 |
-| The composition root wires this read as the fourth review port. | `review_intent_summary_port`; `read_review_intent_summary` | mcp/src/agents_remember/cli/dashboard.py:132-139 |
+| The composition root wires this read as the fourth review port. | `review_intent_summary_port`; `read_review_intent_summary` | mcp/src/agents_remember/cli/dashboard.py:135-142 |
 
 ## Cross-Repo References
 
@@ -129,6 +129,7 @@ snapshots.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-28T17:30:17+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): two rows re-anchored after the full memory-quality run reopened them: the attribute and parameter references (`attached_only`, `after_only`, `invariant_of`) are now named as the literal text the cited ranges hold ("tally.attached_only", "tally.after_only", "invariant_of.get(...)") instead of as symbols, because they are uses inside `_classify`/`_family_side`, not declarations. Claim wording unchanged.
 

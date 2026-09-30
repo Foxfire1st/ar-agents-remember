@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/discovery.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563`   |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`   |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -73,12 +73,13 @@ over three named helpers that carry that totality explicitly:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:310-310; mcp/src/agents_remember/cli/dashboard.py:312-312 |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:310-310; mcp/src/agents_remember/cli/dashboard.py:312-312 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:319-319; mcp/src/agents_remember/cli/dashboard.py:321-321 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()"; "except (ConfigDiscoveryError, ConfigError) as error:" | mcp/src/agents_remember/cli/dashboard.py:319-319; mcp/src/agents_remember/cli/dashboard.py:321-321 |
 | The settings loader the discovered path feeds (`load_config`). | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:159-167 |
 | Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 - 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.

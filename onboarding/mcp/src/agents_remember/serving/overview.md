@@ -5,14 +5,34 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own
+
+**Route meaning extended (MIK-R29).** One new route module, [`knowledge_reader.py`](knowledge_reader.py.md) (carded,
+governed here): `GET /api/knowledge/reader/{view}?repo[&commit][&path|id|census|locator|blob|continuation]`,
+transport only. The view is one of `selections`, `tree`, `path`, `subtree`, `record`, `records`, `census`,
+`without-proof` and `code`; `commit` is `published` by default, a memory commit's hexadecimal name, or
+`leaf:<scope>`. Every typed answer is a 200 (a view, `not-converted`, `not-found`, `unavailable`, a subtree
+`refused`); `invalid-request` is a 400 (an unknown view, a path with `..` or a control character, a malformed
+locator; rulings F3 and F15); a process composed without the port answers a named 503. It is **not** a reviewer
+route: the reader needs no task, so [`_app_common.py`](_app_common.py.md) declares its own
+`ServingCollaborators.knowledge_reader` port (typed by the route module), [`app.py`](app.py.md) registers the route
+right after the tree view route and before the static mount, and `cli/dashboard.py` binds the port to
+`application/knowledge_reader.read_knowledge_reader`. The route is GET-only and never writes; the landed routes keep
+their bodies byte for byte (the unconverted comparison, base against worktree).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The query, the port and the GET handler with its three answer classes. | `KnowledgeReaderQuery`; `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:35-46; mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
+| The collaborator port and the registration before the static mount. | "knowledge_reader: KnowledgeReaderPort"; "register_knowledge_reader_route(app, collaborators.knowledge_reader)" | mcp/src/agents_remember/serving/_app_common.py:510-515; mcp/src/agents_remember/serving/app.py:307-307 |
 
 ## 260928-MIK-L31 The Tree View Route Answers The Focused Cards
 
@@ -29,7 +49,7 @@ route was added, and a dataset review never calls this route.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:36-38; mcp/src/agents_remember/serving/review_trees.py:66-93 |
+| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:36-36; mcp/src/agents_remember/serving/review_trees.py:38-38; mcp/src/agents_remember/serving/review_trees.py:66-93 |
 | The query carries the named invariants to the port. | `ReviewTreesQuery` | mcp/src/agents_remember/serving/review_trees.py:41-51 |
 
 ## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
@@ -47,7 +67,7 @@ Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The route and its three answer classes, with the selection's own 400 since MIK-L31. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:99-134 |
-| The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:305-305 |
+| The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:306-306 |
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
 
@@ -63,6 +83,7 @@ route-level case pins the five-arm status table so the admission is held by beha
 alone.
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own" at the top (the new `knowledge_reader.py` route, its answer classes, the collaborator port and its registration; rulings F3 and F15), with two rows. Rows citing the grown collaborator record and `create_app` were re-pointed by the installed fixer or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Route Answers The Focused Cards" at the top: `invariants=` (ruling 05:36:19 Q2), `ReviewTreesSelection` with the 500-key and 64-character bounds (review F10 at 06:10:21), the payload-pinned reads (F11), and the settled key casing (MIK-L25 review F9). **Reopened claim reworded:** L25's route row; this pass's generated bullet for it was removed. Two rows added.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port" at the top (the new `review_trees.py`, carded and governed here; the collaborator field; the registration; rulings Q5, F6 and F9), with two rows. Rows citing moved lines were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): re-pointed 6 citations into `mcp/tests/test_knowledge_review_source_endpoints.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. One claim was re-worded after re-reading. The selector-kind row said the case asserts that omitting both selector parameters is admitted, and the case (moved verbatim) does not. It now states what the two cited cases assert, and its generated-repair bullet was retired. No stamp was advanced.
@@ -2576,11 +2597,11 @@ application owner, its vocabulary and the dashboard renderer are on their own ro
 | **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:584-604|
 | **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-738; mcp/src/agents_remember/serving/review.py:657-659|
 | **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
-| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:483-483 |
+| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:484-484 |
 | **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review.py:151-160|
 | The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:741-757|
-| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:296-302 |
-| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:120-130; mcp/src/agents_remember/cli/dashboard.py:82-82 |
+| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-303 |
+| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:123-133; mcp/src/agents_remember/cli/dashboard.py:85-85 |
 | **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
 | **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/tests/test_knowledge_review_source_content.py:641-676 |
 

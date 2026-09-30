@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_ingest_comparison_generation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview | `mcp/tests/overview.md` |
 
 ## Governing Overview
@@ -167,7 +167,7 @@ Ranges are the exact construct extents in this candidate.
 | The identity value the identity helper answers with. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:195-204 |
 | **The journey fixtures this module owns and the failure-window module imports rather than copies.** | `_digest`; `_identity_of`; `_publish_a_later_line` | mcp/tests/test_knowledge_ingest_failure_windows.py:71-75; mcp/tests/test_knowledge_ingest_failure_windows.py:80-119 |
 | The ingest-list fixture module every one of these cases builds its enclosure from. | `SourcePair`; `_private_pair`; `_cycle01_sibling_contract`; `_cycle01_publish_baseline`; `_fork_ingest_argv`; `_review_before_half`; `_one_entry_list`; `_cli_json` | mcp/tests/test_knowledge_curator_ingest_list.py:165-179; mcp/tests/test_knowledge_curator_ingest_list.py:1725-1735; mcp/tests/test_knowledge_curator_ingest_list.py:3129-3143; mcp/tests/test_knowledge_curator_ingest_list.py:3146-3169; mcp/tests/test_knowledge_curator_ingest_list.py:1763-1791; mcp/tests/test_knowledge_curator_ingest_list.py:1669-1682; mcp/tests/test_knowledge_curator_ingest_list.py:1702-1722; mcp/tests/test_knowledge_curator_ingest_list.py:1661-1666 |
-| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:128-128 |
+| The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against. | "unit-regression"; "mcp/tests/test_knowledge_ingest_comparison_generation.py" | mcp/tests/test-evidence-lanes.toml:5-5; mcp/tests/test-evidence-lanes.toml:129-129 |
 
 ## Cross-Repo References
 
@@ -179,6 +179,7 @@ builds is local to one temporary coordination root.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/tests/test-evidence-lanes.toml` (one `unit-regression` row at `:108`), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
 - 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/tests/test-evidence-lanes.toml` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
 - 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; rows citing lane rows after the one `unit-regression` row MIK-R10 inserted at `test-evidence-lanes.toml:124` (or catalog lines after `evidence-lifecycle.toml:836`) were re-pointed by the installed fixer or, where it declined, by the exact line shift over rows byte-identical to memory HEAD. No claim was reworded, so the fixer's bullets are kept. No verification stamp was advanced.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `test-evidence-lanes.toml` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ the summary route refuse by name (503), because "this process cannot count" is n
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional summary port on the collaborator record. | `review_intent_summary`; `ReviewIntentSummaryPort` | mcp/src/agents_remember/serving/_app_common.py:493-493 |
+| The optional summary port on the collaborator record. | `review_intent_summary`; `ReviewIntentSummaryPort` | mcp/src/agents_remember/serving/_app_common.py:494-494 |
 
 Since `260928-MIK-L25`, `ServingCollaborators` also declares `review_trees: ReviewTreesPort | None = None` — the
 same adapter's tree view: the four Git trees, the Git diff of the memory trees, the per-side currentness and the
@@ -58,7 +58,19 @@ refuses `GET /api/review/trees` by name (503).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The optional tree-view port on the collaborator record. | "review_trees: ReviewTreesPort" | mcp/src/agents_remember/serving/_app_common.py:502-507 |
+| The optional tree-view port on the collaborator record. | "review_trees: ReviewTreesPort" | mcp/src/agents_remember/serving/_app_common.py:503-508 |
+
+Since `260928-MIK-L29`, `ServingCollaborators` also declares `knowledge_reader: KnowledgeReaderPort | None = None`,
+the path-based knowledge reader (MIK-R29): read-only views of any converted memory tree. It is **not** a sixth review
+port: the reader needs no task, so it is its own port rather than a mode of the review adapter. The port type is
+imported from the route module `serving/knowledge_reader.py`, which keeps the serving tier free of the application;
+the composition root supplies the callable, and omitting it refuses `GET /api/knowledge/reader/{view}` by name
+(503).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The optional reader port on the collaborator record, and why it is its own port. | "knowledge_reader: KnowledgeReaderPort" | mcp/src/agents_remember/serving/_app_common.py:510-515 |
+| The port type, imported from the route module. | "from agents_remember.serving.knowledge_reader import KnowledgeReaderPort" | mcp/src/agents_remember/serving/_app_common.py:31-31 |
 
 ### Conventions
 
@@ -90,12 +102,12 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:310-314 |
-| The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:523-556 |
-| The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:130-170 |
-| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:509-509; mcp/src/agents_remember/serving/_app_common.py:542-542; mcp/src/agents_remember/serving/launch_capsule.py:163-163 |
-| **The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:36-40; mcp/src/agents_remember/serving/_app_common.py:483-483; mcp/src/agents_remember/serving/review.py:83-83 |
-| The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-154 |
+| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:311-315 |
+| The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`. | `_ServingRuntime` | mcp/src/agents_remember/serving/_app_common.py:531-564 |
+| The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`. | `stream_events` | mcp/src/agents_remember/serving/_app_common.py:131-171 |
+| The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch. | `capsule_launch`; `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/_app_common.py:517-517; mcp/src/agents_remember/serving/_app_common.py:550-550; mcp/src/agents_remember/serving/launch_capsule.py:163-163 |
+| **The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:37-41; mcp/src/agents_remember/serving/_app_common.py:484-484; mcp/src/agents_remember/serving/review.py:83-83 |
+| The composition root that fills the port with the real compiler. | `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-163 |
 | The refusals the port's presence decides, in the one gate every launch point calls. | `resolve_launch_capsule`; `capsule-resolver-unavailable` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
 
 ## 260921-ICR-L3 The Third Review Port On The Collaborator Record
@@ -174,6 +186,7 @@ let the serving process register task-bound worker/reviewer/curator first eviden
 retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **body updated for MIK-R29.** Logic gains the `knowledge_reader: KnowledgeReaderPort | None` field (the reader's own port, not a review port, because it needs no task), with two rows. The installed fixer normalised four rows; four displaced rows were re-pointed by the exact base-to-staged line shift (one import line and seven field lines were added). No verification stamp was advanced: the source is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Logic gains the `review_trees: ReviewTreesPort | None` field, with one row. No verification stamp was advanced.
 - 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the collaborator record gains the optional changed-intent summary port (`ICR-R24@v3`).** New Logic paragraph and row. Displaced rows were re-pointed. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.

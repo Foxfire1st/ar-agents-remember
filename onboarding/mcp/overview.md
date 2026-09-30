@@ -5,14 +5,82 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T10:52:00+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
+
+`260928-MIK-L29` (MIK-R29@v1) adds a read-only **Knowledge** area to the dashboard: a reader of one repository's
+knowledge at any memory tree, browsed like a file explorer and needing no task. A commit selector defaults to the
+published memory tree (MIK-R23 rule 6) and offers any converted memory commit and a live leaf's candidate
+(`leaf:<scope>`). A **path view** shows a file's or directory's onboarding prose with its `[n]` references resolved
+(every target listed; code opens at the locator, records at their truth view), the realization and proof entries
+grouped by invariant with their MIK-R03 states, the families of those invariants and those routed over the path
+(MIK-R05) with their other locations, and every record linking to the path or its invariants. A **truth view** shows
+an invariant, family, decision, incident or other facet record with every field, links both ways and a timeline,
+newest first, from three sources: the record file's log with meaning diffs, the history rows of every leaf
+(MIK-R07) and the log of the sidecar entries that realize or prove it (moves and re-anchors). A census view
+(MIK-R20), a without-proof list by path (MIK-R28 rule 5) and a code view complete it. The URL hash encodes the
+repository, commit and path or ID, so every link is a navigation and a view can be shared.
+
+- **Where:**
+  - `application/knowledge_reader/` (new package): `__init__.py` (the entry point and envelope), `selection.py` (the
+    three tree spellings and the code tree), `files.py` (memory and code reads, path validation, bounded code text),
+    `paths.py` (explorer, path view, without-proof), `subtree.py` (the paged subtree), `records.py` (summaries,
+    decisions in full, links, references), `truth.py` (truth, census, record list and code views) and `timeline.py`.
+  - `memory/knowledge_index/query.py`: five additive lookups (`entries_under`, `entries_in_directory`,
+    `live_entry_paths_under`, `links_to_path`, `records_of_kind`) and a shared `_links`.
+  - `serving/knowledge_reader.py` (new): `GET /api/knowledge/reader/{view}`; `serving/_app_common.py` (the
+    `knowledge_reader` port), `serving/app.py` (its registration) and `cli/dashboard.py` (its composition).
+  - `dashboard/src/data/knowledgeReader.ts` (new) and `dashboard/src/panels/knowledge-reader/` (new: the panel,
+    explorer, path views, truth view, shared parts, 14 component tests and a real-data fixture);
+    `dashboard/src/cockpit/Cockpit.tsx` (the Knowledge mode and the `#knowledge?…` initial view).
+  - `mcp/tests/test_knowledge_reader.py` (new, 21 cases) and its `unit-regression` lane row.
+- **Architect rulings** (`29_path-based-knowledge-reader.json`). Carried from L13 (2026-09-30T01:45:56): a decision's
+  chosen and rejected alternatives with reasons and `reconsider_when`, and its derived superseded status, are shown
+  whole wherever the decision appears, read through `models/knowledge_files/decisions`. 06:22:39: started under D31
+  on `48f680d5`. 09:42:58 (worker questions and review R1): Q1/N1 a memory commit measures at its `Code-Commit`
+  pairing, `published` and a leaf at `HEAD` of the code checkout (matching L03; revisit with L03 gap 1), and every
+  answer names `codeTree`, `codeSource` and `codeNote`; Q2 the index cache is L23's design (no repository write);
+  Q3-Q10 accepted as built; N2 a link pinned to the memory revision when the tree is clean; F1 `--pickaxe-all`
+  dropped; F2 the directory view bounded (own level, children with counts, the full list paged through L02's
+  continuation; the root summary as the landing); F3 a malformed locator answers 400; F4 no `[n]` rewrite inside code;
+  F5 re-anchored, not moved; F6 guard tests; F7 a bounded timeline cache; F8 radon splits; F9 the derived status in the
+  header; F11 failures partial or unavailable, never empty; F12 dead code removed; F13 stale explorer answers ignored;
+  F14 a binary or oversize blob answers a bounded notice; F10 accepted as a note. 10:44:14 (R2): F15 NUL and control
+  characters answer 400; F16 a resumed subtree page measures at the walk's code tree; F17 tests for the four surviving
+  Python mutants and the unreadable-links display; F18 the code view of a directory is a typed `absent`; the "more"
+  button's in-flight guard. 11:24:12 (R3 and post-sync on `b54d1b03`): pass-with-notes; R3-1 a resumed page's
+  envelope comes from the measured selection; R3-2 a test for refusing a continuation that names a tree the repository
+  no longer holds; unsigned tokens stay as L02 designs them; the test file's size noted.
+- **Candidate invariants (not ingested; listed on the cards and in the `application` overview):** the reader never
+  writes a repository, reading only the derived index and Git objects; every reader answer names the code tree it
+  measured and its source; a directory view is bounded, the full subtree is paged by a continuation bound to tree,
+  policy and path, and a resumed page measures at the walk's tree; a failed source is shown as partial or unavailable,
+  never as empty; unconverted memory reads are unchanged.
+- **Inertness:** the installed runtime does not serve the route yet (MIK-R37 cuts over). An unconverted tree answers
+  `not-converted` before any index is built, and the landed routes answer byte-identically base against worktree
+  (`4ab45ec3…` on the synced base `b54d1b03`, reviewer R3). Two workers built the first version (backend and
+  dashboard, split in writing); from the R1 fix round one worker owned both.
+- **Tests and evidence:** 21 Python cases and 14 dashboard cases; full unit suite 3,319 passed, integration lane 447
+  passed, dashboard vitest 1,784 passed (reviewer R3, synced tree). Real data on converted scratch copies of the real
+  repositories (SCRATCH-AUTHORED routes, decisions, incident, proof, history rows and census): the packet's conforming
+  example (`worktrees/`), a file, a test file, an invariant with a seven-event three-source timeline, a family, a
+  decision and its superseded predecessor, the census; the root summary's 179 subtree entries in 2 pages within 8,000
+  tokens; the invariant timeline reads 7 blobs instead of about 2,590 (F1); a real-browser walkthrough at 1600×1100 and
+  390×844 (task-local evidence).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reader's entry point: one read-only question per call, the envelope and the typed failures. | `read_knowledge_reader` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:72-89 |
+| The route: 200 for typed answers, 400 for invalid requests, 503 unwired. | `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
+| The Knowledge area's own statement. | "The Knowledge area (MIK-R29)" | dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx:1-7 |
 
 ## 260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover
 
@@ -126,7 +194,7 @@ lifecycle to a `served_earlier` row; `knowledge_read` never does.
 | The chain module statement. | "Route-chain families of a seed path" | mcp/src/agents_remember/application/knowledge_leaf/chain.py:1-26 |
 | The compact row with its family seed. | `chain_row` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:134-154 |
 | The family seed on the mounted read. | `_family_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:525-535 |
-| The lane row. | "mcp/tests/test_knowledge_route_chain.py" | mcp/tests/test-evidence-lanes.toml:110-110 |
+| The lane row. | "mcp/tests/test_knowledge_route_chain.py" | mcp/tests/test-evidence-lanes.toml:111-111 |
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -176,7 +244,7 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 | The two kinds and the coverage lookup. | "MIK-R10's unexplained changes" | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:1-35 |
 | The subjects and the gate predicate. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
 | A delete-only hunk is linked only by a K_B range. | "hunk.new_count > 0" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:537-539 |
-| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
+| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -228,7 +296,7 @@ and the archive hook that deletes a task's review artifacts.
 | The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
 | The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:34-34 |
 | The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
-| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:123-124 |
+| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:124-125 |
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -953,6 +1021,11 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, 24 files over code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R1 and R2 changes-required with fix rounds, R3 and post-sync pass-with-notes, then the R3-1/R3-2 fix): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover": where the reader lives, every ruling of `29_path-based-knowledge-reader.json` (the carried L13 rule; 09:42:58 Q1/N1, Q2, N2 and F1-F14; 10:44:14 F15-F18 and the "more" guard; 11:24:12 R3-1 and R3-2), the five candidate invariants, inertness and the evidence, with three rows. Rows citing the grown collaborator record, composition root and lane manifest were re-pointed by the installed fixer (the bullets below) or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
+- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_knowledge_route_chain.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124; mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:133-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the three stale code comments the 10:05:09 entry recorded were refreshed by the worker (comments only; `familyExpressions.test.ts` joins the change set). The L31 section's bullet says so.
 - 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the whole-leaf section "260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover" at the top: what the cards show, where the code lives, every architect ruling (the carried L11, L25 Q2/F9/Q8, L10, PS-1; 05:36:19 Q1-Q4; 06:10:21 R1; 06:47:03 R2; 09:38:03 R3 with R3-N1), the five candidate invariants, inertness, the evidence, and the stale code comments found. Three rows added.
 - 2026-09-30T07:52:41+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_TREES_ROUTE` repointed to mcp/src/agents_remember/serving/review_trees.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
@@ -1138,7 +1211,7 @@ assessments while claiming a complete bundle — is caught at the composition ra
 | **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_assessment_currentness.py:69-69 |
 | **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850|
 | **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:956-996; mcp/src/agents_remember/models/knowledge/review.py:893-893|
-| **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:94-108; mcp/tests/test_knowledge_review_evidence_channels.py:621-647 |
+| **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:97-111; mcp/tests/test_knowledge_review_evidence_channels.py:621-647 |
 | The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:669-690 |
 
 ## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
@@ -1264,7 +1337,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:133-133 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -3187,9 +3260,9 @@ served dashboard either has both adapters or refuses the corresponding route by 
 | The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
 | **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:115-124|
 | **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review.py:151-160|
-| The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:462-462; mcp/src/agents_remember/serving/_app_common.py:473-473 |
-| The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:296-299 |
-| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:91-100; mcp/src/agents_remember/cli/dashboard.py:102-110 |
+| The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:463-463; mcp/src/agents_remember/serving/_app_common.py:474-474 |
+| The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-300 |
+| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:94-103; mcp/src/agents_remember/cli/dashboard.py:105-113 |
 | **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:107-107; mcp/src/agents_remember/application/review_candidate_resolution.py:113-113; mcp/src/agents_remember/application/review_candidate_resolution.py:114-114; mcp/src/agents_remember/application/knowledge_review.py:131-145; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
 | **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:517-555 |
 | **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** | `review_namespace`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:391-430; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316|
@@ -3233,12 +3306,12 @@ empty surface.
 | The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
 | The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
 | The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:461-470 |
-| The registration that reads that port. | `register_review_routes`; `collaborators.knowledge_review` | mcp/src/agents_remember/serving/app.py:297-303 |
-| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:91-100; mcp/src/agents_remember/cli/dashboard.py:102-110 |
-| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:146-154 |
+| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:462-471 |
+| The registration that reads that port. | `register_review_routes`; `collaborators.knowledge_review` | mcp/src/agents_remember/serving/app.py:298-304 |
+| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:94-103; mcp/src/agents_remember/cli/dashboard.py:105-113 |
+| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:79-83; mcp/src/agents_remember/cli/dashboard.py:154-163 |
 | **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
-| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:76-80; mcp/src/agents_remember/cli/dashboard.py:146-154 |
+| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:79-83; mcp/src/agents_remember/cli/dashboard.py:154-163 |
 | **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
@@ -7178,10 +7251,10 @@ their own routes; this section records only what this package's route model gain
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
-| **The third collaborator port, with the reason it is a port rather than a field on the review payload.** | `review_source_content`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/_app_common.py:483-483; mcp/src/agents_remember/serving/review.py:83-83 |
+| **The third collaborator port, with the reason it is a port rather than a field on the review payload.** | `review_source_content`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/_app_common.py:484-484; mcp/src/agents_remember/serving/review.py:83-83 |
 | **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
 | **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
-| The composition root's third review port, and the registration call that passes all three collaborators. | `review_source_content_port`; `register_review_routes` | mcp/src/agents_remember/cli/dashboard.py:120-130; mcp/src/agents_remember/serving/app.py:295-301 |
+| The composition root's third review port, and the registration call that passes all three collaborators. | `review_source_content_port`; `register_review_routes` | mcp/src/agents_remember/cli/dashboard.py:123-133; mcp/src/agents_remember/serving/app.py:295-301 |
 | **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** | `SOURCE_CONTENT_REFERENCE`; `ReviewSourceExpansion` | mcp/src/agents_remember/application/review_source_content.py:56-56; mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/src/agents_remember/models/knowledge/review_source_content.py:153-214 |
 | The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/tests/test_knowledge_review_source_content.py:641-676 |
 

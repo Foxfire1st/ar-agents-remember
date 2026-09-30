@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-30T04:01:40+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
+| lastUpdated | 2026-09-30T12:15:39+02:00 |
+| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
+| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -141,6 +141,23 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
 
+## 260928-MIK-L29 The Knowledge Reader Port
+
+`serving_collaborators` binds one more callable, `knowledge_reader_port(query)`, which returns
+`read_knowledge_reader(config, query)` (`application/knowledge_reader/__init__.py`) and is placed on the
+collaborator record as `knowledge_reader`. It is imported at function scope with the same deferred-composition
+idiom as the reviewer ports. It is **not** a reviewer port: the path-based knowledge reader (MIK-R29) needs no
+task, so it is its own port rather than a mode of the review adapter. It serves read-only views of any
+converted memory tree at `GET /api/knowledge/reader/{view}`; an unconverted tree answers `not-converted` and the
+landed routes answer byte-identically (the worker's and reviewer's unconverted comparisons). The worker's
+real-data reads and the browser walkthrough were served through this composition.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The deferred import of the reader. | "from agents_remember.application.knowledge_reader import (" | mcp/src/agents_remember/cli/dashboard.py:76-78 |
+| The reader port, bound on the collaborator record beside the reviewer ports. | "def knowledge_reader_port(query):"; "knowledge_reader=knowledge_reader_port" | mcp/src/agents_remember/cli/dashboard.py:149-162 |
+| The entry point the port calls. | `read_knowledge_reader` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:72-89 |
+
 ## 260928-MIK-L25 The Fifth Reviewer Port: The Tree View
 
 `serving_collaborators` binds a **fifth** reviewer callable, `review_trees_port(query)`, which returns
@@ -152,7 +169,7 @@ the worker's real-data captures and the dashboard fixtures were served through.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The deferred import and the fifth port bound on the collaborator record. | `read_review_trees`; `review_trees_port`; "review_trees=review_trees_port" | mcp/src/agents_remember/cli/dashboard.py:87-153 |
+| The deferred import and the fifth port bound on the collaborator record. | `read_review_trees`; `review_trees_port`; "review_trees=review_trees_port" | mcp/src/agents_remember/cli/dashboard.py:90-161 |
 
 ## 260921-ICR-L47 The Fourth Reviewer Port: The Changed-Intent Summary
 
@@ -166,7 +183,7 @@ it opens, and it reads no subject catalogue to produce them (`ICR-R24@v3`).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The deferred import and the fourth port bound on the collaborator record. | `read_review_intent_summary`; `review_intent_summary_port`; "review_intent_summary=review_intent_summary_port" | mcp/src/agents_remember/cli/dashboard.py:67-154 |
+| The deferred import and the fourth port bound on the collaborator record. | `read_review_intent_summary`; `review_intent_summary_port`; "review_intent_summary=review_intent_summary_port" | mcp/src/agents_remember/cli/dashboard.py:67-163 |
 
 ## 260921-ICR-L3 The Third Reviewer Port, And Who Chooses The Generation
 
@@ -299,9 +316,9 @@ see.
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
 | The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:266-292 |
 | The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:111-111; mcp/src/agents_remember/serving/change_watcher.py:285-378 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:190-264; mcp/src/agents_remember/cli/dashboard.py:157-187; mcp/src/agents_remember/cli/dashboard.py:317-338; mcp/src/agents_remember/cli/dashboard.py:352-376; mcp/src/agents_remember/cli/dashboard.py:379-406 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:199-273; mcp/src/agents_remember/cli/dashboard.py:166-196; mcp/src/agents_remember/cli/dashboard.py:326-347; mcp/src/agents_remember/cli/dashboard.py:361-385; mcp/src/agents_remember/cli/dashboard.py:388-415 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:257-327 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:258-329 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:53-63; mcp/src/agents_remember/serving/sim.py:139-150 |
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-156 |
 | The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:79-88 |
@@ -339,12 +356,13 @@ the base is not silently dropped by this composition.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-154; mcp/src/agents_remember/application/role_capsules/launch.py:273-294 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:157-187; mcp/src/agents_remember/cli/dashboard.py:352-376; mcp/src/agents_remember/cli/dashboard.py:67-127 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:163-163; mcp/src/agents_remember/serving/_app_common.py:442-517 |
-| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:120-130; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-482 |
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-163; mcp/src/agents_remember/application/role_capsules/launch.py:273-294 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:166-196; mcp/src/agents_remember/cli/dashboard.py:361-385; mcp/src/agents_remember/cli/dashboard.py:67-127 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:163-163; mcp/src/agents_remember/serving/_app_common.py:443-525 |
+| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:123-133; mcp/src/agents_remember/cli/dashboard.py:87-89; mcp/src/agents_remember/serving/_app_common.py:483-483 |
 
 ## Update History
+- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Port" (`knowledge_reader_port`, bound as `knowledge_reader`; a port of its own because the reader needs no task) with three rows. The installed fixer normalised five rows in this pass; three displaced rows it declined (ambiguous anchors) were re-pointed by the exact base-to-staged line shift (the `serving_collaborators` import block and the collaborator record grew by three and nine lines). No verification stamp was advanced: the source is staged and uncommitted, and closeout owns the stamp.
 - 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Added the section "260928-MIK-L25 The Fifth Reviewer Port: The Tree View" (`review_trees_port`, `read_review_trees`), with one row. Rows citing moved lines were projected by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. The umbrella's `build_parser` gained the `knowledge-index` registration (MIK-R23); the claim that it registers this subcommand was re-read and still holds, and its range was re-pointed to the function's extent `cli/__main__.py:29-92`. The fixer's generated bullet, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the composition root wires a fourth reviewer port, the changed-intent summary (`ICR-R24@v3`).** New section with the port, its import and its reason. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
