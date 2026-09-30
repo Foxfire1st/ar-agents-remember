@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/cli/knowledge_bootstrap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,10 @@ mode is its own function, `_run`: when the admitted memory root is **converted**
 `cli/knowledge_write_route.run_wave_write`, writing as the wave `--wave` names (its history file is
 `knowledge/history/<wave>.json`, MIK-R07 rule 8) with the bootstrap's own scope
 (`knowledge-bootstrap:<repo>`) as the records' task; otherwise it calls `bootstrap_knowledge` exactly as
-before. A converted run without a valid `--wave` is refused with exit 2.
+before. A converted run without a valid `--wave` is refused with exit 2. Since `260928-MIK-L13` the wave also passes
+`coordination_root=admitted.authority.coordination_root` (`:526`), so the file writer resolves every
+requirement endpoint a lifted decision links and reports it; an unresolved one never refuses the wave
+(review F4, ruling 02:05:07, proved by the bootstrap dispatch test in `test_knowledge_writer.py`).
 
 **The contents block is named for the destination, not for this run's publication** (`:361-375`). It
 reports what a read of the declared location found — its state, its revision count, its page count — and
@@ -145,13 +148,14 @@ this entry point implements, and it is a task-tree document rather than a config
 | The run payload the report is rendered from. | `_run_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:291-397 |
 | The identity record one payload renders, and the cleanup payload. | `_identity_record`; `_cleanup_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:400-407; mcp/src/agents_remember/cli/knowledge_bootstrap.py:410-416 |
 | **`run`: the invocation refusal answered first, then the one selected mode; the run mode is `_run`.** | `run`; `_dispatch` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:487-494; mcp/src/agents_remember/cli/knowledge_bootstrap.py:497-512 |
-| **The run mode: a converted admitted memory root is written by the curator file writer as a wave, with the bootstrap scope as task; anything else takes `bootstrap_knowledge` as before.** | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-537; mcp/src/agents_remember/cli/knowledge_write_route.py:168-202 |
+| **The run mode: a converted admitted memory root is written by the curator file writer as a wave, with the bootstrap scope as task; anything else takes `bootstrap_knowledge` as before.** | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538; mcp/src/agents_remember/cli/knowledge_write_route.py:179-219 |
 | The `--wave` argument, required only for converted memory. | "--wave" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:144-149 |
-| **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** | `_cleanup` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:540-547 |
+| **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** | `_cleanup` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:541-548 |
 | **The admission resolver this entry point is the public face of.** | `admit_bootstrap_context`; `BootstrapRefusal`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
 | **The run this subcommand drives, and its refusal value.** | `bootstrap_knowledge`; `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:98-104; mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244 |
 | **The bounded cleanup owner behind `--discard-staging`.** | `discard_bootstrap_staging`; `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:214-221; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
 | The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:62-70 |
+| The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4). | "coordination_root=admitted.authority.coordination_root" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:526-526 |
 
 ## Cross-Repo References
 
@@ -164,6 +168,7 @@ empty, so nothing here names, reads or writes another repository.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** The run-mode paragraph records that the converted wave passes `admitted.authority.coordination_root` to `run_wave_write`, so requirement endpoints resolve and are reported (review F4, ruling 02:05:07). One row was added. Rows below the new line were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
 - 2026-09-29T08:08:46+00:00: Generated citation repair: `EXIT_REPORTED`; `EXIT_REFUSED` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:100-100; mcp/src/agents_remember/cli/knowledge_bootstrap.py:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T08:08:46+00:00: Generated citation repair: `_invocation_refusal`; "silently picking one is how a dry run becomes a real one" repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:158-170; mcp/src/agents_remember/cli/knowledge_bootstrap.py:164-164. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.

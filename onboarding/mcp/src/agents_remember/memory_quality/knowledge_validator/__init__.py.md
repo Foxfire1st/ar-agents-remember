@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,9 +22,10 @@
 
 ### Logic
 
-- It imports only; there is no logic here. Importing `validator` (which the re-export does) imports `rules_structure` and `rules_references`, and that registers MIK-R22's 16 rules; since MIK-R04 (leaf 260928-MIK-L04) it also imports `rules_routes`, which registers MIK-R04's six family route rules; since MIK-R27 (leaf 260928-MIK-L27) it also imports `rules_admission`, which registers MIK-R27's three admission rules.
+- It imports only; there is no logic here. Importing `validator` (which the re-export does) imports `rules_structure` and `rules_references`, and that registers MIK-R22's 16 rules; since MIK-R04 (leaf 260928-MIK-L04) it also imports `rules_routes`, which registers MIK-R04's six family route rules; since MIK-R27 (leaf 260928-MIK-L27) it also imports `rules_admission`, which registers MIK-R27's three admission rules. Since MIK-R13 (leaf 260928-MIK-L13) it also imports `rules_decisions`, which registers MIK-R13's five decision content rules (four refusing, one report-only).
 - The module map names `family_routes` and `rules_routes` (MIK-R04's Coverage, Non-empty, the reported states and the mechanical suggestion), and the re-exports gain `writer_reported_rule_ids`, the IDs of the refusing rules a writer reports instead of refusing.
 - The module map names `rules_admission` (MIK-R27's admission rule: refused on a new record, reported on an existing one, and the count of records still `legacy-unassessed`). Nothing is re-exported for it: its rules reach callers through the one registry.
+- The module map names `rules_decisions` (MIK-R13's decision content rules: alternatives, `reconsider_when`, `superseded` never stored, `reconsider_on` indexes, and the governs links reported). Nothing is re-exported for it either.
 - The docstring states the scope boundary: the validator judges no meaning (Doc13). Whether a statement is true or a realization really enforces its invariant is the curator's and the reviewer's; whether an anchor's content still matches the code is currentness (MIK-R03), not validity.
 
 ### Conventions
@@ -60,9 +61,10 @@ The re-exported API and the module map.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The re-exported names, `writer_reported_rule_ids` included. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:54-74 |
-| Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. | `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:18-32 |
+| The re-exported names, `writer_reported_rule_ids` included. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:56-76 |
+| Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. | `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:19-19; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:28-28; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:34-34 |
 | The route adapter the composition binds. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80 |
+| The module map names MIK-R13's decision rules, and importing the validator registers them. | `rules_decisions` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:15-16; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:24-26 |
 
 ## Cross-Repo References
 
@@ -73,6 +75,8 @@ No meaningful cross-repo references found: the validator reads one memory tree a
 | No cross-repo boundary is crossed by this file. | — | — |
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic records the `rules_decisions` module-map entry and its registration through `validator.py` (five decision content rules). One row was added; the existing import row the fixer re-pointed was not reworded. No verification stamp was advanced.
+- 2026-09-30T01:08:26+00:00: Generated citation repair: `rules_admission`; `rules_references`; `rules_routes`; `rules_structure` repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:19-19; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:28-28; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:31-31; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the module map names MIK-R27's `rules_admission`, which `validator.py` imports for its registration.** Logic states both; the import row was reworded and re-measured (`validator.py:18-32`), and the `__all__` row re-pointed by the exact +2 shift (`:54-74`). No verification stamp was advanced.

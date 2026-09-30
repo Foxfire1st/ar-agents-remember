@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,26 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported
+
+**Route impact (MIK-R13@v2), one new module.** [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md)
+resolves a requirement endpoint of the text knowledge format (MIK-R21 rule 6's
+`{task: {repository, path}, packet, id, version}`): it locates the owning task root
+`<coordination root>/tasks/<repository>/<path>` and hands `{packet, id, version}` to
+[`knowledge/requirement_owner.py`](knowledge/requirement_owner.py.md)'s `consume_owner_resolution`, whose answer it
+carries back verbatim. **The requirement owner remains the resolver.** The module's only own answers are about the
+root: `requirement-task-plane-unavailable` (no root) and `requirement-task-outside-tasks` (a repository that is not
+one directory). An unresolved endpoint is reported, never refused; `task_root` is kept so MIK-R14 can look for a
+newer approved version in the same task. It sits next to `requirement_owner.py`, and moves with it if MIK-R26
+retires the `memory/knowledge` package (ruling 2026-09-30T01:45:56 Q8, carried to L26); L14 and L29 reuse it (Q5).
+The writer (`application/knowledge_writer/requirement_links.py`) is its only caller today. Nothing else on this
+route changed.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The resolver: no root, a root outside tasks, or the owner's answer. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:71-107 |
+| The owner the packet question is handed to. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:93-98 |
 
 ## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
 
@@ -1301,7 +1321,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:275-275 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:276-276 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1601,6 +1621,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported" at the top: the new `knowledge/requirement_endpoint.py`, the owner as resolver, its two root answers, and rulings Q5 and Q8. Two rows. No verification stamp was advanced.
+- 2026-09-30T01:07:32+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:276-276. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims" at the top, with one row (`with_proofs`, rulings Q3 and N6); the default wording is unchanged. The other rows were projected or normalised by the installed fixer.
 - 2026-09-29T23:57:40+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:275-275. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T20:01:17+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:272-272. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.

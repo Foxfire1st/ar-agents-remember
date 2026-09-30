@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/knowledge_files/records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,10 @@ models refuse the fields that would give it a second owner.
   family or decisions; those live in sidecars, family `members` and decision `links`.
 - Only invariant, family and decision records carry `admission` (a criterion set or
   `legacy-unassessed`). What a criterion means, and decision content rules (alternatives, when
-  `reconsider_when` is required), belong to MIK-R27 and MIK-R13.
+  `reconsider_when` is required), belong to MIK-R27 and MIK-R13: MIK-R13's content rules are the pure functions
+  of `models/knowledge_files/decisions.py` (at least two alternatives and exactly one chosen, `reconsider_when` on
+  every rejected or deferred alternative, `reconsider_on` indexes, the derived `superseded`), which the validator
+  refuses on through `rules_decisions.py` (leaf 260928-MIK-L13).
 - A record is never deleted; it leaves use through `status: retired` (or supersession for decisions).
 
 ### Todos
@@ -103,5 +106,6 @@ repository layout it declares, and calls no sibling repository or external servi
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated: a forward reference resolved.** The Invariants bullet that left the decision content rules to MIK-R13 now names where they live (`models/knowledge_files/decisions.py`, refused through `rules_decisions.py`). This card's source is unchanged; no row moved. No verification stamp was advanced.
 - 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — `FamilyRecord.routes` accepts the root route `.` through `RoutePath` (MIK-R04 ruling Q3).** The Logic bullet is reworded; two rows added. `records` now imports `sidecars`, with no cycle. The other rows were re-pointed by the exact one-line shift, their claims unchanged. No verification stamp was advanced.
 - 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

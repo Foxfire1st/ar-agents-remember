@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -394,10 +394,30 @@ ID through `knowledge_files/ids.py`'s `derived_record_id` (ruling 23:04:57 F2), 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response kinds a token pages, and the public queue cap. | `PagedResponse`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/models/knowledge/continuation.py:70-72 |
+| The response kinds a token pages, and the public queue cap. | `PagedResponse`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/models/knowledge/continuation.py:70-70; mcp/src/agents_remember/models/knowledge/continuation.py:72-72 |
 | The optional `families` field on the read response. | `KnowledgeReadResponse`; `families` | mcp/src/agents_remember/models/tools/knowledge_responses.py:72-96 |
 
+## 260928-MIK-L13 The Decision Content Rules And Their Derived Reads
+
+**Route impact (MIK-R13@v2), one new module.** [`knowledge_files/decisions.py`](knowledge_files/decisions.py.md)
+holds MIK-R13's content rules for `records.DecisionRecord` as pure functions over one record, so the validator
+(`memory_quality/knowledge_validator/rules_decisions.py`) and every reader apply one reading: at least two
+alternatives and exactly one chosen, `reconsider_when` on every rejected or deferred alternative (the prose is never
+evaluated), and `reconsider_on` indexes that name an existing rejected or deferred alternative in the authored
+order. It also derives what is never stored: `superseded_by` and `derived_status` (a decision is `superseded` when a
+later decision's `supersedes` names it; `DecisionStatus` cannot spell it), `governs_links` and `reconsider_links`
+(MIK-R14's subject `reconsider:<DEC-ID>#<i>`). The reads are for L29 (packet rule 6, ruling 2026-09-30T01:45:56
+Q4) and L14 (Q6: index stability when alternatives are reordered). The record shape is unchanged.
+[`knowledge_files/records.py`](knowledge_files/records.py.md)'s card now points to the module.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| At least two alternatives, exactly one chosen. | `alternative_problems` | mcp/src/agents_remember/models/knowledge_files/decisions.py:71-93 |
+| Superseded is derived from later decisions' `supersedes`. | `superseded_by`; `derived_status` | mcp/src/agents_remember/models/knowledge_files/decisions.py:170-177; mcp/src/agents_remember/models/knowledge_files/decisions.py:180-185 |
+| The reconsider links and MIK-R14's subject. | `ReconsiderLink`; `reconsider_links` | mcp/src/agents_remember/models/knowledge_files/decisions.py:53-68; mcp/src/agents_remember/models/knowledge_files/decisions.py:156-167 |
+
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules And Their Derived Reads" after L01's: the new `knowledge_files/decisions.py`, the derived `superseded`, and rulings Q4 and Q6. Three rows. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The `leaf` Response Kind, The Public Queue Cap, And The Optional `families`" after L27's, with two rows (the `leaf` kind and `MAX_QUEUED_SEEDS`, ruling 23:21:57; the `families` field, rule 7), and noted in L02's section that the 64-seed edge is resolved as `seed_queue_exceeded`. The other rows were projected by the installed fixer.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Criteria's Meanings" (the `shapes.py` docstring change, no model change; rulings Q3 and F2), with two rows. No verification stamp was advanced.
 - 2026-09-29T21:49:06+00:00: Generated citation repair: `HistoryFile` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:381-425. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.

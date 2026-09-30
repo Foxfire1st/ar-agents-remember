@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `mcp/overview.md` |
 
 ## Governing Overview
@@ -136,6 +136,20 @@ gives two admitted, two refused and one local example, as packet rule 5 requires
 rewrapped to 100 columns (F5), while the table rows cannot wrap. The section reaches the package copy
 and the eight harness starter copies through `sync-skills.py`. It binds converted memory only, so
 today's hand-off lists are unchanged.
+Since leaf `260928-MIK-L13` (MIK-R13) the template has a section, **"Decision records (MIK-R13)"**, after the
+admission section. A decision record keeps a choice that **keeps governing code** with the alternatives weighed, as
+a `records` item of `kind: decision`: `context`; at least two `alternatives` in a fixed order, **exactly one**
+`chosen`, and a `reconsider_when` on every `rejected` or `deferred` one (prose nothing evaluates); `consequences`,
+`decider`, `supersedes` and `admission`; `status` starting `active`, with `superseded` **never stored** (derived from
+a later decision's `supersedes`). Its `links` name what it governs (`explains`, `constrains`,
+`motivated_change_to`; a decision with none is reported) and `reconsider_on` targets, each with the index of a
+rejected or deferred alternative. A requirement target `{task: {repository, path}, packet, id, version}` is
+resolved by the requirement owner and reported in `requirementEndpoints` as `resolved` or `unresolved`, never
+refused. The ruling travels in the attached entry's `evidence` (`origin.handoff`; ruling 2026-09-30T01:45:56 Q1).
+The section lists the validator's refusals, says how to **lift decisions at closeout** (developer rulings and
+requirement-packet choices between real designs that keep governing code, with only the alternatives actually
+weighed; task-only decisions stay in the task; the curator records and links, never reverses) and gives D18 as the
+example. It binds converted memory only, so today's hand-off lists are unchanged.
 
 ### Conventions
 
@@ -176,6 +190,7 @@ These references name the current owners and the behavior they establish.
 | The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed. | "An onboarding row (MIK-R30, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
 | The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. | "A planned row (MIK-R11, converted memory only)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
 | The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. | `## The admission rule (MIK-R27)`; "most knowledge is local and stays prose" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:605-657 |
+| The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example. | `## Decision records (MIK-R13)`; "keeps governing code" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:658-717 |
 
 ## Cross-Repo References
 
@@ -186,6 +201,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** A Logic paragraph records the new section "Decision records (MIK-R13)" (fields, links, requirement endpoints, refusals, lifting at closeout, the D18 example; ruling 01:45:56 Q1 on where the ruling travels), and one row cites it. The section was appended after line 657, so no existing row moved. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the template gains the section "The admission rule (MIK-R27)".** A Logic paragraph states it with rulings Q2, F1, F2 and F5, and one row cites it (`:605-656`). The section is appended after line 604, so no existing row moved. No verification stamp was advanced.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body update — the MIK-R11 planned-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject `planned:<declared subject>#<effect>`, the three dispositions and their refs, the task owner resolving a `dropped` decision), and one row citing it. The eleven inserted lines moved the MIK-R12 row's section extent and its `every other commit route` anchor; that row was re-pointed by the exact +11 line shift. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body update — the MIK-R30 onboarding-row bullet.** Added a Logic paragraph for the new bullet in the writer section's history-row list (subject forms, `no_impact` only, no row needed after a counted change) with architect ruling 2026-09-29T18:49:50 (1), and one row citing it. The six inserted lines moved the MIK-R12 row's `every other commit route` anchor; that row was re-pointed by the exact base-to-working line map. No verification stamp was advanced.

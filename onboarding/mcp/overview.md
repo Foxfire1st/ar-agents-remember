@@ -5,14 +5,67 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
+
+`260928-MIK-L13` (MIK-R13@v2) adds the content rules for decision records (`ar-decision/v1`, whose shape is
+MIK-R21's), the requirement-endpoint resolution the writer reports, and the curator guidance for lifting decisions
+at closeout. A decision keeps the chosen alternative and the rejected or deferred ones with their reasons and
+`reconsider_when`; its `links` name what it governs and, per alternative index, what should reopen it.
+
+- **Where:**
+  - `models/knowledge_files/decisions.py` (new): the pure content rules and the derived reads
+    (`governs_links`, `reconsider_links` with MIK-R14's subject `reconsider:<DEC-ID>#<i>`, `superseded_by`,
+    `derived_status`).
+  - `memory_quality/knowledge_validator/rules_decisions.py` (new): five rules, `R13.1-alternatives`,
+    `R13.1-reconsider-when`, `R13.2-superseded-derived` and `R13.3-reconsider-on` refusing, `R13.3-governs`
+    report-only; imported by `validator.py` and named in the package docstring.
+  - `memory/knowledge/requirement_endpoint.py` (new): locates `<coordination root>/tasks/<repository>/<path>` and
+    asks the requirement owner (`consume_owner_resolution`); its only own answers are two root codes.
+  - `application/knowledge_writer/requirement_links.py` (new), `writer.py` (`WriteRequest.coordination_root`) and
+    `report.py` (`EndpointOutcome`, `requirementEndpoints`, `_endpoint_line`).
+  - `cli/knowledge_write_route.py` and `cli/knowledge_bootstrap.py` pass the coordination root (the leaf's
+    contract, the wave's admitted authority).
+  - `rules_admission.py` (L27's): `_exported` is `False` for every decision (review F6).
+  - Skills: the hand-off template's "Decision records (MIK-R13)" section and `roles/curator.md` step 3, synced to
+    all copies.
+- **Architect rulings.** 2026-09-30T01:45:56: Q1 `origin.task` plus the ruling named in the attached entry's
+  evidence satisfies "origin names the task or ruling", and the `knowledge-bootstrap:<repo>` origin is valid wave
+  provenance; Q2 `R13.3-governs` is report-only and a `reconsider_on` link to the chosen alternative is refused;
+  Q3 the content rules apply to every decision, new or carried (the conversion exports none); Q4 packet rule 6
+  (reads) is carried to L29; Q5 and Q6 are carried to L14 (reuse `resolve_requirement_endpoint`; guard
+  `reconsider_on` index stability when alternatives are reordered); Q7 accepted; Q8 carried to L26 (the resolver
+  moves with `requirement_owner.py` if `memory/knowledge` is retired). 2026-09-30T02:05:07 (review R1): F3 the
+  render helper `_endpoint_line`, so `WriteReport.render` keeps its base complexity; F4 the bootstrap-wave test
+  asserts a resolved endpoint through the admitted coordination root; F6 a decision is never an export for
+  admission; F1 and F2 stay with L14 and L29; F5 accepted; F7 resolved by the sync onto L06.
+- **Candidate invariants (not ingested):** (1) a decision has at least two alternatives and exactly one chosen; (2) every rejected or deferred alternative
+  says when to reconsider; (3) superseded is derived, never stored; (4) an unresolved requirement endpoint is
+  reported, never refused; (5) a decision is never treated as an export for admission.
+- **Inert before MIK-R37:** the validator runs only over converted trees, the conversion writes no
+  `knowledge/decisions/` directory, and the writer's new field defaults to `None`. Base and leaf builds gave
+  byte-identical `knowledge-validate` reports on a freshly converted scratch copy of the real memory, and the same
+  "unconverted" line on the unconverted leaf memory. On real data (scratch only), D12 and D18 were lifted as
+  decision records with 0 refusals, both requirement endpoints resolved against the real task, and a rerun wrote
+  nothing.
+- **Tests:** the new `test_knowledge_decisions.py` (9 cases, one `unit-regression` lane row at `:121`) and two new
+  cases plus the adapted bootstrap dispatch case in `test_knowledge_writer.py`. No catalog row or re-pin.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The content rules and derived reads. | "MIK-R13's content rules for decision records, and the reads they make possible." | mcp/src/agents_remember/models/knowledge_files/decisions.py:1-25 |
+| The five registered decision rules. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-147 |
+| The owner resolves each requirement endpoint; unresolved is reported. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:71-107 |
+| The writer reports each endpoint of the records the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/requirement_links.py:24-53 |
+| A decision is never an export. | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, Inert Until The Cutover
 
@@ -140,8 +193,8 @@ meets no criterion stays prose.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The admission rule's module statement. | "MIK-R27's admission rules in the validator's registry (MIK-R22 rule 9)." | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:1-37 |
-| The three registered rules. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
-| The export test. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187 |
+| The three registered rules. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:307-328 |
+| The export test. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:180-192 |
 
 ## 260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover
 
@@ -423,9 +476,9 @@ route, because `cli/` has no overview of its own:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The ingest dispatch on the loaded contract's memory worktree. | `run`; `run_leaf_write` | mcp/src/agents_remember/cli/knowledge_ingest.py:673-709 |
-| The bootstrap run mode's dispatch on the admitted memory root. | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-537 |
+| The bootstrap run mode's dispatch on the admitted memory root. | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538 |
 | The layout-marker test both commands use. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:55-58 |
-| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59 |
+| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:56-60 |
 
 ## 260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`
 
@@ -684,6 +737,8 @@ Git family's cases live in `test_master_net_generation.py` over an eight-name fi
 backslash on each side.
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover" at the top: the whole leaf, the rulings of 01:45:56 (Q1–Q8) and 02:05:07 (F1–F7), the five candidate invariants, the real-data evidence and the tests. Five rows. No verification stamp was advanced.
+- 2026-09-30T01:07:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Family-Complete Leaf Read, Inert Until The Cutover" at the top: where it lives, the five carried obligations, every ruling of 2026-09-29T23:21:57 and 2026-09-30T00:08:39, the five candidate invariants, the preservation and real-data evidence, the tests, and three rows. L02's paging-statement row was re-measured (`1-27` → `1-30`). The other rows were projected or normalised by the installed fixer.
 - 2026-09-29T23:55:07+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:55:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
@@ -977,7 +1032,7 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 | The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:122-154 |
 | The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:170-170 |
 | **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
+| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:128-128 |
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -2759,7 +2814,7 @@ its own positive control.
 | The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
 | The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
 | The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2022 |
+| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2039 |
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms

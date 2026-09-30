@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_knowledge_writer.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 **MIK-R12: the curator writer creates and updates every knowledge kind as validated files.** Registered
-in the `unit-regression` lane; 18 collected cases, each over real Git repositories.
+in the `unit-regression` lane; 20 collected cases, each over real Git repositories.
 
 ## Code Commentary
 
@@ -52,6 +52,21 @@ in the `unit-regression` lane; 18 collected cases, each over real Git repositori
   `onboarding/pkg/moved/landing.py.json` with its role kept, its `blob` the moved file's blob at C and its
   content unchanged; the row's `before` and `after` name the old and new paths and validate as `moved`; a
   rerun is byte-identical.
+- **MIK-R13 decision records** (leaf 260928-MIK-L13). `_requirement_packet` writes MIK-R04@v2 under the world's
+  coordination root (`tasks/agents-remember/260928_family/…`); `_lifted_d12` lifts D12 as a `records` item with a
+  `constrains` and a `reconsider_on` link (alternative 1) to the base invariant and two `motivated_change_to` links to
+  MIK-R04, at v2 and v9.
+  - `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported`: `knowledge-ingest --commit`
+    writes the decision with its `reconsider_when`; `requirementEndpoints` is `links.2` `resolved` and `links.3`
+    `unresolved` (`task-intent-requirement-packet-version-mismatch`); no R13 violation; a rerun is `unchanged` and
+    byte-identical.
+  - `test_a_decision_that_breaks_a_content_rule_is_refused_and_nothing_is_written`: a deferred alternative without
+    `reconsider_when` is refused by exactly `R13.1-reconsider-when` with the tree unchanged, and the endpoint is still
+    reported `unresolved` (no coordination root on the direct API).
+  - **The bootstrap dispatch test also proves the wave passes the root** (review F4, ruling 02:05:07): its hand-off is
+    now an object with the entry and the lifted D12, the fake `admitted` carries `authority.coordination_root`, and it
+    asserts `[("links.2", "resolved"), ("links.3", "unresolved")]`. The file writer's bare-list branch stays covered
+    by `_write(world, [proven])`.
 
 ### Conventions
 
@@ -89,10 +104,14 @@ The cases.
 | Unresolvable evidence reported and kept. | `test_evidence_that_names_no_resolvable_test_is_reported_and_kept` | mcp/tests/test_knowledge_writer.py:298-323 |
 | A bootstrap of converted memory writes as a wave. | `test_a_bootstrap_of_converted_memory_writes_as_a_wave` | mcp/tests/test_knowledge_writer.py:464-492 |
 | A rerun that changes a locator removes this leaf's old entry only. | `test_a_rerun_that_changes_a_locator_removes_this_leafs_old_entry` | mcp/tests/test_knowledge_writer.py:560-580 |
-| The bootstrap command dispatch. | `test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer` | mcp/tests/test_knowledge_writer.py:583-602 |
-| MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:659-675 |
-| Route rules: report in the writer, refusal at commit. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:618-656 |
-| MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused. | `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` | mcp/tests/test_knowledge_writer.py:678-749 |
+| The bootstrap command dispatch. | `test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer` | mcp/tests/test_knowledge_writer.py:583-606 |
+| MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:663-679 |
+| Route rules: report in the writer, refusal at commit. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:622-660 |
+| MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused. | `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` | mcp/tests/test_knowledge_writer.py:682-753 |
+| The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. | `_requirement_packet`; `_lifted_d12` | mcp/tests/test_knowledge_writer.py:764-769; mcp/tests/test_knowledge_writer.py:772-784 |
+| A lifted decision round-trips; its endpoints are reported, resolved and unresolved. | `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported` | mcp/tests/test_knowledge_writer.py:787-813 |
+| A content-rule break refuses the write and writes nothing. | `test_a_decision_that_breaks_a_content_rule_is_refused_and_nothing_is_written` | mcp/tests/test_knowledge_writer.py:816-830 |
+| The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4). | "The wave resolves requirement endpoints through the admitted coordination root" | mcp/tests/test_knowledge_writer.py:603-606 |
 
 ## Cross-Repo References
 
@@ -106,6 +125,7 @@ worktree of one repository.
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Purpose now counts 20 cases. A Logic bullet records `_requirement_packet`, `_lifted_d12`, the two new decision cases and the bootstrap dispatch test's new endpoint assertion (review F4, ruling 02:05:07); four rows were added. The existing bootstrap-dispatch row was re-pointed by the installed fixer and not reworded. No verification stamp was advanced.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Purpose now counts 18 cases; a Logic bullet and one row record the moved-row relocation test and its four refusals (ruling Q6; review F1 and N7). The test was appended after L27's (the sync kept both), so no existing row moved. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — one MIK-R27 case (17 collected) and the meaning-change case's origin now carries the base record's `legacyId`.** Purpose, two Logic bullets and one row; the later rows re-pointed by the exact +4 shift. No verification stamp was advanced.
 - 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

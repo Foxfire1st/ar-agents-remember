@@ -5,9 +5,22 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+
+## The curator lifts the decisions that keep governing code (260928-MIK-L13)
+
+[`curator.md`](curator.md.md), Process step 3, gains four lines for MIK-R13 rule 5: on converted memory, the
+curator turns each developer ruling and requirement-packet choice that still constrains code into a decision record
+with the alternatives it weighed, and leaves decisions that matter only within the task in the task. The step
+points to the hand-off template's "Decision records (MIK-R13)" section for the fields and the rules. Lifting is
+guidance; nothing enforces it mechanically, and the decision authority stays with the developer. No other role
+changed; the package copy and the eight harness starter copies are synced by `sync-skills.py`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifting pointer in step 3. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## The reviewer checks a leaf's declared knowledge effects (260928-MIK-L11)
 
@@ -30,7 +43,7 @@ The curator role requires explicit stored membership IDs and authored bases when
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curator process carries exact retained-sibling authoring and readback. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-159 |
+| The curator process carries exact retained-sibling authoring and readback. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-163 |
 
 ## Curator authors a rationale for every realization target (260921-ICR-L45)
 
@@ -146,8 +159,8 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:81-81 |
-| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:191-191; skills/l-01-agent-lifecycles/roles/curator.md:208-208 |
-| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:168-169 |
+| The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. | "ordinary knowledge authoring route"; "Never write the knowledge dataset yourself." | skills/l-01-agent-lifecycles/roles/curator.md:195-195; skills/l-01-agent-lifecycles/roles/curator.md:212-212 |
+| The report sentence that carries the published identity into the handoff. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/roles/curator.md:172-173 |
 | The operation block the same obligation landed in, which is the procedure this role file composes. | "Route the durable knowledge through the real writer, and publish it." | skills/l-01-agent-lifecycles/operations/curation.md:60-71 |
 
 ## Purpose
@@ -308,7 +321,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-159; skills/l-01-agent-lifecycles/roles/curator.md:186-203; skills/l-01-agent-lifecycles/roles/curator.md:204-218 |
+| The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. | `## Process`; `## What you may do`; `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:59-163; skills/l-01-agent-lifecycles/roles/curator.md:190-207; skills/l-01-agent-lifecycles/roles/curator.md:208-222 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Manager"; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Worker"; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:1-33; skills/l-01-agent-lifecycles/roles/worker.md:72-83 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -437,6 +450,8 @@ leaves are not re-curated, and whole-layer completeness is discharged by L11's f
 frozen tip.
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "The curator lifts the decisions that keep governing code (260928-MIK-L13)" at the top: the role's four new step-3 lines. One row. Rows below the insertion were re-pointed by the installed fixer or, where it declined, by the exact +4 shift. No verification stamp was advanced.
+- 2026-09-30T01:05:55+00:00: Generated citation repair: "knowledge hand-off result"; "published dataset identity" repointed to skills/l-01-agent-lifecycles/roles/curator.md:172-172; skills/l-01-agent-lifecycles/roles/curator.md:173-173. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The reviewer checks a leaf's declared knowledge effects (260928-MIK-L11)" at the top (step 7's new line, architect ruling 2026-09-29T21:56:18 Q3). Rows citing `reviewer.md` below the three inserted lines were re-pointed by the installed fixer or the exact +3 line shift. No verification stamp was advanced.
 - 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the section for Process step 3's per-target realization rationale duty. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 

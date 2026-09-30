@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -43,6 +43,11 @@ sync, `knowledge-validate`) runs them.
   `derived_record_id(kind, origin.legacyId)` equals the record's ID: the conversion's own derivation
   from `models/knowledge_files/ids.py`, not a copy of it. A hand-written `legacyId` that does not derive
   the ID does not make a record exported, so such a record is judged for admission like any new one.
+- **A decision is never an export** (L13 review F6, ruling 02:05:07). `_exported` returns `False` for any
+  `DecisionRecord` before it looks at `legacyId`: the conversion exports no decisions (MIK-R24), so a
+  `legacyId` on a decision exempts it from nothing, even one chosen so that
+  `derived_record_id("decision", legacyId)` equals the decision's ID. A new decision marked `legacy-unassessed`
+  is therefore refused by `R27.2-new-record` like any other new record.
 - **Retired records are exempt** from both admission rules (`_retired`; decisions cannot be retired).
 - **Refused on a new record** (`check_new_record_admission`):
   - `legacy-unassessed`, which only the export writes (field `admission`);
@@ -105,6 +110,10 @@ sync, `knowledge-validate`) runs them.
   `test_exported_retired_and_merged_records_are_never_refused`.
 - **A record counts as exported only when its ID is the one the converter derives from its
   `legacyId`.** Realized by `_exported`; proved by `test_a_forged_legacy_id_does_not_make_a_record_exported`.
+- **A decision is never treated as an export for admission.** Realized by the `DecisionRecord` guard in
+  `_exported`; proved by `test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing`
+  (`test_knowledge_decisions.py`), which fails with the guard removed, and by the L13 reviewer's hand-forged
+  decision on a converted clone (refused by the L13 build, not by the base build).
 - **Retired records are exempt.** Realized by `_retired`; proved by the retired block of
   `test_exported_retired_and_merged_records_are_never_refused`.
 - **Nothing is refused until records are authored on a converted line.** The validator runs only
@@ -156,24 +165,26 @@ The detector, novelty, the entry facts, the three rules and their proofs.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reference forms the detector recognises, D-IDs, commit hashes and ISO dates included. | `_REFERENCE` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:96-109 |
-| A master code before a leaf or requirement ID is joined into one reference; the provenance filler words. | `_MASTER_PREFIXED`; `_FILLER_WORDS` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:111-111; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:115-123 |
-| A justification is reference-only when every token is filler, a number or a reference, and one is a reference. | `_only_references` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:127-137 |
-| The base record IDs come from the bases' record filenames. | `_base_record_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:155-166 |
-| A record is new when no base holds its ID and it is not an export. | `_admitted_records` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:169-176 |
-| An export is a record whose legacy ID derives its ID; retired records are exempt. | `_exported`; `_retired` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:179-187; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:190-191 |
-| The checkable facts come from the tree's sidecar realization and proof entries. | `_entry_facts` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:202-216 |
-| An unsupported spans_locations or guarded_by_test claim. | `_unsupported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:219-239 |
-| A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim. | `check_new_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:242-268 |
-| Every other record's unsupported claim is only reported. | `check_existing_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:271-282 |
-| The live legacy-unassessed records are counted in one finding. | `check_legacy_unassessed` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:285-299 |
-| The three rules, one refusing and two report-only, none writer-reported, registered on import. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:302-323 |
+| The reference forms the detector recognises, D-IDs, commit hashes and ISO dates included. | `_REFERENCE` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:97-110 |
+| A master code before a leaf or requirement ID is joined into one reference; the provenance filler words. | `_MASTER_PREFIXED`; `_FILLER_WORDS` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:112-112; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:116-124 |
+| A justification is reference-only when every token is filler, a number or a reference, and one is a reference. | `_only_references` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:128-138 |
+| The base record IDs come from the bases' record filenames. | `_base_record_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:156-167 |
+| A record is new when no base holds its ID and it is not an export. | `_admitted_records` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:170-177 |
+| An export is a record whose legacy ID derives its ID; retired records are exempt. | `_exported`; `_retired` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:180-192; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:195-196 |
+| The checkable facts come from the tree's sidecar realization and proof entries. | `_entry_facts` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:207-221 |
+| An unsupported spans_locations or guarded_by_test claim. | `_unsupported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:224-244 |
+| A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim. | `check_new_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:247-273 |
+| Every other record's unsupported claim is only reported. | `check_existing_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:276-287 |
+| The live legacy-unassessed records are counted in one finding. | `check_legacy_unassessed` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:290-304 |
+| The three rules, one refusing and two report-only, none writer-reported, registered on import. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:307-328 |
 | The derivation the conversion writes and the export test reuses. | `derived_record_id` | mcp/src/agents_remember/models/knowledge_files/ids.py:121-126 |
 | Reference-only justifications are refused, and real prose is admitted. | `test_a_new_record_whose_justification_is_only_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:656-717 |
 | An unsupported checkable criterion on a new record is refused, naming it. | `test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it` | mcp/tests/test_knowledge_validator.py:741-750 |
 | An existing record whose test was deleted is only reported. | `test_an_existing_record_whose_test_was_deleted_is_only_reported` | mcp/tests/test_knowledge_validator.py:753-762 |
 | A forged legacy ID does not make a record exported. | `test_a_forged_legacy_id_does_not_make_a_record_exported` | mcp/tests/test_knowledge_validator.py:787-802 |
-| The writer refuses a new invariant whose claim the tree does not support, and writes nothing. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:659-675 |
+| The writer refuses a new invariant whose claim the tree does not support, and writes nothing. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:663-679 |
+| A decision is never an export, so a legacy ID exempts it from nothing (L13 review F6). | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
+| A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new. | `test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing` | mcp/tests/test_knowledge_decisions.py:314-325 |
 
 ## Cross-Repo References
 
@@ -186,5 +197,6 @@ No meaningful cross-repo references found: the rules read the validation context
 ## Update History
 
 <!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for the L13 review F6 hardening (ruling 02:05:07).** Logic and Invariants record that `_exported` returns `False` for every `DecisionRecord` (the conversion exports no decisions), and two rows cite the guard and its test in `test_knowledge_decisions.py`. The rows below the module docstring were re-pointed by the exact base-to-staged line shift; the fixer had declined them. No claim was reworded. No verification stamp was advanced.
 - 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated.** The Todo on the L06 sync is marked resolved: L06 landed second and its cases filter the validator's reports by rule, so no pin needed the legacy count (ruling Q4). This card's source is unchanged; no row moved. No verification stamp was advanced.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): created this card for the new file MIK-R27 adds, recording rulings 22:11:24 Q1, Q2, Q3, Q5, Q6 and 23:04:57 F1, F2. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.

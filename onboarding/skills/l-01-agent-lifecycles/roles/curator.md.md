@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
+| lastUpdated | 2026-09-30T03:13:03+02:00 |
+| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
+| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,11 @@ Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure ev
 its own authored `rationale` (why that place carries the obligation, specific to the construct it names,
 optional `role`) before ingest, writing it from the evidence where the producer gave none; the writer
 never generates one and refuses an unexplained target with `realization_rationale_absent`.
+Since leaf `260928-MIK-L13` (MIK-R13), Process step 3 ends with **"Lift the decisions that keep governing code."**
+On converted memory the curator turns each developer ruling and requirement-packet choice that still constrains
+code into a decision record with the alternatives it weighed; decisions that matter only within the task stay in
+the task. The step points to the hand-off template's "Decision records (MIK-R13)" section for the fields and rules.
+Lifting is guidance only; nothing enforces it mechanically.
 
 ### Conventions
 
@@ -65,9 +70,10 @@ These references name the current owners and the behavior they establish.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Required task, source, handoff and publication inputs. | `## Inputs` | skills/l-01-agent-lifecycles/roles/curator.md:11-58 |
-| Three-way reconciliation, explicit retention, writer/readback and full quality duties. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-159 |
-| The curator’s prohibited writes and source-stamp boundary. | `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:204-218 |
+| Three-way reconciliation, explicit retention, writer/readback and full quality duties. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-163 |
+| The curator’s prohibited writes and source-stamp boundary. | `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:208-222 |
 | Process step 3 requires an authored rationale on every hand-off target before ingest. | "every target carries its own authored" | skills/l-01-agent-lifecycles/roles/curator.md:70-76 |
+| Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13). | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
 
 ## Cross-Repo References
 
@@ -78,6 +84,7 @@ No sibling repository defines this file's contract.
 | No meaningful cross-repository implementation dependency. | — | — |
 
 ## Update History
+- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** A Logic paragraph records Process step 3's new four lines (lift the decisions that keep governing code, on converted memory, pointing to the template's decision-record section), and one row cites them. Ranges below the insertion were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
 - 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic records Process step 3's new duty (every target carries an authored rationale before ingest; the writer generates none); new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
 
 - 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
