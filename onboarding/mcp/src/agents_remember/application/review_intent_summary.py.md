@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_intent_summary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:21+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,7 @@ head rule; the fixture tests pin every count class.
 | --- | --- | --- |
 | The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`. | `read_review_intent_summary`; `resolve_review_candidate` | mcp/src/agents_remember/application/review_intent_summary.py:122-134 |
 | One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved. | `intent_summary_of`; `pair_preflight_refusal`; `unreadable_candidate_refusal` | mcp/src/agents_remember/application/review_intent_summary.py:137-167 |
-| The compared fields, including the record status that makes a record-only successor count. | `_STATEMENT_FIELDS`; `_GUARANTEE_FIELDS` | mcp/src/agents_remember/application/review_intent_summary.py:76-85 |
+| The compared fields, including the record status that makes a record-only successor count. | `_STATEMENT_FIELDS`; `_GUARANTEE_FIELDS` | mcp/src/agents_remember/application/review_intent_summary.py:76-83; mcp/src/agents_remember/application/review_intent_summary.py:85-85 |
 | The classification: unresolved, after-only, before-only, relationship-only, or a counted successor. | `_classify`; "tally.attached_only"; "tally.after_only" | mcp/src/agents_remember/application/review_intent_summary.py:339-369 |
 | Several heads, or a population with none, is not one head. | `_no_single_head` | mcp/src/agents_remember/application/review_intent_summary.py:372-375 |
 | Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership. | `_family_side`; "invariant_of.get(invariant_revision, invariant_revision)" | mcp/src/agents_remember/application/review_intent_summary.py:274-304 |
@@ -117,7 +117,7 @@ head rule; the fixture tests pin every count class.
 | A revised member shared by two families counts once on each side. | `test_a_revised_statement_two_families_share_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:319-338 |
 | A status-only or version-only successor counts once on each side (L47-R1-F3). | `test_a_record_only_successor_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:341-380 |
 | Divergent heads make the answer `partial`; absent knowledge is `unavailable` with no counts. | `test_an_identity_without_one_head_makes_the_summary_partial`; `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` | mcp/tests/test_review_intent_summary.py:383-403; mcp/tests/test_review_intent_summary.py:406-418 |
-| The composition root wires this read as the fourth review port. | `review_intent_summary_port`; `read_review_intent_summary` | mcp/src/agents_remember/cli/dashboard.py:129-136 |
+| The composition root wires this read as the fourth review port. | `review_intent_summary_port`; `read_review_intent_summary` | mcp/src/agents_remember/cli/dashboard.py:132-139 |
 
 ## Cross-Repo References
 
@@ -129,6 +129,7 @@ snapshots.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-28T17:30:17+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): two rows re-anchored after the full memory-quality run reopened them: the attribute and parameter references (`attached_only`, `after_only`, `invariant_of`) are now named as the literal text the cited ranges hold ("tally.attached_only", "tally.after_only", "invariant_of.get(...)") instead of as symbols, because they are uses inside `_classify`/`_family_side`, not declarations. Claim wording unchanged.
 
 - 2026-09-28T16:55:21+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`; delivery attempt L47-A3, review R2 pass-with-notes): created this card for the new changed-intent summary owner (`ICR-R24@v3`). It records the master's count semantics as the code implements them after the F3 ruling: record-only successors count; only same-content relationship changes are typed apart. The verification pair names the code base, because the file exists only in the uncommitted candidate; closeout owns the real stamp.

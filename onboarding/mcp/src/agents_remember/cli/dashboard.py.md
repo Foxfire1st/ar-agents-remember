@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-28T17:13:48+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -141,6 +141,19 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
 
+## 260928-MIK-L25 The Fifth Reviewer Port: The Tree View
+
+`serving_collaborators` binds a **fifth** reviewer callable, `review_trees_port(query)`, which returns
+`read_review_trees(config, query)` (`application/review_tree_knowledge.py`) and is placed on the collaborator record
+as `review_trees`. It is imported at function scope with the same deferred-composition idiom as its siblings. It
+answers, for a leaf whose memory is converted, what the dataset review cannot: the four Git trees, the Git diff of
+the memory trees, the per-side currentness and the worklist view (MIK-R25 rules 1–3). The same composition is what
+the worker's real-data captures and the dashboard fixtures were served through.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The deferred import and the fifth port bound on the collaborator record. | `read_review_trees`; `review_trees_port`; "review_trees=review_trees_port" | mcp/src/agents_remember/cli/dashboard.py:87-153 |
+
 ## 260921-ICR-L47 The Fourth Reviewer Port: The Changed-Intent Summary
 
 `serving_collaborators` binds a **fourth** reviewer callable, `review_intent_summary_port(repository_id,
@@ -153,7 +166,7 @@ it opens, and it reads no subject catalogue to produce them (`ICR-R24@v3`).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The deferred import and the fourth port bound on the collaborator record. | `read_review_intent_summary`; `review_intent_summary_port`; "review_intent_summary=review_intent_summary_port" | mcp/src/agents_remember/cli/dashboard.py:67-145 |
+| The deferred import and the fourth port bound on the collaborator record. | `read_review_intent_summary`; `review_intent_summary_port`; "review_intent_summary=review_intent_summary_port" | mcp/src/agents_remember/cli/dashboard.py:67-154 |
 
 ## 260921-ICR-L3 The Third Reviewer Port, And Who Chooses The Generation
 
@@ -282,13 +295,13 @@ see.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:29-92 |
+| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:36-123 |
 | The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
 | The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:266-292 |
 | The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:111-111; mcp/src/agents_remember/serving/change_watcher.py:285-378 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:181-255; mcp/src/agents_remember/cli/dashboard.py:148-178; mcp/src/agents_remember/cli/dashboard.py:308-329; mcp/src/agents_remember/cli/dashboard.py:343-367; mcp/src/agents_remember/cli/dashboard.py:370-397 |
+| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:190-264; mcp/src/agents_remember/cli/dashboard.py:157-187; mcp/src/agents_remember/cli/dashboard.py:317-338; mcp/src/agents_remember/cli/dashboard.py:352-376; mcp/src/agents_remember/cli/dashboard.py:379-406 |
 | Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:256-325 |
+| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:257-327 |
 | The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:53-63; mcp/src/agents_remember/serving/sim.py:139-150 |
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-156 |
 | The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:79-88 |
@@ -326,12 +339,13 @@ the base is not silently dropped by this composition.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-145; mcp/src/agents_remember/application/role_capsules/launch.py:273-294 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:148-178; mcp/src/agents_remember/cli/dashboard.py:343-367; mcp/src/agents_remember/cli/dashboard.py:67-127 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:163-163; mcp/src/agents_remember/serving/_app_common.py:441-509 |
-| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:117-127; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-482 |
+| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-154; mcp/src/agents_remember/application/role_capsules/launch.py:273-294 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:157-187; mcp/src/agents_remember/cli/dashboard.py:352-376; mcp/src/agents_remember/cli/dashboard.py:67-127 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:163-163; mcp/src/agents_remember/serving/_app_common.py:442-517 |
+| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:120-130; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-482 |
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Added the section "260928-MIK-L25 The Fifth Reviewer Port: The Tree View" (`review_trees_port`, `read_review_trees`), with one row. Rows citing moved lines were projected by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. The umbrella's `build_parser` gained the `knowledge-index` registration (MIK-R23); the claim that it registers this subcommand was re-read and still holds, and its range was re-pointed to the function's extent `cli/__main__.py:29-92`. The fixer's generated bullet, written minutes earlier in this same pass, is folded into this entry.
 - 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the composition root wires a fourth reviewer port, the changed-intent summary (`ICR-R24@v3`).** New section with the port, its import and its reason. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
 - 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
@@ -339,9 +353,9 @@ the base is not silently dropped by this composition.
 
 - 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the composition root gained the third reviewer port, and the section that counted two was superseded in place.** `serving_collaborators` now imports `read_review_source_content` from `agents_remember.application.review_source_content` with the same deferred `# noqa: PLC0415 - composition` idiom as its siblings, defines `review_source_content_port(request)` closing over `config`, and places it on the replaced record as `review_source_content`. The new section records the division of labour the docstring states — **the request carries the generation the browser is looking at rather than the server choosing one**, and the application owner re-resolves the leaf only to *measure* whether that generation is still the candidate's, then reads those two objects and nothing else (no working tree, no `HEAD`), so an entry opened after the branch moved still shows the listed generation's bytes and says the leaf has moved past it — plus the refuse-by-name half: "this process cannot read the entry" and "this entry has no content" are different facts. The L45 section's "binds **two** application-tier reviewer callables" is flagged as superseded while its wiring site and reason are kept. **Citation accounting:** this leaf's +16-line insertion shifted every construct below line ~78 by 16, so every row into this file was re-read against the candidate and re-derived rather than shifted: `add_arguments` `147-171` → `163-237`; `_dev_app` `114-144` → `130-160`; `_run_reload_server` `237-258` → `290-311`; `_build_app` `261-282`/`309-333` → `325-349`; `_run_daemon_command` `285-312`/`336-363` → `352-379`; `serving_collaborators` `67-83` → `67-127`; `ServingCollaborators` in `_app_common.py` `430-462` → `440-499`; `create_app` in `serving/app.py` `226-285` → `255-323`. Two backticked spans in the cadence row that are **not anchors** — the file path and the sibling CLI path used to disambiguate `add_arguments` — were moved out of the Anchor cell into the Finding's plain prose, because no cited range can literally hold a path; one row was added for the new port. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
 | The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:117-157; mcp/src/agents_remember/cli/dashboard.py:322-346; mcp/src/agents_remember/cli/dashboard.py:67-114 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
-| **The review port and the loader it hands the surface, which is the composition the R14 evidence is measured through.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-101; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
+| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:120-166; mcp/src/agents_remember/cli/dashboard.py:331-355; mcp/src/agents_remember/cli/dashboard.py:67-117 |
+| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:431-463 |
+| **The review port and the loader it hands the surface, which is the composition the R14 evidence is measured through.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-104; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
 | **The cases that drive this port and prove every available collection arrives with its own channel state.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `review_through_port` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:170-183 |
 
 ## Update History
@@ -386,7 +400,7 @@ the base is not silently dropped by this composition.
 
 - 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this file's change is **small, and is recorded as
   small** — seven lines, one import and `declare_process_role("dashboard")` as the first
-  statement of `run` cit:([`run`], mcp/src/agents_remember/cli/dashboard.py:161-196). Nothing else in the file moved. Recorded the placement rule (entry
+  statement of `run` cit:([`run`], mcp/src/agents_remember/cli/dashboard.py:170-205). Nothing else in the file moved. Recorded the placement rule (entry
   point, never `create_app`, because the factory is called in-process by tests and `_declared` has
   no reset) and, more usefully, **which serving processes the declaration actually reaches**:
   foreground live/sim yes; the `--daemon` child yes, because `serving/daemon.py` L201-L214 spawns

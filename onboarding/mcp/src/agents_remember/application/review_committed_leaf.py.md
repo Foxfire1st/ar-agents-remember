@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/review_committed_leaf.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview | `mcp/src/agents_remember/application/overview.md` |
 
 ## Governing Overview
@@ -112,8 +112,9 @@ vocabulary is stated once.** `closed_leaf_limitations` publishes the facts a rea
 top-level `kind:value` tokens — which record answered (`history:recorded-comparison` /
 `history:recorded-source-range`), which generation it was
 (`history:comparison-generation:<id>`), each intent half's state (`history:intent:<side>:<state>`) and a
-source channel that is not `available` (`history:source:<state>`) — and returns an empty tuple for a live
-candidate, so a live response is byte-identical to the one it always was. `closed_leaf_intent_detail` is
+source channel that is not `available` (`history:source:<state>`). For a resolution with no closed-leaf record it
+delegates to `knowledge_unavailable_limitations` (MIK-R25): the tree comparison's facts, the legacy facts, or an
+empty tuple for a live dataset candidate, so a live dataset response is byte-identical to the one it always was. `closed_leaf_intent_detail` is
 the one sentence a reopened review states about the operand it did not compare, and
 `closed_leaf_dataset_refusal` is the refusal the entry route and the subject composition share.
 
@@ -163,6 +164,10 @@ dependency is one-way at runtime and both modules publish the same resolution va
   endpoint.
 - **`candidate_not_live` survives only where it is true**: a closed leaf that recorded neither a
   comparison nor a landed commit.
+- **A converted repository's closed leaf reads no database (MIK-R25 rule 4).** `_converted_repository_resolution`
+  reopens a recorded tree comparison from its tree ids, or, for a converted official line with only a dataset
+  record, answers `legacy-unavailable` knowledge sides with the code sides kept; an unconverted repository's
+  closed leaf takes the dataset path unchanged.
 - **The module writes nothing.** It retains, freezes, releases and deletes nothing; every one of those
   decisions remains the owner's it was read from.
 
@@ -194,41 +199,41 @@ silencing no other rule.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The historical resolver prefers the retained generation and reconstructs exact recorded endpoints only when no generation exists. | `resolve_committed_leaf_review`; `_generation_resolution`; `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202; mcp/src/agents_remember/application/review_committed_leaf.py:225-263; mcp/src/agents_remember/application/review_committed_leaf.py:324-361 |
-| **The published surface: the two record names, the three declared-limit prefixes, the closing sentence, the review value and the four entry callables.** | `__all__` | mcp/src/agents_remember/application/review_committed_leaf.py:60-73 |
-| **The two records a closed leaf is reopened from, named once because a second spelling would be a second vocabulary.** | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:77-78 |
-| **The declared-limit vocabulary every fact is published at the top level of the response under.** | `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX` | mcp/src/agents_remember/application/review_committed_leaf.py:84-86 |
-| **The one sentence the surface publishes when a closed leaf's review is opened, stated here so the entry, the review and the expansion cannot describe the same resolution three ways.** | `CLOSED_LEAF_REVIEW_SENTENCE` | mcp/src/agents_remember/application/review_committed_leaf.py:91-95 |
-| **The six intent-half states this surface may declare: its own `retained`, the two typed absences that are history (R05's `not-recorded`, R11's `not-selected`), and the three unresolved states kept apart from them.** | `IntentState`; `_UNAVAILABLE_INTENT_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:101-108; mcp/src/agents_remember/application/review_committed_leaf.py:111-113 |
-| **The record one closed leaf's review was reopened from: the reopen owner's own answer, the two bound trees, and the two properties that name which record answered and which half channel it measured.** | `ClosedLeafReview`; `state`; `intent` | mcp/src/agents_remember/application/review_committed_leaf.py:116-160 |
-| **The whole resolution, in the packet's order: the recorded contract, R11's reopen, the reopen's own refusal for an unreadable record, and the generation-or-range branch.** | `resolve_committed_leaf_review`; `recorded_leaf_contract`; `reopen_comparison_generation` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202; mcp/src/agents_remember/application/review_candidate_resolution.py:490-517; mcp/src/agents_remember/application/review_comparison_reopen.py:228-249 |
-| **An unreadable or ambiguous generation refused in the reopen's own words rather than in a sentence invented here.** | `_reopen_refusal` | mcp/src/agents_remember/application/review_committed_leaf.py:205-219 |
-| **The generation resolution: the two retained snapshots, the record's own two code objects read in the repository the record names, and the deliberately absent captured identity.** | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:225-263 |
-| **One half's dataset: the generation's own retained copy, or the leaf's own disposable path when the record states the half was never kept.** | `_half_database`; `_disposable_half` | mcp/src/agents_remember/application/review_committed_leaf.py:266-285; mcp/src/agents_remember/application/review_committed_leaf.py:288-297 |
-| **The namespace the retained halves are read under, taken from the dataset identities the generation recorded.** | `_retained_namespace` | mcp/src/agents_remember/application/review_committed_leaf.py:300-318 |
-| **The recorded-range resolution: R01's committed-range owner, the two recorded endpoints, and the explicit statement that no generation was published.** | `_recorded_range_resolution`; `recorded_committed_range` | mcp/src/agents_remember/application/review_committed_leaf.py:324-361; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
-| **The endpoint is a tree, resolved in the repository the range names, because the expansion owner refuses a commit, a blob or a tag by name.** | `_tree_of` | mcp/src/agents_remember/application/review_committed_leaf.py:364-389 |
-| **The F2 fix: the refusal branched on the endpoint's own kind, so a recorded endpoint that does not resolve is `candidate_unresolved` and only "nothing live and nothing recorded" keeps `candidate_not_live`.** | `_no_recorded_range_refusal`; `RecordedEndpointAbsent` | mcp/src/agents_remember/application/review_committed_leaf.py:392-432; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
-| **The declared facts one reopened review publishes, and the empty tuple a live candidate earns so a live response is unchanged.** | `closed_leaf_limitations` | mcp/src/agents_remember/application/review_committed_leaf.py:438-471 |
-| **The one sentence a reopened review states about the operand it did not compare, with the record's own state deciding which fact leads.** | `closed_leaf_intent_detail`; `_intent_sentence` | mcp/src/agents_remember/application/review_committed_leaf.py:474-486; mcp/src/agents_remember/application/review_committed_leaf.py:608-661 |
-| **The F1 fix: the refusal the entry route and the subject composition share, partitioning the half reasons through R11's own typed-absence set and wording a declared absence apart from a channel that is unavailable.** | `closed_leaf_dataset_refusal`; `_stated_sentence`; `_unresolved_sentence`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:489-550; mcp/src/agents_remember/application/review_committed_leaf.py:561-569; mcp/src/agents_remember/application/review_committed_leaf.py:572-581; mcp/src/agents_remember/application/review_comparison_generation.py:151-151 |
-| **Which half cannot be compared and why: the record's own channel state first, the disk asked only for a half the record retained.** | `_half_reason`; `_half_present`; `_intent_state` | mcp/src/agents_remember/application/review_committed_leaf.py:584-598; mcp/src/agents_remember/application/review_committed_leaf.py:601-605; mcp/src/agents_remember/application/review_committed_leaf.py:664-675 |
-| **The two halves in the order every report of them uses, and the two directory names imported from the live resolution rather than re-spelled.** | `_SIDES`; `_HALF_DIRECTORY`; `_DISPOSABLE_RELATIVE` | mcp/src/agents_remember/application/review_committed_leaf.py:679-679; mcp/src/agents_remember/application/review_committed_leaf.py:684-684; mcp/src/agents_remember/application/review_committed_leaf.py:688-688 |
-| **The value this resolution is composed into, and the field that carries the record rather than a live capture.** | `ReviewCandidateResolution`; `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:123-160; mcp/src/agents_remember/application/review_candidate_resolution.py:436-450 |
-| **The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.** | `resolve_review_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:163-250 |
+| The historical resolver asks the converted-repository resolution first (MIK-R25: a recorded tree comparison, or a legacy one), then prefers the retained generation and reconstructs exact recorded endpoints only when no generation exists. | `resolve_committed_leaf_review`; "def _generation_resolution("; `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:174-216; mcp/src/agents_remember/application/review_committed_leaf.py:265-303; mcp/src/agents_remember/application/review_committed_leaf.py:364-401 |
+| **The published surface: the two record names, the three declared-limit prefixes, the closing sentence, the review value and the four entry callables.** | `__all__` | mcp/src/agents_remember/application/review_committed_leaf.py:71-84 |
+| **The two records a closed leaf is reopened from, named once because a second spelling would be a second vocabulary.** | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` | mcp/src/agents_remember/application/review_committed_leaf.py:88-89 |
+| **The declared-limit vocabulary every fact is published at the top level of the response under.** | `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX` | mcp/src/agents_remember/application/review_committed_leaf.py:95-97 |
+| **The one sentence the surface publishes when a closed leaf's review is opened, stated here so the entry, the review and the expansion cannot describe the same resolution three ways.** | `CLOSED_LEAF_REVIEW_SENTENCE` | mcp/src/agents_remember/application/review_committed_leaf.py:102-106 |
+| **The six intent-half states this surface may declare: its own `retained`, the two typed absences that are history (R05's `not-recorded`, R11's `not-selected`), and the three unresolved states kept apart from them.** | `IntentState`; `_UNAVAILABLE_INTENT_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:112-119; mcp/src/agents_remember/application/review_committed_leaf.py:122-124 |
+| **The record one closed leaf's review was reopened from: the reopen owner's own answer, the two bound trees, and the two properties that name which record answered and which half channel it measured.** | `ClosedLeafReview`; `state`; `intent` | mcp/src/agents_remember/application/review_committed_leaf.py:127-171 |
+| **The whole resolution, in the packet's order: the recorded contract, R11's reopen, the reopen's own refusal for an unreadable record, and the generation-or-range branch.** | `resolve_committed_leaf_review`; `recorded_leaf_contract`; `reopen_comparison_generation` | mcp/src/agents_remember/application/review_committed_leaf.py:174-216; mcp/src/agents_remember/application/review_candidate_resolution.py:490-517; mcp/src/agents_remember/application/review_comparison_reopen.py:228-249 |
+| **An unreadable or ambiguous generation refused in the reopen's own words rather than in a sentence invented here.** | `_reopen_refusal` | mcp/src/agents_remember/application/review_committed_leaf.py:245-259 |
+| **The generation resolution: the two retained snapshots, the record's own two code objects read in the repository the record names, and the deliberately absent captured identity.** | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:265-303 |
+| **One half's dataset: the generation's own retained copy, or the leaf's own disposable path when the record states the half was never kept.** | `_half_database`; `_disposable_half` | mcp/src/agents_remember/application/review_committed_leaf.py:306-325; mcp/src/agents_remember/application/review_committed_leaf.py:328-337 |
+| **The namespace the retained halves are read under, taken from the dataset identities the generation recorded.** | `_retained_namespace` | mcp/src/agents_remember/application/review_committed_leaf.py:340-358 |
+| **The recorded-range resolution: R01's committed-range owner, the two recorded endpoints, and the explicit statement that no generation was published.** | `_recorded_range_resolution`; `recorded_committed_range` | mcp/src/agents_remember/application/review_committed_leaf.py:364-401; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
+| **The endpoint is a tree, resolved in the repository the range names, because the expansion owner refuses a commit, a blob or a tag by name.** | `_tree_of` | mcp/src/agents_remember/application/review_committed_leaf.py:404-429 |
+| **The F2 fix: the refusal branched on the endpoint's own kind, so a recorded endpoint that does not resolve is `candidate_unresolved` and only "nothing live and nothing recorded" keeps `candidate_not_live`.** | `_no_recorded_range_refusal`; `RecordedEndpointAbsent` | mcp/src/agents_remember/application/review_committed_leaf.py:432-472; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84 |
+| **The declared facts one reopened review publishes; without a closed-leaf record it delegates to the tree or legacy facts (MIK-R25), which are the empty tuple for a live dataset candidate, so a live dataset response is unchanged.** | "def closed_leaf_limitations(" | mcp/src/agents_remember/application/review_committed_leaf.py:478-511 |
+| **The one sentence a reopened review states about the operand it did not compare, with the record's own state deciding which fact leads.** | `closed_leaf_intent_detail`; `_intent_sentence` | mcp/src/agents_remember/application/review_committed_leaf.py:514-526; mcp/src/agents_remember/application/review_committed_leaf.py:651-704 |
+| **The F1 fix: the refusal the entry route and the subject composition share, partitioning the half reasons through R11's own typed-absence set and wording a declared absence apart from a channel that is unavailable.** | `closed_leaf_dataset_refusal`; `_stated_sentence`; `_unresolved_sentence`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_committed_leaf.py:529-593; mcp/src/agents_remember/application/review_committed_leaf.py:604-612; mcp/src/agents_remember/application/review_committed_leaf.py:615-624; mcp/src/agents_remember/application/review_comparison_generation.py:151-151 |
+| **Which half cannot be compared and why: the record's own channel state first, the disk asked only for a half the record retained.** | `_half_reason`; `_half_present`; `_intent_state` | mcp/src/agents_remember/application/review_committed_leaf.py:627-641; mcp/src/agents_remember/application/review_committed_leaf.py:644-648; mcp/src/agents_remember/application/review_committed_leaf.py:707-718 |
+| **The two halves in the order every report of them uses, and the two directory names imported from the live resolution rather than re-spelled.** | `_SIDES`; `_HALF_DIRECTORY`; `_DISPOSABLE_RELATIVE` | mcp/src/agents_remember/application/review_committed_leaf.py:722-722; mcp/src/agents_remember/application/review_committed_leaf.py:727-727; mcp/src/agents_remember/application/review_committed_leaf.py:731-731 |
+| **The value this resolution is composed into, and the field that carries the record rather than a live capture.** | `ReviewCandidateResolution`; `refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:132-169; mcp/src/agents_remember/application/review_candidate_resolution.py:494-508 |
+| **The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.** | `resolve_review_candidate` | mcp/src/agents_remember/application/review_candidate_resolution.py:180-242 |
 | **The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.** | `ComparisonReopen`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:136-151; mcp/src/agents_remember/application/review_comparison_reopen.py:164-225 |
-| **The two routes that publish these declarations: the entry refusal and the review's declared limits.** | `list_knowledge_review_entries`; `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:256-316; mcp/src/agents_remember/application/knowledge_review.py:334-574 |
+| **The two routes that publish these declarations: the entry refusal and the review's declared limits.** | `list_knowledge_review_entries`; `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:256-317; mcp/src/agents_remember/application/knowledge_review.py:334-574 |
 | **The case module that measures the whole chain through the real composition and the real HTTP route.** | `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte`; `test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence` | mcp/tests/test_historical_committed_leaf_review.py:257-324; mcp/tests/test_historical_committed_leaf_review.py:387-446 |
 
-| `_recorded_range_resolution` owns the behavior described above. | `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:315-317 |
-| `_generation_resolution` owns the behavior described above. | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:216-218 |
-| `resolve_committed_leaf_review` owns the behavior described above. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:163-165 |
+| `_recorded_range_resolution` owns the behavior described above. | `_recorded_range_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:364-366 |
+| `_generation_resolution` owns the behavior described above. | `_generation_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:265-267 |
+| `resolve_committed_leaf_review` owns the behavior described above. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:174-176 |
 
 The following declarations carry the changed boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| An explicit generation is resolved through the same committed-leaf owner. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:163-202 |
+| An explicit generation is resolved through the same committed-leaf owner. | `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_committed_leaf.py:174-216 |
 
 ## Cross-Repo References
 
@@ -241,6 +246,12 @@ namespace the request names.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Added the section "260928-MIK-L25 A Converted Repository's Closed Leaf Reads Trees, Or Reports Legacy-Unavailable": `_converted_repository_resolution` before the generation path, and the three declaration helpers delegating to `review_legacy_comparison` when no closed-leaf record answers; one row. **Two reopened claims re-read, reworded and re-anchored:** the historical-resolver row and the `closed_leaf_limitations` row. Their committed generated-repair bullets (2026-09-26T21:14:45+00:00) are left intact, so both rows are re-anchored on the line-exact quotes "def _generation_resolution(" and "def closed_leaf_limitations("; the two bullets this pass's fixer wrote for them were removed. The Logic paragraph on `closed_leaf_limitations` was updated. **Already-stale rows re-measured:** the `_recorded_range_resolution` and `_generation_resolution` declaration rows (base `315-317` and `216-218`, which no longer held the declarations even at the base) now cite `364-366` and `265-267`. The other rows were projected or normalised by the installed fixer, or re-pointed by exact line shift. No verification stamp was advanced.
+- 2026-09-30T01:46:18+00:00: Generated citation repair: `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:88-88; mcp/src/agents_remember/application/review_committed_leaf.py:89-89. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T01:46:18+00:00: Generated citation repair: `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:95-95; mcp/src/agents_remember/application/review_committed_leaf.py:96-96; mcp/src/agents_remember/application/review_committed_leaf.py:97-97. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T01:46:18+00:00: Generated citation repair: `CLOSED_LEAF_REVIEW_SENTENCE` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:102-106. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T01:46:18+00:00: Generated citation repair: `ClosedLeafReview`; `state`; `intent` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:127-171; mcp/src/agents_remember/application/review_committed_leaf.py:151-155; mcp/src/agents_remember/application/review_committed_leaf.py:163-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T01:46:18+00:00: Generated citation repair: `_retained_namespace` repointed to mcp/src/agents_remember/application/review_committed_leaf.py:340-358. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
 
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 11 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
@@ -264,3 +275,25 @@ namespace the request names.
 - 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
 - 2026-09-26T19:49:05Z — Reconciled the changed ownership and current behavior with the source.
 - 2026-09-23T05:05:00+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): created this one-to-one card for the module this leaf introduced to reopen a **committed or closed** leaf's code-and-intent comparison from its own durable records (`ICR-R12@v1`). The card records the intake defect it removes (a cleaned leaf's Intent Review answered `candidate_not_live`), the two records it resolves from and their order, why both resolutions produce the value the one composition already renders, the per-kind refusal of the recorded-range path, and the declared-limit vocabulary the response publishes. **The two findings of this leaf's fix round are recorded as current behaviour rather than as history**: the F1 partition of a state the record itself declares away from content that is unavailable, and the F2 branch that keeps `candidate_not_live` for the one state in which it is true. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+
+## 260928-MIK-L25 A Converted Repository's Closed Leaf Reads Trees, Or Reports Legacy-Unavailable
+
+**MIK-R25 rule 4.** `resolve_committed_leaf_review` now calls `_converted_repository_resolution` before R11's
+generation reopen:
+
+- a leaf that recorded a tree comparison reopens from its tree ids (`review_tree_comparison.reopen_review_trees`
+  and `tree_resolution`); a tree Git can no longer produce is `unavailable-history`, named, never substituted;
+- a leaf whose repository's official memory line is converted (`official_line_converted`) but which recorded only a
+  dataset comparison, or only a committed range, is answered by `review_legacy_comparison.legacy_comparison_resolution`:
+  code sides kept, knowledge sides `legacy-unavailable`, or four committed trees when the recorded memory endpoints
+  are converted;
+- every other leaf (an unconverted repository's) returns `None` here and keeps the dataset path below unchanged.
+
+`closed_leaf_limitations`, `closed_leaf_intent_detail` and `closed_leaf_dataset_refusal` delegate to
+`knowledge_unavailable_limitations`, `knowledge_unavailable_detail` and `knowledge_unavailable_refusal` when no
+closed-leaf record answers, so a tree or legacy comparison declares its own facts and refusal. The pre-existing
+radon C scores here were accepted (review F8, ruling 23:15:34).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| A recorded tree comparison reopened, a converted repository's legacy answer, or none for the dataset path. | `_converted_repository_resolution` | mcp/src/agents_remember/application/review_committed_leaf.py:219-242 |

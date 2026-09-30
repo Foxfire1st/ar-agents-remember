@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | lastVerifiedCommitHash |  `a8d2431926d6b130012ca81ed2e85b14721c0615`|
 | lastVerifiedCommitDate |  2026-09-21T22:51:46+02:00|
 | the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
@@ -16,6 +16,30 @@
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup
+
+**Route meaning extended (MIK-R25, a shared fix in L23's code; ruling 2026-09-29T22:22:37 Q6).** The reviewer reads
+each memory side of a converted leaf through the derived index of its tree, and its family roster reads revisions
+through the store's revision readers, which verify the logical payload seal on every decode. The index's projected
+revision rows carried `sha256(record)` instead, so every index was refused there.
+
+- [`knowledge_index/projection.py`](knowledge_index/projection.py.md): each projected `invariant_revision` and
+  `family_revision` row now carries `revision_payload_digest`/`family_revision_payload_digest` over exactly the
+  projected cells, so an index reads as a dataset for the revision readers too.
+- [`knowledge_index/schema.py`](knowledge_index/schema.py.md): `INDEX_FORMAT` is `ar-knowledge-index/v2`, so a v1
+  cache is treated as absent and rebuilt rather than reused.
+- [`knowledge_index/query.py`](knowledge_index/query.py.md): `record_ids(kind)`, every record ID of one kind in the
+  tree, for the reviewer's per-side currentness.
+
+L23, L03 and L08 tests still pass (worker ruling round). No database copy is part of a review: the derived index is
+the permitted read path (Q1).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The store's own seal on each projected revision row. | `revision_payload_digest`; `family_revision_payload_digest` | mcp/src/agents_remember/memory/knowledge_index/projection.py:157-202; mcp/src/agents_remember/memory/knowledge_index/projection.py:205-263 |
+| The format bump that rebuilds v1 caches. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:21-23 |
+| Every record ID of one kind. | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:288-292 |
 
 ## 260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported
 
@@ -1321,7 +1345,7 @@ one leaf's curation pass.
 | The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database"; "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:662-699; mcp/tests/test_knowledge_portable_boundaries.py:96-134 |
 | The node that proves destination admission refuses before any staging work. | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
 | The node that holds the round trip of a populated dataset to an equal logical dataset. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427 |
-| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:276-276 |
+| The registry rows this leaf added: two integration lane rows. | "integration = [" | mcp/tests/test-evidence-lanes.toml:278-278 |
 | The registered support artifact the two integration lane rows land in, by its own artifact id. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
 |The second registered support artifact those rows land in, by its own artifact id.|"id = \"knowledge-snapshot-lifecycle-cases\""| mcp/tests/evidence-lifecycle.toml:40-40 |
 |The third registered support artifact those rows land in, by its own artifact id.|"id = \"common-base-merge-cases\""| mcp/tests/evidence-lifecycle.toml:45-45 |
@@ -1590,7 +1614,7 @@ index schema, the key and the cache are unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The candidate list is the path and every ancestor, nearest first, and ends with the root route `.`. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:383-392 |
+| The candidate list is the path and every ancestor, nearest first, and ends with the root route `.`. | `_self_and_ancestors` | mcp/src/agents_remember/memory/knowledge_index/query.py:390-399 |
 | A family routed at the root governs a root-level file and a deep file. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
 
 ## 260928-MIK-L20 The Census Inventory And Writer: A New Package, `knowledge_census/`
@@ -1621,6 +1645,8 @@ The legacy database census described in "260915-KS-L21 The Census Apparatus" abo
 | Every write is checked, then written atomically. | `_commit` | mcp/src/agents_remember/memory/knowledge_census/writer.py:92-121 |
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Index's Revision Rows Carry The Store's Own Seal, And A Record-ID Lookup" at the top (the shared seal fix in `projection.py`, `INDEX_FORMAT` v2, `record_ids`; ruling 22:22:37 Q6), with three rows. **Reopened claim re-read:** the retired-records row (`RETIRED_STATUS`, `project`) still holds and its wording was retained. No verification stamp was advanced.
+- 2026-09-30T01:47:43+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:278-278. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported" at the top: the new `knowledge/requirement_endpoint.py`, the owner as resolver, its two root answers, and rulings Q5 and Q8. Two rows. No verification stamp was advanced.
 - 2026-09-30T01:07:32+00:00: Generated citation repair: "integration = [" repointed to mcp/tests/test-evidence-lanes.toml:276-276. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims" at the top, with one row (`with_proofs`, rulings Q3 and N6); the default wording is unchanged. The other rows were projected or normalised by the installed fixer.
@@ -1986,7 +2012,7 @@ production memory tree is converted, so the installed runtime never reaches it.
 | The package map. | "No knowledge writer writes the index" | mcp/src/agents_remember/memory/knowledge_index/__init__.py:1-20 |
 | The captured-state key. | `directory_snapshot`; `_capture` | mcp/src/agents_remember/memory/knowledge_index/tree.py:92-110; mcp/src/agents_remember/memory/knowledge_index/tree.py:122-144 |
 | The build, which names every failing file. | `build_index`; `parse_tree` | mcp/src/agents_remember/memory/knowledge_index/build.py:120-129; mcp/src/agents_remember/memory/knowledge_index/build.py:132-159 |
-| Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:68-68; mcp/src/agents_remember/memory/knowledge_index/projection.py:85-105 |
+| Retired records are left out of the projection. | `project`; `RETIRED_STATUS` | mcp/src/agents_remember/memory/knowledge_index/projection.py:82-82; mcp/src/agents_remember/memory/knowledge_index/projection.py:99-119 |
 | The cache refuses a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-164 |
 
 
@@ -2052,7 +2078,7 @@ never written by a knowledge writer, and unreached by the installed runtime befo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:260-268; mcp/src/agents_remember/memory/knowledge_index/query.py:270-282 |
+| The two proof lookups. | `proofs_of`; `invariants_without_proof` | mcp/src/agents_remember/memory/knowledge_index/query.py:261-269; mcp/src/agents_remember/memory/knowledge_index/query.py:271-283 |
 
 ## Update History
 - 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows this document carried — both on the per-record isolation row (`:98`) of the `260921-ICR-L14` route-impact section above.** That row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` for `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied` and `mcp/tests/test_knowledge_review_evidence_channels.py:719-745` for `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; this leaf's fix round moved both cases down that module, and they now declare at `:825-844` and `:847-870`, so the two ranges were repointed to those extents. Claim, anchors, wording and every other range are unchanged; no range was dropped to silence a row. No verification stamp was advanced — the candidate is uncommitted (the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta), so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

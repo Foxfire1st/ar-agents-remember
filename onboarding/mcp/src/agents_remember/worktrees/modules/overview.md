@@ -3,9 +3,9 @@
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | repository             | agents-remember                         |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-21T20:24:00+02:00 |
@@ -16,6 +16,21 @@
 ## Governing Overview
 
 [worktrees overview](../overview.md)
+
+## 260928-MIK-L25 Finalization Carries The Review-Artifact Archive Hook
+
+`modules/finalize.py` gained `_with_review_artifact_cleanup` (MIK-R25 rule 5, D17). Right after
+`archive_completed_root_task`, `_finalized_result` passes the archive result through it: for an `archived` (or, on
+a dry run, `would-archive`) task it calls the composition-bound `ReviewArtifactCleanupPort` (`../services.py`) with
+the task root as it now is, `task_name` = the contract's `task_root.name` (the only name of the review-ref
+namespace, ruling 2026-09-30T02:32:42 (a)), the contract's two repositories and `dry_run`, and carries the report as
+`taskArchive.reviewArtifacts`. An unbound port reports `not-bound`; an exception becomes `{state: "failed", detail}`,
+because the task has already moved (review F2). The hook (`application/review_artifact_cleanup.py`) deletes the
+task's review refs, its own legacy retained-code pins and its legacy dataset copies, confined to the task folder.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The archive result gains the hook's report; unbound or failed is reported, never raised. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:229-267 |
 
 ## 260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route
 
@@ -553,7 +568,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:708-783 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
-| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
+| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:324-358; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:574-574; mcp/src/agents_remember/worktrees/modules/landing_record.py:36-36 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context`; `build_route_indexes` | mcp/src/agents_remember/worktrees/modules/onboarding.py:532-540; mcp/src/agents_remember/kernel/route_index.py:184-235 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:333-333; mcp/src/agents_remember/models/worktree.py:46-55 |
@@ -1400,6 +1415,7 @@ drift snapshot crashed**. The repair is one keyword argument (`:285-292`), held 
 
 ## Update History
 
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 Finalization Carries The Review-Artifact Archive Hook" at the top (`finalize._with_review_artifact_cleanup`, review F2, ruling 02:32:42 (a)), with one row. No verification stamp was advanced.
 - 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "260928-MIK-L30 The Onboarding Refresh Gate On History Files Joins This Route": the new `modules/onboarding_trace.py` (carded, governed by this overview), `onboarding.py`'s entry points and converted-tree guards, and the architect rulings of 18:49:50, 19:23:45 and 19:53:54. Three rows. The route-index row's `onboarding.py` range (`513-521`) was moved by the insertions and re-pointed to `532-540`. No verification stamp was advanced.
 - 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
 

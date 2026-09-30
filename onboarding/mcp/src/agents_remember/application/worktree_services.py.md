@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/worktree_services.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,8 @@ Since MIK-R24 the validator is bound as `GitKnowledgeValidation(base_converter=G
 
 Since MIK-R08 the bundle also binds `knowledge_worklist=LeafWorklistRecompute()` (`application/knowledge_worklist/leaf.py`), which implements `worktrees.services.KnowledgeWorklistPort`: a completed managed sync recomputes and persists the leaf's change-to-knowledge worklist through it (rule 8) without the worktree layer importing the application layer. It returns `None` for a leaf whose two memory sides are unconverted (every production leaf before MIK-R37) and never raises, so the sync result is unchanged for them.
 
+Since MIK-R25 the bundle also binds `review_artifact_cleanup=ReviewArtifactCleanup()` (`application/review_artifact_cleanup.py`), which implements `worktrees.services.ReviewArtifactCleanupPort`: finalization's archive of a root task deletes the task's review refs, its own legacy retained-code refs and its legacy dataset copies through it (rule 5, D17) without the worktree layer importing the application layer. It never raises; a process built without it reports `not-bound`.
+
 ### Conventions
 
 Keep imports of providers and memory_quality at this composition boundary. Worktree modules consume protocols from worktrees.services; they do not locate those packages dynamically or construct fallback implementations.
@@ -43,6 +45,7 @@ Keep imports of providers and memory_quality at this composition boundary. Workt
 - Default composition must bind the rail adapter before the Agents Remember certification-record seam requests it.
 - Preserve provider teardown and citation-guard ownership while extending the bundle.
 - The knowledge validator and the knowledge crossing are bound here and nowhere else. A process without a bound crossing refuses a crossing sync (`crossing sync step 'convert' failed`); it never merges one as plain Git.
+- The review-artifact archive hook is bound here and nowhere else (MIK-R25); finalize reads it through the port.
 - The knowledge validator is bound here and nowhere else. A process that builds its bundle without it gets a refusal, not a skipped validation, for any converted memory commit.
 
 ### Todos
@@ -55,7 +58,7 @@ The default application bundle installs `PreparedCloseoutContinuation` and `Prep
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:203-211 |
+| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:204-212 |
 
 ## Docs References
 
@@ -71,12 +74,13 @@ The cited source establishes the current contracts and boundaries described abov
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:39-143 |
-| Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:146-150; mcp/src/agents_remember/application/worktree_services.py:153-191 |
-| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:194-206 |
-| The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. | `build_default_worktree_services`; `GitKnowledgeValidation`; `GitBaseConverter`; `GitKnowledgeCrossing` | mcp/src/agents_remember/application/worktree_services.py:209-220; mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80; mcp/src/agents_remember/memory/conversion/base.py:101-139; mcp/src/agents_remember/memory/conversion/crossing_port.py:24-52 |
-| The default bundle's MIK-R08 binding: the worklist recompute port adapter. | `LeafWorklistRecompute`; `knowledge_worklist` | mcp/src/agents_remember/application/worktree_services.py:209-220; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:437-446 |
-| The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:253-256 |
+| Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:40-144 |
+| Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:147-151; mcp/src/agents_remember/application/worktree_services.py:154-192 |
+| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:195-207 |
+| The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. | `build_default_worktree_services`; `GitKnowledgeValidation`; `GitBaseConverter`; `GitKnowledgeCrossing` | mcp/src/agents_remember/application/worktree_services.py:210-222; mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:31-80; mcp/src/agents_remember/memory/conversion/base.py:101-139; mcp/src/agents_remember/memory/conversion/crossing_port.py:24-52 |
+| The default bundle's MIK-R08 binding: the worklist recompute port adapter. | `LeafWorklistRecompute`; `knowledge_worklist` | mcp/src/agents_remember/application/worktree_services.py:210-222; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:437-446 |
+| The default bundle's MIK-R25 binding: the review-artifact archive hook. | "review_artifact_cleanup=ReviewArtifactCleanup()" | mcp/src/agents_remember/application/worktree_services.py:221-221 |
+| The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:280-283 |
 
 ## Cross-Repo References
 
@@ -87,6 +91,8 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Purpose-level Logic paragraph and Invariants bullet for the `review_artifact_cleanup=ReviewArtifactCleanup()` binding, with one row. The `bind_worktree_services` row was projected by the installed fixer. No verification stamp was advanced.
+- 2026-09-30T01:47:00+00:00: Generated citation repair: `bind_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:280-283. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T15:43:05+00:00: Generated citation repair: `bind_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:253-256. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic gains the `knowledge_worklist=LeafWorklistRecompute()` binding (the `KnowledgeWorklistPort` adapter a completed managed sync recomputes the worklist through; inert and non-raising for unconverted leaves), with a citation row.
 - 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Body updated for MIK-R24. The validator is now bound with `base_converter=GitBaseConverter()` (rule 7), and the bundle binds `knowledge_crossing=GitKnowledgeCrossing()` (rule 8). The Purpose, the Logic paragraph and the invariants say so, including that an unbound crossing refuses and never merges as plain Git. The bundle row was re-measured and now cites the two new adapters.

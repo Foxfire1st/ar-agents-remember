@@ -5,14 +5,31 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-28T17:14:56+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
+
+**Route meaning extended (MIK-R25).** One new route module, [`review_trees.py`](review_trees.py.md) (carded, governed
+here): `GET /api/review/trees?repo&master&leaf[&comparison=<n>][&history=recorded]`, transport only. Every typed
+answer is a 200 (`trees`, `not-converted`, `refused`); a process composed without the port answers a named 503; a
+bad `history` or negative `comparison` is a 400. [`_app_common.py`](_app_common.py.md) declares
+`ServingCollaborators.review_trees`, [`app.py`](app.py.md) registers the route right after the summary route and
+before the static mount, and `cli/dashboard.py` binds the port to `application/review_tree_knowledge.read_review_trees`.
+The landed reviewer routes keep their shapes: for a converted leaf only their data source changed, to the derived
+indexes of the memory trees (rule 6). A read may pin a live candidate (rule 1), idempotently (ruling 2026-09-29T22:22:37
+Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The route and its three answer classes. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:57-88 |
+| The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:305-305 |
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
 
@@ -28,6 +45,7 @@ route-level case pins the five-arm status table so the admission is held by beha
 alone.
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port" at the top (the new `review_trees.py`, carded and governed here; the collaborator field; the registration; rulings Q5, F6 and F9), with two rows. Rows citing moved lines were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
 - 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): re-pointed 6 citations into `mcp/tests/test_knowledge_review_source_endpoints.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. One claim was re-worded after re-reading. The selector-kind row said the case asserts that omitting both selector parameters is admitted, and the case (moved verbatim) does not. It now states what the two cited cases assert, and its generated-repair bullet was retired. No stamp was advanced.
 - 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`): No route impact: L55 (`ICR-R24@v3`) bounded the notes listing inside `serving/notes.py`. It now makes one followed `stat` per entry, realpath-checks only symlinks, and enters directories through `O_DIRECTORY|O_NOFOLLOW` descriptors. The route set, the registration order before the static mount, the shared `SCOPED_READ_RESPONSES` idiom and the `NotesListing`/`NoteContents` contracts are unchanged, and no cache, store or daemon joined the route. The file-level account, including the accepted read-without-search deviation and the two residual windows, is on `notes.py.md`. No stamp was advanced.
 - 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — a fourth reviewer route, `/api/review/intent/summary` (`ICR-R24@v3`).** The route table gains its row; the route is registered from `serving/review_summary.py` beside the reviewer family, answers every typed state (`counted`, `partial`, `unavailable`) with 200 and the state in the body — deliberately unlike the catalogue's refusal statuses, so an uninitialized leaf puts no console error on the page — and answers 503 only when the port is not wired. Displaced rows were re-pointed. No stamp advanced.
@@ -233,18 +251,18 @@ same eight keys, no `capsuleDelivery` key appears, and diffing the two transcrip
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:108-159; mcp/src/agents_remember/serving/launch_capsule.py:73-80; mcp/src/agents_remember/serving/launch_capsule.py:233-249; mcp/src/agents_remember/serving/launch_capsule.py:251-273 |
+| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:107-159; mcp/src/agents_remember/serving/launch_capsule.py:233-248; mcp/src/agents_remember/serving/launch_capsule.py:251-272; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-78 |
 | The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
 | The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
-| The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-70 |
-| The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295; mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
-| The opener's two carrier readers, and the defensive refusal beside them. | `_codex_capsule_delivery`; `_eve_capsule_env`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:542-554; mcp/src/agents_remember/serving/terminal_opener.py:556-562; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
-| The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. | `_require_capsule_channel`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:110-119; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
+| The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-60 |
+| The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-294; mcp/src/agents_remember/application/role_capsules/launch.py:362-404 |
+| The opener's two carrier readers, and the defensive refusal beside them. | `_codex_capsule_delivery`; `_eve_capsule_env`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:542-553; mcp/src/agents_remember/serving/terminal_opener.py:556-561; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
+| The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. | `_require_capsule_channel`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:110-119; mcp/src/agents_remember/serving/harness_control_factories.py:104-117; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
 | The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:805-844 |
-| The declared legacy exclusion, with its reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124 |
-| The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:483-526; mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:816-872 |
+| The declared legacy exclusion, with its reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-119 |
+| The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:485-528; mcp/tests/test_capsule_launch_wiring.py:531-576; mcp/tests/test_capsule_launch_wiring.py:859-915 |
 | The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
-| The two limitations, with their owner and the evidence that measures them. | `_resolve_harness_dispatch`; `session_backend` | mcp/src/agents_remember/application/terminal_tools.py:386-438; mcp/src/agents_remember/serving/terminal_opener.py:163-173 |
+| The two limitations, with their owner and the evidence that measures them. | `_resolve_harness_dispatch`; `session_backend` | mcp/src/agents_remember/application/terminal_tools.py:386-479; mcp/src/agents_remember/serving/terminal_opener.py:163-163 |
 
 ## Purpose
 
@@ -1241,12 +1259,12 @@ L17).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
-| The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527; mcp/src/agents_remember/serving/eve_runtime_launch.py:529-560 |
+| The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
+| The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:518-545; mcp/src/agents_remember/serving/eve_runtime_launch.py:548-569 |
 | The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463 |
-| The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
-| The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-62 |
-| The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:364-395; mcp/tests/test_eve_capsule_binding.py:397-418 |
+| The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-99; mcp/src/agents_remember/serving/eve_runtime_client.py:242-254; mcp/src/agents_remember/serving/eve_runtime_client.py:256-268 |
+| The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-56 |
+| The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:368-398; mcp/tests/test_eve_capsule_binding.py:401-422 |
 
 ## 260915-CAPS-L11 The Argv Bound Is Stated, Enforced, And Measured
 
@@ -1351,19 +1369,19 @@ from it.
 | **The comparison route's handler over its injected port.** | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
 | **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** | "def api_review_intent_entries(" |mcp/src/agents_remember/serving/review.py:560-645|
 | **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).** | "def api_review_intent_source_content(" |mcp/src/agents_remember/serving/review.py:573-658|
-| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** | `_UNWIRED_ENTRIES`; `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:107-116; mcp/src/agents_remember/serving/review.py:121-130|
-| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:86-89|
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:98-106|
+| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** | `_UNWIRED_ENTRIES`; `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:115-124; mcp/src/agents_remember/serving/review.py:129-138|
+| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:89-89|
+| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:106-106|
 | The query parser that admits only those two. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` |mcp/src/agents_remember/serving/review.py:522-607|
+| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` |mcp/src/agents_remember/serving/review.py:607-624|
 | The refusal code a process with no adapter produces. | `review_adapter_unavailable` |mcp/src/agents_remember/serving/review.py:530-615|
 | The 400 a selector kind outside the admitted set gets. | `status_code` |mcp/src/agents_remember/serving/review.py:704-704|
 | The 404 for a candidate that does not resolve. | `status_code` |mcp/src/agents_remember/serving/review.py:709-709|
 | **The registration that must precede the static mount and that takes all three ports.** | "def register_review_routes(" |mcp/src/agents_remember/serving/review.py:542-627|
 | **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** | `KnowledgeReviewEntriesPort`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:109-109|
-| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:107-116|
+| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:115-124|
 | **The registration that must precede the static mount and that takes both ports.** | "def register_review_routes(" |mcp/src/agents_remember/serving/review.py:542-627|
-| **The entry port type: the task context in, one typed entry result out.** | `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:101-109|
+| **The entry port type: the task context in, one typed entry result out.** | `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:109-109|
 
 ## 260915-KS-L22 The Intent-Review Transport Over An Injected Port
 
@@ -1398,7 +1416,7 @@ resolves nothing from it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The GET-only route handler over the injected port. | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:98-106|
+| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:106-106|
 | The query parser that admits only those two. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
 | **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
 | The refusal code a process with no adapter produces. | `review_adapter_unavailable` |mcp/src/agents_remember/serving/review.py:530-615|
@@ -1449,10 +1467,10 @@ whose after-side is a filesystem location, and its own `mode` says so. The two m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:43-125 |
-| **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:247-712 |
-| **The doc-reader entry point that publishes the unrecorded state in the body.** | `leaf_changeset`; `LeafChangeSet` | mcp/src/agents_remember/serving/changeset.py:455-497; mcp/src/agents_remember/serving/response_contract.py:843-894 |
-| **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:629-679; mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779; mcp/tests/test_knowledge_review_source_endpoints.py:782-826 |
+| **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:50-50; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
+| **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:386-440; mcp/src/agents_remember/serving/changeset.py:596-630 |
+| **The doc-reader entry point that publishes the unrecorded state in the body.** | `leaf_changeset`; `LeafChangeSet` | mcp/src/agents_remember/serving/changeset.py:455-494; mcp/src/agents_remember/serving/response_contract.py:843-860 |
+| **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:629-679; mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779; mcp/tests/test_knowledge_review_source_endpoints.py:782-815 |
 
 ## 260921-ICR-L13 The Master Net Is Generation-Bound, And Selection Is A Module Of Its Own
 
@@ -1479,10 +1497,10 @@ body correction and citation re-derivation; the two new modules' cards (`master_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** | `select_master_net`; `master_net_digest`; `MasterEndpointAbsent` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/master_net_generation.py:158-168; mcp/src/agents_remember/serving/master_net_generation.py:73-81 |
-| **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** | `master_changeset`; `master_file_diff`; `_master_json` | mcp/src/agents_remember/serving/changeset.py:247-712 |
-| **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:127-890; mcp/src/agents_remember/serving/response_contract.py:129-890; mcp/src/agents_remember/serving/response_contract.py:130-890; mcp/src/agents_remember/serving/response_contract.py:568-890; mcp/src/agents_remember/serving/response_contract.py:570-890; mcp/src/agents_remember/serving/response_contract.py:576-890; mcp/src/agents_remember/serving/response_contract.py:578-890; mcp/src/agents_remember/serving/response_contract.py:633-890 |
-| **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:237-265; mcp/tests/test_master_net_generation.py:472-488 |
+| **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** | `select_master_net`; `master_net_digest`; `MasterEndpointAbsent` | mcp/src/agents_remember/serving/master_net_generation.py:73-82; mcp/src/agents_remember/serving/master_net_generation.py:158-168; mcp/src/agents_remember/serving/master_net_generation.py:171-200 |
+| **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** | `master_changeset`; `master_file_diff`; `_master_json` | mcp/src/agents_remember/serving/changeset.py:247-322; mcp/src/agents_remember/serving/changeset.py:325-356; mcp/src/agents_remember/serving/changeset.py:581-593 |
+| **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:863-868; mcp/src/agents_remember/serving/response_contract.py:871-883; mcp/src/agents_remember/serving/response_contract.py:886-896 |
+| **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:248-275; mcp/tests/test_master_net_generation.py:483-499 |
 
 ## Update History
 - 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the L1 section's refusal claim is superseded in place, and no route was added or removed.** The section said an unrecorded `committed` endpoint "is a **named `404`**" and that "the **code** half keeps the refusal"; at this tip `_leaf_range` carries that sentence in its own return value and `leaf_changeset` answers with the body's `state: "unrecorded"` + `stateDetail`, because a legitimate state every live leaf passes through was being reported as a missing resource and the change-set bar probes the view on every open (register B6). The corrected paragraph records the three untouched refusals (unknown leaf `404`, bad/absent `mode` `400`, enclosure `scope` `404`), that `HEAD` is still never substituted, and that `no-repository`/`unresolvable` still refuse on both sides. **Citation accounting:** the L1 section's rows were re-derived from each construct's own declaration at this tip (`_leaf_range` `:386-429` → `:386-440`, `leaf_file_diff` `:577-612` → `:596-630`, and the three case ranges → `:642-692` / `:695-741` / `:744-792`), and the renamed case is cited by its new name. The later L13 section's `changeset.py` master rows were checked against the same tip and are unchanged. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
@@ -2488,10 +2506,10 @@ unwired `503`/refusal answers, the status mapping and the serializer are unchang
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` |mcp/src/agents_remember/serving/review.py:281-314; mcp/src/agents_remember/models/knowledge/review.py:248-301|
-| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` |mcp/src/agents_remember/serving/review.py:662-662; mcp/src/agents_remember/serving/review.py:627-709|
-| The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` |mcp/src/agents_remember/serving/review.py:712-712; mcp/src/agents_remember/serving/review.py:607-624|
-| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:300-412; mcp/src/agents_remember/application/review_task_context.py:84-157 |
+| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` |mcp/src/agents_remember/serving/review.py:294-327; mcp/src/agents_remember/models/knowledge/review.py:262-324|
+| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` |mcp/src/agents_remember/serving/review.py:661-709; mcp/src/agents_remember/serving/review.py:627-709|
+| The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` |mcp/src/agents_remember/serving/review.py:712-717; mcp/src/agents_remember/serving/review.py:607-624|
+| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/review_task_context.py:93-191 |
 | **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` |mcp/tests/test_knowledge_review_source_endpoints.py:829-905; mcp/tests/test_knowledge_review_resolution_and_route.py:285-303|
 
 ## 260921-ICR-L3 The Reviewer Gains Its Expansion Route, And The Inventory Rows Open Into Their Bound Content
@@ -2534,18 +2552,18 @@ application owner, its vocabulary and the dashboard renderer are on their own ro
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:93-96|
+| **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
 | **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** | `SourceContentRef`; `before_code_tree_id` |mcp/src/agents_remember/serving/review.py:215-215; mcp/src/agents_remember/serving/review.py:199-216|
-| **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:499-584|
-| **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-720; mcp/src/agents_remember/serving/review.py:657-659|
-| **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:121-130|
-| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:481-489 |
-| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:522-607; mcp/src/agents_remember/models/knowledge/review.py:151-160|
-| The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:656-734|
-| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:295-301 |
-| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:114-132; mcp/src/agents_remember/cli/dashboard.py:82-82 |
+| **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:584-604|
+| **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-738; mcp/src/agents_remember/serving/review.py:657-659|
+| **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
+| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:483-483 |
+| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review.py:151-160|
+| The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:741-757|
+| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:296-302 |
+| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:120-130; mcp/src/agents_remember/cli/dashboard.py:82-82 |
 | **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
-| **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:771-795; mcp/tests/test_knowledge_review_source_content.py:796-821; mcp/tests/test_knowledge_review_source_content.py:641-678 |
+| **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/tests/test_knowledge_review_source_content.py:641-676 |
 
 ## 260921-ICR-L16 One 400/404 Mapping In The Review Transport, And Two Bodies That Now Carry An Action
 
@@ -2571,10 +2589,10 @@ is therefore how a test reaches the mapping at all.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:128-170 |
-| **The two actions the bodies gained, and where they are named.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` |mcp/src/agents_remember/serving/review.py:149-149; mcp/src/agents_remember/serving/review.py:145-148|
-| The expansion read's whole transport, whose docstring now states the shared mapping. | `_source_content_response` |mcp/src/agents_remember/serving/review.py:635-659|
-| The published surface, unchanged: the three route constants, the three ports and the two parsers. | `__all__`; `SourceContentRef` |mcp/src/agents_remember/serving/review.py:50-70; mcp/src/agents_remember/serving/review.py:191-208|
+| **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:155-167; mcp/src/agents_remember/serving/review.py:170-196 |
+| **The two actions the bodies gained, and where they are named.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` |mcp/src/agents_remember/serving/review.py:149-152; mcp/src/agents_remember/serving/review.py:145-148|
+| The expansion read's whole transport, whose docstring now states the shared mapping. | `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-738|
+| The published surface, unchanged: the three route constants, the three ports and the two parsers. | `__all__`; `SourceContentRef` |mcp/src/agents_remember/serving/review.py:53-73; mcp/src/agents_remember/serving/review.py:199-216|
 
 ## Update History
 - 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the review transport's single change on this route: one `_port_outcome` mapping and one `_transport_refusal` body builder reached by both adapters, with the two bodies that published only their message now carrying the action their failure implies (and the offending path for `not-found`). It also records that nothing was removed — no route, status, key or model — and that the port indirection's reason (rank) is unchanged. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.

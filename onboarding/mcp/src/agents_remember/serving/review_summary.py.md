@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/review_summary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:21+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview | `mcp/src/agents_remember/serving/overview.md` |
 
 ## Governing Overview
@@ -59,11 +59,11 @@ No Domain Documentation source is configured for this module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route path and the port signature (repository, master, leaf). | `KNOWLEDGE_REVIEW_SUMMARY_ROUTE`; `ReviewIntentSummaryPort` | mcp/src/agents_remember/serving/review_summary.py:35-37 |
+| The route path and the port signature (repository, master, leaf). | `KNOWLEDGE_REVIEW_SUMMARY_ROUTE`; `ReviewIntentSummaryPort` | mcp/src/agents_remember/serving/review_summary.py:35-35; mcp/src/agents_remember/serving/review_summary.py:37-37 |
 | The unwired answer: named, and never a zero. | `_UNWIRED_SUMMARY` | mcp/src/agents_remember/serving/review_summary.py:41-48 |
 | Every typed state answered 200 with the body; 503 only without a port. | `register_review_summary_route`; `status_code=503` | mcp/src/agents_remember/serving/review_summary.py:51-59 |
-| The route is registered from the app's collaborators. | `register_review_summary_route` | mcp/src/agents_remember/serving/app.py:303-303 |
-| The optional collaborator slot the route reads. | `review_intent_summary` | mcp/src/agents_remember/serving/_app_common.py:492-499 |
+| The route is registered from the app's collaborators. | `register_review_summary_route` | mcp/src/agents_remember/serving/app.py:304-304 |
+| The optional collaborator slot the route reads. | `review_intent_summary` | mcp/src/agents_remember/serving/_app_common.py:493-493 |
 | The case that pins 200 for every typed state and 503 when unwired. | `test_the_route_answers_every_typed_state_in_the_body` | mcp/tests/test_review_intent_summary.py:421-457 |
 
 ## Cross-Repo References
@@ -76,4 +76,5 @@ No cross-repository behavior.
 
 ## Update History
 
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `_app_common.py`, `app.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
 - 2026-09-28T16:55:21+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the changed-intent summary route (`ICR-R24@v3`), including the deliberate 200-for-every-typed-state idiom. The verification pair names the code base; closeout owns the real stamp.

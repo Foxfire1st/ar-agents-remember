@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
+| lastUpdated            | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ Cleanup is handled as part of the finalization operation, and it is the **only**
 an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized
 leaf still owns its worktrees, its merged local branches, its reports directory and its enclosure
 root. `_run_or_verify_cleanup` is the whole seam
-cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:277-311):
+cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:324-358):
 
 - If the contract is already cleaned, the response records `already-completed` without calling
   cleanup at all.
@@ -58,7 +58,7 @@ cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/final
 **The report is shaped here, and only for a real reclamation (260831-LOCR-L31).** A real,
 completed reclamation is passed through
 `cleanup_report(contract, result.payload)`
-cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:310-310)
+cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:357-357)
 — the operator-facing sentence and inventory documented on its own card. The gate in front of that
 call is load-bearing in both directions: when `args.dry_run` or `result.returncode != 0`, the cleanup
 payload is returned **unchanged**, because a preview lists what cleanup *would* remove (so shaping it
@@ -75,6 +75,16 @@ same canonical contract. A missing, vacant, unreadable, or different selection i
 reported; a paused old master cannot clear the currently selected one. Successful results carry the
 activation observation/release evidence and only then archive a root series task.
 
+**The review-artifact archive hook (MIK-R25 rule 5, D17).** Right after `archive_completed_root_task`,
+`_finalized_result` passes the archive result through `_with_review_artifact_cleanup`. For a task that was
+`archived` (or `would-archive` on a dry run) it takes the composition-bound `review_artifact_cleanup` port from
+`worktree_services()` and calls it with a `ReviewArtifactCleanupRequest`: the task root as it is now (the archive
+path once archived), `task_name` = the contract's `task_root.name` (the review-ref namespace, ruling
+2026-09-30T02:32:42 (a)), the contract's code and memory repositories, and `dry_run`. Its report is carried as
+`taskArchive.reviewArtifacts`. An unbound port reports `state: "not-bound"` rather than "nothing to delete", and
+any exception becomes `{state: "failed", detail}`: the task is already archived, so the hook never fails finalize
+(review F2, ruling 2026-09-29T23:15:34). The hook itself is `application/review_artifact_cleanup.py`.
+
 Task document reconciliation is optional and edge-scoped. `task_doc_path` is
 set to `Completed` unless it points at a master document. `master_doc_path` plus
 `subtask_number` sets only that immediate parent row to `Completed`. The parent
@@ -90,10 +100,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Final result releases exact terminal selection before root task archival and reports retryable release failure. | `_finalized_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:144-220 |
+| Final result releases exact terminal selection before root task archival, reports retryable release failure, and carries the review-artifact archive hook's report on an archived (or would-archive) root task (MIK-R25). | "def _finalized_result("; "archive = _with_review_artifact_cleanup(contract, archive, dry_run=args.dry_run)" | mcp/src/agents_remember/worktrees/modules/finalize.py:149-226 |
+| The archive hook is carried for an archived task only; unbound is `not-bound`, and an exception is a `failed` report, never raised. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:229-267 |
 | Exact terminal release is independent of queue/task scheduling state. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:645-645 |
-| The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/finalize.py:310-310 |
+| The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:324-358; mcp/src/agents_remember/worktrees/modules/finalize.py:357-357 |
 | The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:193-193 |
 | Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:139-139 |
@@ -128,6 +139,9 @@ before bytes move. Projection refresh failure is reported separately and never r
 accepted finalization write.
 
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Added the Code Commentary paragraph on the review-artifact archive hook (`_with_review_artifact_cleanup`, rule 5, review F2 and ruling 02:32:42 (a)) and its row. **Reopened claim re-read, reworded and re-anchored:** the `_finalized_result` row now also names the hook's report; its committed generated-repair bullet (2026-09-11T22:39:01+00:00) is left intact, so the row is re-anchored on the line-exact quotes "def _finalized_result(" and the hook call. The other rows were projected by the installed fixer. No verification stamp was advanced.
+- 2026-09-30T01:49:28+00:00: Generated citation repair: `_run_or_verify_cleanup` repointed to mcp/src/agents_remember/worktrees/modules/finalize.py:324-358. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-30T01:49:28+00:00: Generated citation repair: "cleanup_report(contract, result.payload)" repointed to mcp/src/agents_remember/worktrees/modules/finalize.py:357-357. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-18T17:30:57+00:00: Generated citation repair: "def carryover_done" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:193-193. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def cleanup_result" repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:645-645. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-17T20:42:17+00:00: Generated citation repair: "def carryover_done" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
+| lastUpdated | 2026-09-30T04:01:40+02:00 |
+| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` |
+| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -416,7 +416,31 @@ Q4) and L14 (Q6: index stability when alternatives are reordered). The record sh
 | Superseded is derived from later decisions' `supersedes`. | `superseded_by`; `derived_status` | mcp/src/agents_remember/models/knowledge_files/decisions.py:170-177; mcp/src/agents_remember/models/knowledge_files/decisions.py:180-185 |
 | The reconsider links and MIK-R14's subject. | `ReconsiderLink`; `reconsider_links` | mcp/src/agents_remember/models/knowledge_files/decisions.py:53-68; mcp/src/agents_remember/models/knowledge_files/decisions.py:156-167 |
 
+## 260928-MIK-L25 The Review Comparison As Four Git Trees, And The Tree View's Answer
+
+**Route meaning extended (MIK-R25).** One new model module, [`knowledge/review_trees.py`](knowledge/review_trees.py.md)
+(carded, governed here, following the `knowledge/` precedent of no sub-route overview):
+
+- `ReviewTreeComparisonRecord` (`ar-review-tree-comparison/v1`): task id (the task directory name), leaf id,
+  number, the four `ReviewTreeSide`s (a committed side names its commit; an uncommitted one names its pinning ref
+  under `REVIEW_REF_NAMESPACE`, `refs/ar/review`) and the optional `ReviewConvertedBase`. `same_trees` compares task,
+  leaf, the four trees and the converted base, so a record written under another naming is never reused (ruling
+  2026-09-30T02:32:42 (a)).
+- `ReviewTreeSideState`: `available`, `unavailable-history` (named, never substituted) or `legacy-unavailable`.
+  `ReviewKnowledgeSide` carries the index state and problems; `ReviewCodeSide` (review F4) the reopened code trees.
+- `ReviewTreesResult`: `trees`, `not-converted` or `refused`, with the knowledge diff groups
+  (`ReviewKnowledgeTreeDiff`), per-side currentness and `ReviewWorklistView`. Its mixed key casing is carried to L31
+  (review F9).
+
+No database path is part of either shape.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The ref namespace and the durable record. | `REVIEW_REF_NAMESPACE`; `ReviewTreeComparisonRecord` | mcp/src/agents_remember/models/knowledge/review_trees.py:59-59; mcp/src/agents_remember/models/knowledge/review_trees.py:98-138 |
+| The tree view's answer. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:237-254 |
+
 ## Update History
+- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Review Comparison As Four Git Trees, And The Tree View's Answer" after L13's (the new `knowledge/review_trees.py`, carded and governed here; review F4 and F9; ruling 02:32:42 (a) on `same_trees`), with two rows. No verification stamp was advanced.
 - 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules And Their Derived Reads" after L01's: the new `knowledge_files/decisions.py`, the derived `superseded`, and rulings Q4 and Q6. Three rows. No verification stamp was advanced.
 - 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The `leaf` Response Kind, The Public Queue Cap, And The Optional `families`" after L27's, with two rows (the `leaf` kind and `MAX_QUEUED_SEEDS`, ruling 23:21:57; the `families` field, rule 7), and noted in L02's section that the 64-seed edge is resolved as `seed_queue_exceeded`. The other rows were projected by the installed fixer.
 - 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Criteria's Meanings" (the `shapes.py` docstring change, no model change; rulings Q3 and F2), with two rows. No verification stamp was advanced.
